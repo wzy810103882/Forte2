@@ -1,0 +1,13 @@
+Forte
+Proto - Proof of concept generative music mechanic, prototype level that demonstrates movement or collision detection leads to sound generation
+Alpha - attack feature, timing enemy attack feature, one legit level with opportunity for dissonance
+Beta - final boss completed, music/art updated, 2 music scores, losing feature 
+Final - debug, polish, any bonus levels
+
+To do for prototype (by priority)
+
+Music overlay
+Some "art" for m.c. and bad guy
+(Optional) Blinking bad guys
+ (Optional) Both arrow keys working together (and better in general)
+ (Optional) Brick sizing
