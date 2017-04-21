@@ -23,7 +23,15 @@ public class DisplayObject extends EventDispatcher {
 	/* All DisplayObject have a unique id */
 	private String id;
 
+	public boolean isBounce() {
+		return isBounce;
+	}
 
+	public void setBounce(boolean bounce) {
+		isBounce = bounce;
+	}
+
+	private boolean isBounce;
 	/* The image that is displayed by this object */
 	private BufferedImage displayImage;
 	private boolean visible = true;

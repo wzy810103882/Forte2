@@ -239,19 +239,14 @@ public class FortePrototype extends Game {
 
     }
 
-    public void gamePadUpdate(ArrayList<GamePad> gamePads){
+    public void gamePadUpdate(ArrayList<GamePad> gamePads) {
         for (GamePad pad : gamePads) {
 
             if (pad.getLeftStickXAxis() < -0.5) {
                 player.setVelX(-15);
-            }
-
-
-            else if (pad.getLeftStickXAxis() > 0.5)
-            {
+            } else if (pad.getLeftStickXAxis() > 0.5) {
                 player.setVelX(15);
-            }
-            else {
+            } else {
                 player.setVelX(0);
 
             }
@@ -298,6 +293,7 @@ public class FortePrototype extends Game {
         }
 
     }
+
     @Override
     public void update(ArrayList<String> pressedKeys, ArrayList<GamePad> gamePads) {
         super.update(pressedKeys, gamePads);
@@ -311,10 +307,10 @@ public class FortePrototype extends Game {
         gamePadUpdate(gamePads);
 
 
-
 /**
  * map bound check
  */
+
         Position p1 = player.getPosition();
         if (p1.getX() <= 0) player.setPosition(0, p1.getY());
         if (p1.getX() >= gameWidth - player.getScaledWidth())
@@ -326,65 +322,123 @@ public class FortePrototype extends Game {
         }
 
 
-        /**
-         * collision with platform
-         */
         for (Sprite s : objects) {
             if (s.isVisible()) {
-                if (player.nearby(s)) {
-                    if (player.collidesWith(s, player.getVelX(), player.getVelY())) {
-                        collision = true;
-                        if (s.getId() == "Floor") {
-                            player.setPosition(player.getPosX(), s.getPosY() - player.getScaledHeight() - 1);
-                            player.setVelY(0);
-                            falling = false;
-                            break;
-                        }
-
-                        if (s.getId() == "Platform") {
-                            // Landing on top
-                            if (player.getPosY() + player.getScaledHeight() - player.getVelY() <= s.getPosY()) {
-                                falling = false;
-                                plat_top = true;
-                                plat_down = false;
-                                player.setPosition(player.getPosX(), s.getPosY() - player.getScaledHeight() - 1);
-                                break;
-                            } else {
-                                // Left side
-                                if (player.getPosX() + player.getScaledWidth() >= s.getPosX()
-                                        && player.getPosX() + player.getScaledWidth() < s.getPosX() + s.getScaledWidth() / 2) {
-                                    player.setPosition(s.getPosX() - player.getScaledWidth() - 1, player.getPosY());
-                                    falling = true;
-                                    plat_top = false;
-                                    plat_down = false;
-                                    break;
-                                }
-                                // Right side
-                                if (player.getPosX() <= s.getPosX() + s.getScaledWidth() && player.getPosX() > s.getPosX() + s.getScaledWidth() * 0.5) {
-                                    player.setPosition(s.getPosX() + s.getScaledWidth() + 1, player.getPosY());
-                                    falling = true;
-                                    plat_top = false;
-                                    plat_down = false;
-                                    break;
-                                }
-                                // Below
-                                if (player.getPosY() <= s.getPosY() + s.getScaledHeight() && player.getPosY() > s.getPosY()) {
-                                    player.setPosition(player.getPosX(), s.getPosY() + s.getScaledHeight() + 1);
-                                    falling = true;
-                                    plat_top = false;
-                                    plat_down = true;
-                                    break;
-
-                                }
-                            }
-                        }
-
-                    } else {
-                        collision = false;
+                if (player.collidesWith(s, player.getVelX(), player.getVelY())) {
+                    collision = true;
+                    int xscenter = s.getPosX() + s.getUnscaledWidth() / 2;
+                    int yscenter = s.getPosY() + s.getUnscaledHeight() / 2;
+                    int xbulletcenter = player.getPosX() + player.getUnscaledWidth() / 2;
+                    int ybulletcenter = player.getPosY() + player.getUnscaledHeight() / 2;
+                    int xdif = xbulletcenter - xscenter;
+                    int ydif = ybulletcenter - yscenter;
+                    // top
+                    if (ydif < 0 && Math.abs(ydif) > Math.abs(xdif)) {
+                        //player.setVelY(-(player.getVelY()));
+                        falling = false;
+                        plat_top = true;
+                        plat_down = false;
+                        player.setPosition(player.getPosX(), s.getPosY() - player.getScaledHeight() - 1);
+                        player.setVelY(0);
+                        System.out.println("top");
+                        break;
                     }
+                    // Left side
+                    if (xdif < 0 && Math.abs(ydif) < Math.abs(xdif)) {
+                        player.setPosition(s.getPosX() - player.getScaledWidth() - 1, player.getPosY());
+                        falling = true;
+                        plat_top = false;
+                        plat_down = false;
+                        System.out.println("left");
+                        break;
+                    }
+                    // Right side
+                    if (xdif > 0 && Math.abs(ydif) < Math.abs(xdif)) {
+                        player.setPosition(s.getPosX() + s.getScaledWidth() + 1, player.getPosY());
+                        falling = true;
+                        plat_top = false;
+                        plat_down = false;
+                        System.out.println("right");
+                        break;
+
+                    }
+                    // Below
+                    if (ydif > 0 && Math.abs(ydif) > Math.abs(xdif)) {
+                        player.setPosition(player.getPosX(), s.getPosY() + s.getScaledHeight() + 1);
+                        falling = true;
+                        plat_top = false;
+                        plat_down = true;
+                        System.out.println("below");
+                        break;
+
+                    }
+                } else {
+                    collision = false;
+                    falling = true;
                 }
             }
         }
+        /**
+         * collision with platform
+         */
+        /**
+         for (Sprite s : objects) {
+         if (s.isVisible()) {
+         if (player.nearby(s)) {
+         if (player.collidesWith(s, player.getVelX(), player.getVelY())) {
+         collision = true;
+         if (s.getId() == "Floor") {
+         player.setPosition(player.getPosX(), s.getPosY() - player.getScaledHeight() - 1);
+         player.setVelY(0);
+         falling = false;
+         break;
+         }
+
+         if (s.getId() == "Platform") {
+         // Landing on top
+         if (player.getPosY() + player.getScaledHeight() - player.getVelY() <= s.getPosY()) {
+         falling = false;
+         plat_top = true;
+         plat_down = false;
+         player.setPosition(player.getPosX(), s.getPosY() - player.getScaledHeight() - 1);
+         break;
+         } else {
+         // Left side
+         if (player.getPosX() + player.getScaledWidth() >= s.getPosX()
+         && player.getPosX() + player.getScaledWidth() < s.getPosX() + s.getScaledWidth() / 2) {
+         player.setPosition(s.getPosX() - player.getScaledWidth() - 1, player.getPosY());
+         falling = true;
+         plat_top = false;
+         plat_down = false;
+         break;
+         }
+         // Right side
+         if (player.getPosX() <= s.getPosX() + s.getScaledWidth() && player.getPosX() > s.getPosX() + s.getScaledWidth() * 0.5) {
+         player.setPosition(s.getPosX() + s.getScaledWidth() + 1, player.getPosY());
+         falling = true;
+         plat_top = false;
+         plat_down = false;
+         break;
+         }
+         // Below
+         if (player.getPosY() <= s.getPosY() + s.getScaledHeight() && player.getPosY() > s.getPosY()) {
+         player.setPosition(player.getPosX(), s.getPosY() + s.getScaledHeight() + 1);
+         falling = true;
+         plat_top = false;
+         plat_down = true;
+         break;
+
+         }
+         }
+         }
+
+         } else {
+         collision = false;
+         }
+         }
+         }
+         }
+         */
 
 
         /**
