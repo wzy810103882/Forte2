@@ -275,6 +275,7 @@ public class SmallGame extends Game implements MouseListener {
         }
 
 
+
     }
 
 
@@ -290,42 +291,22 @@ public class SmallGame extends Game implements MouseListener {
             } else {
                 player1.setVelX(0);
             }
+
             if (e.getKeyCode() == KeyEvent.VK_UP) {
 
                 if (player1serve) {
-                    //setMid(bullet, player1, false);
-                    //bullet.setPosition(player1.getPosX(), player1.getPosY() - 5 - player1.getUnscaledHeight());
-                    /**
-                     int xdif = e.getX() - (player1.getPosX() + player1.getUnscaledWidth() / 2);
-                     int ydif = e.getY() - (player1.getPosY() + player1.getUnscaledHeight() / 2);
-                     double distance = Math.sqrt(xdif * xdif + ydif * ydif);
-                     double x = xdif / distance;
-                     double y = ydif / distance;
-                     int truex = (int) (x * 15);
-                     int truey = (int) (y * 15);
-                     */
+
                     bullet.setVelX(player1.getVelX());
                     bullet.setVelY(-20);
                     serving = false;
                     player1serve = false;
 
                 } else {
-                    /**
-                     setMid(bullet, player2, true);
-                     //  bullet.setPosition(player2.getPosX(), player2.getPosY() + 5 + player2.getUnscaledHeight());
-                     int xdif = e.getX() - (player2.getPosX() + player2.getUnscaledWidth() / 2);
-                     int ydif = e.getY() - (player2.getPosY() + player2.getUnscaledHeight() / 2);
-                     double distance = Math.sqrt(xdif * xdif + ydif * ydif);
-                     double x = xdif / distance;
-                     double y = ydif / distance;
-                     int truex = (int) (x * 15);
-                     int truey = (int) (y * 15);
-
-                     bullet.setVelX(player2.getVelX());
-                     bullet.setVelY(20);
-                     */
                 }
+
+
             }
+
         }
 
         if (e.getKeyCode() == KeyEvent.VK_SPACE) {
