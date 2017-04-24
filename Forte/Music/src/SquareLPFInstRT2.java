@@ -64,11 +64,19 @@ public final class SquareLPFInstRT2 extends Instrument{
      */
     public void createChain(){
         Oscillator wt = new Oscillator(this, Oscillator.SQUARE_WAVE, this.sampleRate, this.channels);
+<<<<<<< HEAD
         //filt = new Filter(wt, this.filterCutoff, Filter.LOW_PASS);
         //Envelope env = new Envelope(filt,
          //       new double[] {0.0, 0.0, 0.02, 1.0, 0.2, 0.5, 0.8, 0.3, 1.0, 0.0});
         //Volume vol = new Volume(env);
         //StereoPan pan = new StereoPan(vol);
+=======
+        filt = new Filter(wt, this.filterCutoff, Filter.LOW_PASS);
+        Envelope env = new Envelope(filt,
+                new double[] {0.0, 0.0, 0.02, 1.0, 0.2, 0.5, 0.8, 0.3, 1.0, 0.0});
+        Volume vol = new Volume(env);
+        StereoPan pan = new StereoPan(vol);
+>>>>>>> a0cd67ed12ff35bc0cc69f5e3e587c492ba99b1d
     }
 
     /** Changes the specified controller when called */

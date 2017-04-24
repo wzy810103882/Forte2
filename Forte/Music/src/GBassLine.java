@@ -7,7 +7,11 @@ import jm.util.*;
 import jm.JMC;
 
 public class GBassLine extends RTLine implements JMC{
+<<<<<<< HEAD
     private Note n = new Note(36, 0.5);
+=======
+    private Note n = new Note(0, 0.5);
+>>>>>>> a0cd67ed12ff35bc0cc69f5e3e587c492ba99b1d
     private int dynoPosition = 0;
 
     //i added these. currently not using.
@@ -20,6 +24,11 @@ public class GBassLine extends RTLine implements JMC{
     /**
      * Constructor
      */
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> a0cd67ed12ff35bc0cc69f5e3e587c492ba99b1d
     public GBassLine(Instrument[] instArray) {
         super(instArray);
     }
@@ -37,6 +46,7 @@ public class GBassLine extends RTLine implements JMC{
         return n;*/
 
         //Testing a non-random song.
+<<<<<<< HEAD
         n.setPitch(pitchArray[arrayIndex]);
         n.setRhythmValue(rhythmArray[arrayIndex]);
         if(arrayIndex % 2 == 0)
@@ -50,6 +60,35 @@ public class GBassLine extends RTLine implements JMC{
         }
         //n.setDynamic(dynoPosition);
         n.setDuration(n.getRhythmValue() * 0.9);
+=======
+        if(arrayIndex % 2 == 0)
+        {
+
+           // n.setPitch(pitchArray[arrayIndex]);
+            n.setPitch(pitchArray[arrayIndex]);
+            n.setRhythmValue(rhythmArray[arrayIndex]);
+            n.setDynamic(dynoPosition);
+            n.setDuration(n.getRhythmValue());
+        }
+        else
+        {
+            n = new Note(REST, rhythmArray[arrayIndex]);
+
+        }
+
+        /*if(arrayIndex % 2 == 0)
+        {
+            n.setDynamic(dynoPosition);
+        }
+        else
+        {
+            setDynoValue(0);
+            //this.dynoPosition = 0;
+        }*/
+        System.out.println("ArrayIndex is: " + arrayIndex);
+        //n.setDynamic(dynoPosition);
+
+>>>>>>> a0cd67ed12ff35bc0cc69f5e3e587c492ba99b1d
         arrayIndex++;
         if(arrayIndex == rhythmArray.length)
         {

@@ -19,17 +19,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FortePrototype.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FortePrototype.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edu/virginia/lab1test/FortePrototype.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2877">
-              <caret line="706" column="33" lean-forward="false" selection-start-line="706" selection-start-column="33" selection-end-line="706" selection-end-column="33" />
+            <state relative-caret-position="255">
+              <caret line="17" column="51" lean-forward="false" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1636#1644#0" expanded="true" />
                 <element signature="method#setBackground#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#setFloor#0;class#FortePrototype#0" expanded="false" />
-                <element signature="method#setBoosFloor#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#setHorizontalPlatform#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#setHorizontalPlaformOnFloor#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#setVerticalPlatform#0;class#FortePrototype#0" expanded="false" />
@@ -55,15 +54,16 @@
                 <element signature="method#draw#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#getmute#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#main#0;class#FortePrototype#0" expanded="false" />
+                <marker date="1493002888000" expanded="false" signature="9067:9336" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Game.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/display/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="810">
+            <state relative-caret-position="225">
               <caret line="111" column="26" lean-forward="false" selection-start-line="111" selection-start-column="26" selection-end-line="111" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -769,7 +769,6 @@
             <element signature="e#1636#1644#0" expanded="true" />
             <element signature="method#setBackground#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#setFloor#0;class#FortePrototype#0" expanded="false" />
-            <element signature="method#setBoosFloor#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#setHorizontalPlatform#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#setHorizontalPlaformOnFloor#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#setVerticalPlatform#0;class#FortePrototype#0" expanded="false" />
@@ -795,6 +794,7 @@
             <element signature="method#draw#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#getmute#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#main#0;class#FortePrototype#0" expanded="false" />
+            <marker date="1493002888000" expanded="false" signature="9067:9336" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -919,7 +919,6 @@
             <element signature="e#1636#1644#0" expanded="true" />
             <element signature="method#setBackground#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#setFloor#0;class#FortePrototype#0" expanded="false" />
-            <element signature="method#setBoosFloor#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#setHorizontalPlatform#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#setHorizontalPlaformOnFloor#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#setVerticalPlatform#0;class#FortePrototype#0" expanded="false" />
@@ -945,6 +944,7 @@
             <element signature="method#draw#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#getmute#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#main#0;class#FortePrototype#0" expanded="false" />
+            <marker date="1493002888000" expanded="false" signature="9067:9336" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1069,7 +1069,6 @@
             <element signature="e#1636#1644#0" expanded="true" />
             <element signature="method#setBackground#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#setFloor#0;class#FortePrototype#0" expanded="false" />
-            <element signature="method#setBoosFloor#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#setHorizontalPlatform#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#setHorizontalPlaformOnFloor#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#setVerticalPlatform#0;class#FortePrototype#0" expanded="false" />
@@ -1095,6 +1094,7 @@
             <element signature="method#draw#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#getmute#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#main#0;class#FortePrototype#0" expanded="false" />
+            <marker date="1493002888000" expanded="false" signature="9067:9336" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1165,7 +1165,6 @@
             <element signature="e#1636#1644#0" expanded="true" />
             <element signature="method#setBackground#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#setFloor#0;class#FortePrototype#0" expanded="false" />
-            <element signature="method#setBoosFloor#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#setHorizontalPlatform#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#setHorizontalPlaformOnFloor#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#setVerticalPlatform#0;class#FortePrototype#0" expanded="false" />
@@ -1191,6 +1190,7 @@
             <element signature="method#draw#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#getmute#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#main#0;class#FortePrototype#0" expanded="false" />
+            <marker date="1493002888000" expanded="false" signature="9067:9336" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1253,7 +1253,6 @@
             <element signature="e#1636#1644#0" expanded="true" />
             <element signature="method#setBackground#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#setFloor#0;class#FortePrototype#0" expanded="false" />
-            <element signature="method#setBoosFloor#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#setHorizontalPlatform#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#setHorizontalPlaformOnFloor#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#setVerticalPlatform#0;class#FortePrototype#0" expanded="false" />
@@ -1279,6 +1278,7 @@
             <element signature="method#draw#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#getmute#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#main#0;class#FortePrototype#0" expanded="false" />
+            <marker date="1493002888000" expanded="false" signature="9067:9336" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1300,7 +1300,6 @@
             <element signature="e#1636#1644#0" expanded="true" />
             <element signature="method#setBackground#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#setFloor#0;class#FortePrototype#0" expanded="false" />
-            <element signature="method#setBoosFloor#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#setHorizontalPlatform#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#setHorizontalPlaformOnFloor#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#setVerticalPlatform#0;class#FortePrototype#0" expanded="false" />
@@ -1326,6 +1325,7 @@
             <element signature="method#draw#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#getmute#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#main#0;class#FortePrototype#0" expanded="false" />
+            <marker date="1493002888000" expanded="false" signature="9067:9336" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1529,16 +1529,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/display/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="111" column="26" lean-forward="false" selection-start-line="111" selection-start-column="26" selection-end-line="111" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#Game#0;class#Game#0" expanded="false" />
+            <element signature="method#setUpMainFrame#0;class#Game#0" expanded="false" />
+            <element signature="method#start#0;class#Game#0" expanded="false" />
+            <element signature="method#stop#0;class#Game#0" expanded="false" />
+            <element signature="method#pause#0;class#Game#0" expanded="false" />
+            <element signature="method#exitGame#0;class#Game#0" expanded="false" />
+            <element signature="method#closeGame#0;class#Game#0" expanded="false" />
+            <element signature="method#repaintGame#0;class#Game#0" expanded="false" />
+            <element signature="method#nextFrame#0;class#Game#0" expanded="false" />
+            <element signature="method#pollControllers#0;class#Game#0" expanded="false" />
+            <element signature="method#draw#0;class#Game#0" expanded="false" />
+            <element signature="method#setScenePanel#0;class#Game#0" expanded="false" />
+            <element signature="method#keyPressed#0;class#Game#0" expanded="false" />
+            <element signature="method#keyReleased#0;class#Game#0" expanded="false" />
+            <element signature="method#mouseClicked#0;class#Game#0" expanded="false" />
+            <element signature="method#keyTyped#0;class#Game#0" expanded="false" />
+            <element signature="method#mousePressed#0;class#Game#0" expanded="false" />
+            <element signature="method#mouseReleased#0;class#Game#0" expanded="false" />
+            <element signature="method#mouseEntered#0;class#Game#0" expanded="false" />
+            <element signature="method#mouseExited#0;class#Game#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/virginia/lab1test/FortePrototype.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2877">
-          <caret line="706" column="33" lean-forward="false" selection-start-line="706" selection-start-column="33" selection-end-line="706" selection-end-column="33" />
+        <state relative-caret-position="255">
+          <caret line="17" column="51" lean-forward="false" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1636#1644#0" expanded="true" />
             <element signature="method#setBackground#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#setFloor#0;class#FortePrototype#0" expanded="false" />
-            <element signature="method#setBoosFloor#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#setHorizontalPlatform#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#setHorizontalPlaformOnFloor#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#setVerticalPlatform#0;class#FortePrototype#0" expanded="false" />
@@ -1564,36 +1593,7 @@
             <element signature="method#draw#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#getmute#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#main#0;class#FortePrototype#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/display/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="111" column="26" lean-forward="false" selection-start-line="111" selection-start-column="26" selection-end-line="111" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#Game#0;class#Game#0" expanded="false" />
-            <element signature="method#setUpMainFrame#0;class#Game#0" expanded="false" />
-            <element signature="method#start#0;class#Game#0" expanded="false" />
-            <element signature="method#stop#0;class#Game#0" expanded="false" />
-            <element signature="method#pause#0;class#Game#0" expanded="false" />
-            <element signature="method#exitGame#0;class#Game#0" expanded="false" />
-            <element signature="method#closeGame#0;class#Game#0" expanded="false" />
-            <element signature="method#repaintGame#0;class#Game#0" expanded="false" />
-            <element signature="method#nextFrame#0;class#Game#0" expanded="false" />
-            <element signature="method#pollControllers#0;class#Game#0" expanded="false" />
-            <element signature="method#draw#0;class#Game#0" expanded="false" />
-            <element signature="method#setScenePanel#0;class#Game#0" expanded="false" />
-            <element signature="method#keyPressed#0;class#Game#0" expanded="false" />
-            <element signature="method#keyReleased#0;class#Game#0" expanded="false" />
-            <element signature="method#mouseClicked#0;class#Game#0" expanded="false" />
-            <element signature="method#keyTyped#0;class#Game#0" expanded="false" />
-            <element signature="method#mousePressed#0;class#Game#0" expanded="false" />
-            <element signature="method#mouseReleased#0;class#Game#0" expanded="false" />
-            <element signature="method#mouseEntered#0;class#Game#0" expanded="false" />
-            <element signature="method#mouseExited#0;class#Game#0" expanded="false" />
+            <marker date="1493002888000" expanded="false" signature="9067:9336" ph="{...}" />
           </folding>
         </state>
       </provider>
