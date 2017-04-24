@@ -1,8 +1,11 @@
 package edu.virginia.lab1test;
 
 import edu.virginia.engine.controller.GamePad;
+import edu.virginia.engine.display.DisplayObject;
 import edu.virginia.engine.display.Game;
 import edu.virginia.engine.display.Sprite;
+import edu.virginia.engine.events.Event;
+import edu.virginia.engine.events.IEventListener;
 import edu.virginia.engine.util.GameClock;
 import edu.virginia.engine.util.MusicPlayer;
 import edu.virginia.engine.util.Position;
@@ -12,7 +15,7 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
 //Gannon was here.
-public class FortePrototype extends Game {
+public class FortePrototype extends Game implements IEventListener {
     static int gravity = 2;
     boolean falling = false;
     static int gameWidth = 1000;
@@ -23,10 +26,18 @@ public class FortePrototype extends Game {
     boolean bullet_ready = true;
     private Sprite floor = new Sprite("Floor", "Brick.png");
     private Sprite background = new Sprite("background", "background.png");
+    private Sprite bossBackground = new Sprite("bossBackground", "background.png");
+    private Sprite boss = new Sprite("boss", "Protagonist.png");
     private Sprite platform = new Sprite("Platform", "Brick.png");
     private Sprite player = new Sprite("Player", "Protagonist.png");
+    private Sprite door = new Sprite("door", "door.png");
+    private Sprite bossFloor = new Sprite("Floor", "Brick.png");
+    private boolean isStart = false;
+    private boolean isEnd = false;
+    private boolean BossEncountered = false;
 
     private ArrayList<Sprite> particle = new ArrayList<Sprite>();
+    private ArrayList<Sprite> bossObject = new ArrayList<Sprite>();
     private ArrayList<Sprite> objects = new ArrayList<Sprite>();
     private ArrayList<Sprite> enemies = new ArrayList<Sprite>();
     private ArrayList<Sprite> moving = new ArrayList<Sprite>();
@@ -40,7 +51,8 @@ public class FortePrototype extends Game {
     Devent devent = new Devent(Devent.Devent, D);
     Eevent eevent = new Eevent(Eevent.Eevent, E);
     Fevent fevent = new Fevent(Fevent.Fevent, F);
-
+    BossEvent bevent = new BossEvent(BossEvent.BossEvent, door);
+    BossEvent bossCompleteEvent = new BossEvent(BossEvent.BossEvent, boss);
     MusicPlayer sfx = new MusicPlayer();
     MusicPlayer pC = new MusicPlayer();
     MusicPlayer pG = new MusicPlayer();
@@ -57,7 +69,8 @@ public class FortePrototype extends Game {
 
     public FortePrototype() {
         super("Forte Prototype", gameWidth, gameHeight);
-        player.setPosition(500, gameHeight - floor.getUnscaledHeight() - player.getUnscaledHeight());
+        // player.setPosition(500, gameHeight - floor.getUnscaledHeight() - player.getUnscaledHeight());
+        player.setPosition(50, 50);
         C.setPosition(260, gameHeight - floor.getUnscaledHeight() - C.getUnscaledHeight());
         D.setPosition(700, gameHeight - floor.getUnscaledHeight() - D.getUnscaledHeight());
         E.setPosition(780, gameHeight - floor.getUnscaledHeight() - E.getUnscaledHeight());
@@ -68,7 +81,8 @@ public class FortePrototype extends Game {
         E.addEventListener(QuestManager, Eevent.Eevent);
         F.addEventListener(QuestManager, Fevent.Fevent);
 
-
+        door.addEventListener(this, BossEvent.BossEvent);
+        boss.addEventListener(this, BossEvent.BossEvent);
         //  ArrayList<Integer> CxArray = Arrays.asList(500,2000,4000);
 
         int[] CxArray = {1500, 1980};
@@ -101,17 +115,98 @@ public class FortePrototype extends Game {
         /**
          * platform positions
          */
-        setFloor(100, floor);
-        setBackground(10, background);
-        setHorizontalPlatform(500, gameHeight - 450, 3, platform);
-        setHorizontalPlatform(2000, gameHeight - 500, 4, platform);
-        setHorizontalPlatform(3000, gameHeight - 400, 7, platform);
-        setVerticalPlatformOnFloor(1000, 3, platform);
-        setVerticalPlatformOnFloor(1500, 2, platform);
-        setVerticalPlatformOnFloor(0, 8, platform);
-        setDiagonalPlatformOnFloor(2500, 3, true, platform);
+
+
+        /**
+         setHorizontalPlatform(500, gameHeight - 450, 3, platform);
+         setHorizontalPlatform(2000, gameHeight - 500, 4, platform);
+         setHorizontalPlatform(3000, gameHeight - 400, 7, platform);
+         setVerticalPlatformOnFloor(1000, 3, platform);
+         setVerticalPlatformOnFloor(1500, 2, platform);
+         setVerticalPlatformOnFloor(0, 8, platform);
+         setDiagonalPlatformOnFloor(2500, 3, true, platform);
+         */
+        platformSetup();
         mainClock.resetGameClock();
 
+
+    }
+
+    public void platformSetup() {
+        /**
+         * -200 is reference floor
+         * -300 first tier
+         * -900 is the top
+         */
+
+        setFloor(110, floor);
+        setBackground(20, background);
+
+        setHorizontalPlaformOnFloor(800, 3, platform);
+        setHorizontalPlatform(900, gameHeight - 300, 2, platform);
+        setHorizontalPlatform(1000, gameHeight - 400, 1, platform);
+
+        setHorizontalPlatform(1500, gameHeight - 400, 4, platform);
+
+        setHorizontalPlatform(1900, gameHeight - 600, 3, platform);
+
+        setVerticalPlatformOnFloor(2000, 2, platform);
+
+        setVerticalPlatformOnFloor(2300, 2, platform);
+        setVerticalPlatformOnFloor(2400, 2, platform);
+        setVerticalPlatformOnFloor(2500, 2, platform);
+        setVerticalPlatformOnFloor(2600, 2, platform);
+
+        setHorizontalPlaformOnFloor(3000, 10, platform);
+        setHorizontalPlatform(3000, gameHeight - 300, 8, platform);
+        setHorizontalPlatform(3000, gameHeight - 400, 6, platform);
+        setHorizontalPlatform(3300, gameHeight - 500, 3, platform);
+        setHorizontalPlatform(3400, gameHeight - 600, 2, platform);
+        setHorizontalPlatform(3400, gameHeight - 700, 2, platform);
+
+        setVerticalPlatformOnFloor(4400, 1, platform);
+        setVerticalPlatformOnFloor(4600, 2, platform);
+        setVerticalPlatformOnFloor(4800, 3, platform);
+        setVerticalPlatformOnFloor(5000, 4, platform);
+        setVerticalPlatformOnFloor(5200, 5, platform);
+        setVerticalPlatformOnFloor(5400, 2, platform);
+
+
+        setHorizontalPlatform(5700, gameHeight - 500, 4, platform);
+        setVerticalPlatform(6000, gameHeight - 600, 2, platform);
+
+        setHorizontalPlatform(6400, gameHeight - 700, 2, platform);
+        setVerticalPlatformOnFloor(6700, 3, platform);
+        setHorizontalPlatform(6800, gameHeight - 700, 2, platform);
+
+        setHorizontalPlatform(7200, gameHeight - 700, 1, platform);
+        setHorizontalPlatform(7500, gameHeight - 700, 1, platform);
+
+        setVerticalPlatformOnFloor(7800, 3, platform);
+        setVerticalPlatform(7800, gameHeight - 600, 3, platform);
+
+
+        setVerticalPlatform(8100, gameHeight - 500, 1, platform);
+        setVerticalPlatform(8300, gameHeight - 500, 1, platform);
+        setVerticalPlatform(8500, gameHeight - 500, 1, platform);
+        setVerticalPlatform(8700, gameHeight - 500, 1, platform);
+
+        setVerticalPlatformOnFloor(8800, 3, platform);
+        setVerticalPlatformOnFloor(8900, 5, platform);
+        setVerticalPlatformOnFloor(9100, 3, platform);
+        setVerticalPlatformOnFloor(9200, 2, platform);
+        setVerticalPlatformOnFloor(9300, 2, platform);
+        setVerticalPlatformOnFloor(9400, 1, platform);
+        setVerticalPlatformOnFloor(9500, 1, platform);
+
+        setVerticalPlatformOnFloor(10000, 10, platform);
+        setVerticalPlatformOnFloor(10100, 10, platform);
+        setVerticalPlatformOnFloor(10200, 10, platform);
+        setVerticalPlatformOnFloor(10300, 10, platform);
+        setVerticalPlatformOnFloor(10400, 10, platform);
+
+        door.setPosition(9800, gameHeight - 300);
+        moving2.add(door);
     }
 
     public void setBackground(int number, Sprite background) {
@@ -130,6 +225,15 @@ public class FortePrototype extends Game {
             moving.add(temp);
         }
     }
+
+    public void setBoosFloor(int number, Sprite floor) {
+        for (int i = 0; i < number; i++) {
+            Sprite temp = new Sprite(floor.getId(), floor.getImageName());
+            temp.setPosition(i * floor.getUnscaledWidth(), gameHeight - floor.getUnscaledHeight());
+            bossObject.add(temp);
+        }
+    }
+
 
     public void setHorizontalPlatform(int x, int y, int number, Sprite Platform) {
         for (int i = 0; i < number; i++) {
@@ -242,10 +346,10 @@ public class FortePrototype extends Game {
     public void gamePadUpdate(ArrayList<GamePad> gamePads) {
         for (GamePad pad : gamePads) {
 
-            if (pad.getLeftStickXAxis() < -0.9) {
-                player.setVelX(-15);
-            } else if (pad.getLeftStickXAxis() > 0.9) {
-                player.setVelX(15);
+            if (pad.getLeftStickXAxis() > 0.9) {
+                player.setVelX(8);
+            } else if (pad.getLeftStickXAxis() < -0.9) {
+                player.setVelX(-8);
             } else {
                 player.setVelX(0);
 
@@ -256,14 +360,14 @@ public class FortePrototype extends Game {
                 if (!falling) {
                     player.setVelY(-37);
                     falling = true;
-                  //  sfx.playSong("bass1.wav", 0);
+                    //  sfx.playSong("bass1.wav", 0);
 
                 }
             }
 
             if (pad.isButtonPressed(GamePad.BUTTON_SQUARE)) {
                 if (bullet_ready) {
-                  //  sfx.playSong("bass2.wav", -15);
+                    //  sfx.playSong("bass2.wav", -15);
                     Sprite bullet = new Sprite("bullet", "music_note.png");
                     bullet.setPosition(player.getPosition());
                     bullet.setVelY(-20);
@@ -276,7 +380,7 @@ public class FortePrototype extends Game {
                 if (bullet_ready) {
                     // player.setVelY(-30);
                     // player.setVelX(40);
-                  //  sfx.playSong("bass2.wav", -15);
+                    //  sfx.playSong("bass2.wav", -15);
                     Sprite bullet = new Sprite("bullet", "music_note.png");
                     bullet.setPosition(player.getPosition());
                     bullet.setVelY(-20);
@@ -292,7 +396,7 @@ public class FortePrototype extends Game {
 
     }
 
-    public void mapBound(){
+    public void mapBound() {
         Position p1 = player.getPosition();
         if (p1.getX() <= 0) player.setPosition(0, p1.getY());
         if (p1.getX() >= gameWidth - player.getScaledWidth())
@@ -304,7 +408,7 @@ public class FortePrototype extends Game {
         }
     }
 
-    public void platformCollision(){
+    public void platformCollision(ArrayList<Sprite> objects) {
         for (Sprite s : objects) {
             if (s.isVisible()) {
                 if (player.collidesWith(s, player.getVelX(), player.getVelY())) {
@@ -323,7 +427,7 @@ public class FortePrototype extends Game {
                         plat_down = false;
                         player.setPosition(player.getPosX(), s.getPosY() - player.getScaledHeight() - 1);
                         player.setVelY(0);
-                      //  System.out.println("top");
+                        //  System.out.println("top");
                         break;
                     }
                     // Left side
@@ -355,8 +459,8 @@ public class FortePrototype extends Game {
                         falling = true;
                         plat_top = false;
                         plat_down = true;
-                        setVelY(10);
-                      //  System.out.println("below");
+                        setVelY(0);
+                        //  System.out.println("below");
                         break;
 
                     }
@@ -368,7 +472,7 @@ public class FortePrototype extends Game {
         }
     }
 
-    public void enemyCollision(){
+    public void enemyCollision() {
         for (Sprite e : enemies) {
             if (e.isVisible()) {
                 if (player.nearby(e)) {
@@ -394,7 +498,7 @@ public class FortePrototype extends Game {
         }
     }
 
-    public void scrolling(){
+    public void scrolling() {
 
         if (!collision) {
             if (!(player.getPosX() < gameWidth / 2)) {
@@ -429,7 +533,7 @@ public class FortePrototype extends Game {
         }
     }
 
-    public void attack(){
+    public void attack() {
         ArrayList<Sprite> toRemove = new ArrayList<Sprite>();
         for (Sprite p : particle) {
             p.rePosition(p.getVelX(), p.getVelY());
@@ -459,57 +563,80 @@ public class FortePrototype extends Game {
         }
         particle.removeAll(toRemove);
     }
+
     @Override
     public void update(ArrayList<String> pressedKeys, ArrayList<GamePad> gamePads) {
-        super.update(pressedKeys, gamePads);
-        player.update(pressedKeys, gamePads);
-        /**
-         * speed and gravity reposition for the player
-         */
-        player.rePosition(player.getVelX(), player.getVelY());
-        if (falling) player.setVelY(player.getVelY() + (int) gravity);
+
+
+        if (isStart) {
+            if (!isEnd) {
+                if (!BossEncountered) {
 
 /**
  * controller
  */
-        gamePadUpdate(gamePads);
+                    super.update(pressedKeys, gamePads);
+                    /**
+                     * speed and gravity reposition for the player
+                     */
+                    player.rePosition(player.getVelX(), player.getVelY());
+                    if (falling) player.setVelY(player.getVelY() + (int) gravity);
+
+                    gamePadUpdate(gamePads);
+
+                    mapBound();
+
+                    platformCollision(objects);
+
+                    enemyCollision();
+                    timingMode(0, 1000, C);
+                    timingMode(0, 1000, D);
+                    timingMode(0, 1000, E);
+                    timingMode(0, 1000, F);
+                    attack();
+                    scrolling();
+
+                    if (player.collidesWith(door, player.getVelX(), player.getVelY())) {
+                        door.dispatchEvent(bevent);
+                    }
+                } else {
+
+                    super.update(pressedKeys, gamePads);
+                    player.rePosition(player.getVelX(), player.getVelY());
+                    if (falling) player.setVelY(player.getVelY() + (int) gravity);
+
+                    gamePadUpdate(gamePads);
+                    mapBound();
+                    attack();
+                    platformCollision(bossObject);
+                    if (player.collidesWith(boss, player.getVelX(), player.getVelY())) {
+                        boss.dispatchEvent(bossCompleteEvent);
+                    }
+
+                }
 
 
-/**
- * map bound check
- */
 
-        mapBound();
-
-        /**
-         * platform collision handle
-         */
-        platformCollision();
-
-        /**
-         * collision with player and enemy
-         */
-        enemyCollision();
-
-        /**
-         * blinking feature
-         */
-        timingMode(0, 1000, C);
-        timingMode(0, 1000, D);
-        timingMode(0, 1000, E);
-        timingMode(0, 1000, F);
-
-        /**
-         * attack feature
-         */
-        attack();
-
-        /**
-         * background and object scrolling
-         */
-        scrolling();
-
+            }
+            else {
+                for (GamePad pad : gamePads) {
+                    if (pad.isButtonPressed(GamePad.BUTTON_TRIANGLE)){
+                        exitGame();
+                    }
+                }
+            }
+        } else {
+            for (GamePad pad : gamePads) {
+                if (pad.isButtonPressed(GamePad.BUTTON_TRIANGLE)) {
+                    this.start();
+                    isStart = true;
+                    isEnd = false;
+                    BossEncountered = false;
+                }
+            }
+        }
     }
+
 
     public void keyPressed(KeyEvent e) {
         if (!falling) {
@@ -578,34 +705,66 @@ public class FortePrototype extends Game {
 
     @Override
     public void draw(Graphics g) {
-        super.draw(g);
-        for (Sprite p : moving2) {
-            if (p.isVisible()) {
-                if (inRange(p)) {
-                    p.draw(g);
-                }
-            }
-        }
-        for (Sprite p : objects) {
-            if (p.isVisible()) {
-                if (inRange(p)) {
-                    p.draw(g);
-                }
-            }
-        }
+        if (isStart) {
+            if (!isEnd) {
+                if (!BossEncountered) {
+                    super.draw(g);
+                    for (Sprite p : moving2) {
+                        if (p.isVisible()) {
+                            if (inRange(p)) {
+                                p.draw(g);
+                            }
+                        }
+                    }
+                    for (Sprite p : objects) {
+                        if (p.isVisible()) {
+                            if (inRange(p)) {
+                                p.draw(g);
+                            }
+                        }
+                    }
 
-        if (C != null) C.draw(g);
-        if (D != null) D.draw(g);
-        if (E != null) E.draw(g);
-        if (F != null) F.draw(g);
+                    if (door != null) door.draw(g);
+                    if (C != null) C.draw(g);
+                    if (D != null) D.draw(g);
+                    if (E != null) E.draw(g);
+                    if (F != null) F.draw(g);
 
-        if (player != null) player.draw(g);
-        for (Sprite temp : particle) {
-            if (temp.isVisible()) {
-                if (inRange(temp)) {
-                    temp.draw(g);
+                    if (player != null) player.draw(g);
+                    for (Sprite temp : particle) {
+                        if (temp.isVisible()) {
+                            if (inRange(temp)) {
+                                temp.draw(g);
+                            }
+                        }
+                    }
+                } else {
+                    bossBackground.draw(g);
+                    for (Sprite temp : bossObject) {
+                        if (temp.isVisible()) {
+                            if (inRange(temp)) {
+                                temp.draw(g);
+                            }
+                        }
+                    }
+                    boss.draw(g);
+                    player.draw(g);
+                    for (Sprite p: particle){
+                        if (p.isVisible()) {
+                            if (inRange(p)) {
+                                p.draw(g);
+                            }
+                        }
+                    }
+
                 }
+            } else {
+                g.drawString("GAME OVER", gameWidth / 2, gameHeight / 2);
             }
+        } else {
+
+            g.drawString("Forte", gameWidth / 2, gameHeight / 2);
+            g.drawString("press Y to start", gameWidth / 2, gameHeight / 2 + 50);
         }
 
     }
@@ -694,5 +853,21 @@ public class FortePrototype extends Game {
         }
 
 
+    }
+
+    @Override
+    public void handleEvent(Event event) {
+        DisplayObject source = (DisplayObject) event.getSource();
+        if (source == door) {
+            BossEncountered = true;
+            player.setPosition(50, 50);
+            boss.setPosition(500, 500);
+            bossBackground.setPosition(0, 0);
+            setBoosFloor(20, bossFloor);
+        }
+
+        if (source == boss) {
+            isEnd = true;
+        }
     }
 }
