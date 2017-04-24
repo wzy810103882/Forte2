@@ -15,8 +15,8 @@ import java.util.ArrayList;
 public class FortePrototype extends Game {
     static int gravity = 2;
     boolean falling = false;
-    static int gameWidth = 1040;
-    static int gameHeight = 920;
+    static int gameWidth = 1000;
+    static int gameHeight = 900;
     boolean collision = false;
     boolean plat_top = false;
     boolean plat_down = false;
@@ -294,23 +294,7 @@ public class FortePrototype extends Game {
 
     }
 
-    @Override
-    public void update(ArrayList<String> pressedKeys, ArrayList<GamePad> gamePads) {
-        super.update(pressedKeys, gamePads);
-        player.update(pressedKeys, gamePads);
-        player.rePosition(player.getVelX(), player.getVelY());
-        if (falling) player.setVelY(player.getVelY() + (int) gravity);
-
-/**
- * controller
- */
-        gamePadUpdate(gamePads);
-
-
-/**
- * map bound check
- */
-
+    public void mapBound(){
         Position p1 = player.getPosition();
         if (p1.getX() <= 0) player.setPosition(0, p1.getY());
         if (p1.getX() >= gameWidth - player.getScaledWidth())
@@ -320,8 +304,9 @@ public class FortePrototype extends Game {
             player.setPosition(p1.getX(), gameHeight - player.getScaledHeight());
             falling = false;
         }
+    }
 
-
+    public void platformCollision(){
         for (Sprite s : objects) {
             if (s.isVisible()) {
                 if (player.collidesWith(s, player.getVelX(), player.getVelY())) {
@@ -340,25 +325,29 @@ public class FortePrototype extends Game {
                         plat_down = false;
                         player.setPosition(player.getPosX(), s.getPosY() - player.getScaledHeight() - 1);
                         player.setVelY(0);
-                        System.out.println("top");
+                      //  System.out.println("top");
                         break;
                     }
                     // Left side
                     if (xdif < 0 && Math.abs(ydif) < Math.abs(xdif)) {
-                        player.setPosition(s.getPosX() - player.getScaledWidth() - 1, player.getPosY());
+                        player.setPosition(s.getPosX() - player.getScaledWidth() - 5, player.getPosY()+10);
                         falling = true;
                         plat_top = false;
                         plat_down = false;
-                        System.out.println("left");
+                        setVelY(5);
+
+                        // System.out.println("left");
                         break;
                     }
                     // Right side
                     if (xdif > 0 && Math.abs(ydif) < Math.abs(xdif)) {
-                        player.setPosition(s.getPosX() + s.getScaledWidth() + 1, player.getPosY());
+                        player.setPosition(s.getPosX() + s.getScaledWidth() + 5, player.getPosY()+10);
                         falling = true;
                         plat_top = false;
                         plat_down = false;
-                        System.out.println("right");
+                        setVelY(5);
+
+                        //  System.out.println("right");
                         break;
 
                     }
@@ -368,7 +357,8 @@ public class FortePrototype extends Game {
                         falling = true;
                         plat_top = false;
                         plat_down = true;
-                        System.out.println("below");
+                        setVelY(10);
+                      //  System.out.println("below");
                         break;
 
                     }
@@ -378,72 +368,9 @@ public class FortePrototype extends Game {
                 }
             }
         }
-        /**
-         * collision with platform
-         */
-        /**
-         for (Sprite s : objects) {
-         if (s.isVisible()) {
-         if (player.nearby(s)) {
-         if (player.collidesWith(s, player.getVelX(), player.getVelY())) {
-         collision = true;
-         if (s.getId() == "Floor") {
-         player.setPosition(player.getPosX(), s.getPosY() - player.getScaledHeight() - 1);
-         player.setVelY(0);
-         falling = false;
-         break;
-         }
+    }
 
-         if (s.getId() == "Platform") {
-         // Landing on top
-         if (player.getPosY() + player.getScaledHeight() - player.getVelY() <= s.getPosY()) {
-         falling = false;
-         plat_top = true;
-         plat_down = false;
-         player.setPosition(player.getPosX(), s.getPosY() - player.getScaledHeight() - 1);
-         break;
-         } else {
-         // Left side
-         if (player.getPosX() + player.getScaledWidth() >= s.getPosX()
-         && player.getPosX() + player.getScaledWidth() < s.getPosX() + s.getScaledWidth() / 2) {
-         player.setPosition(s.getPosX() - player.getScaledWidth() - 1, player.getPosY());
-         falling = true;
-         plat_top = false;
-         plat_down = false;
-         break;
-         }
-         // Right side
-         if (player.getPosX() <= s.getPosX() + s.getScaledWidth() && player.getPosX() > s.getPosX() + s.getScaledWidth() * 0.5) {
-         player.setPosition(s.getPosX() + s.getScaledWidth() + 1, player.getPosY());
-         falling = true;
-         plat_top = false;
-         plat_down = false;
-         break;
-         }
-         // Below
-         if (player.getPosY() <= s.getPosY() + s.getScaledHeight() && player.getPosY() > s.getPosY()) {
-         player.setPosition(player.getPosX(), s.getPosY() + s.getScaledHeight() + 1);
-         falling = true;
-         plat_top = false;
-         plat_down = true;
-         break;
-
-         }
-         }
-         }
-
-         } else {
-         collision = false;
-         }
-         }
-         }
-         }
-         */
-
-
-        /**
-         * collision with player and enemy
-         */
+    public void enemyCollision(){
         for (Sprite e : enemies) {
             if (e.isVisible()) {
                 if (player.nearby(e)) {
@@ -467,21 +394,45 @@ public class FortePrototype extends Game {
                 }
             }
         }
+    }
 
-        /**
-         * blinking feature
-         */
-        timingMode(0, 1000, C);
-        timingMode(0, 1000, D);
-        timingMode(0, 1000, E);
-        timingMode(0, 1000, F);
+    public void scrolling(){
 
+        if (!collision) {
+            if (!(player.getPosX() < gameWidth / 2)) {
+                if (player.getVelX() > 0) {
+                    for (Sprite p : moving) {
+                        p.setPosition(p.getPosX() - player.getVelX(), p.getPosY());
+                    }
+                    for (Sprite p : moving2) {
+                        p.setPosition(p.getPosX() - player.getVelX(), p.getPosY());
+                    }
+                    for (Sprite p : enemies) {
+                        p.setPosition(p.getPosX() - player.getVelX(), p.getPosY());
+                    }
+                }
+            }
+        } else {
+            if (plat_top || plat_down) {
+                if (!(player.getPosX() < gameWidth / 2)) {
+                    if (player.getVelX() > 0) {
+                        for (Sprite p : moving) {
+                            p.setPosition(p.getPosX() - player.getVelX(), p.getPosY());
+                        }
+                        for (Sprite p : moving2) {
+                            p.setPosition(p.getPosX() - player.getVelX(), p.getPosY());
+                        }
+                        for (Sprite p : enemies) {
+                            p.setPosition(p.getPosX() - player.getVelX(), p.getPosY());
+                        }
+                    }
+                }
+            }
+        }
+    }
 
+    public void attack(){
         ArrayList<Sprite> toRemove = new ArrayList<Sprite>();
-
-        /**
-         * attack feature
-         */
         for (Sprite p : particle) {
             p.rePosition(p.getVelX(), p.getVelY());
             p.setVelY(p.getVelY() + (int) gravity);
@@ -490,9 +441,6 @@ public class FortePrototype extends Game {
                     if (e.collidesWith(p, e.getVelX(), e.getVelY())) {
                         toRemove.add(p);
                         falling = true;
-                        // player.setPosition(p.getPosition());
-                        //p.setVisible(false);
-                        // particle.remove(p);
                         if (e.getId() == "C") {
                             C.dispatchEvent(cevent);
                         }
@@ -512,39 +460,57 @@ public class FortePrototype extends Game {
             }
         }
         particle.removeAll(toRemove);
+    }
+    @Override
+    public void update(ArrayList<String> pressedKeys, ArrayList<GamePad> gamePads) {
+        super.update(pressedKeys, gamePads);
+        player.update(pressedKeys, gamePads);
+        /**
+         * speed and gravity reposition for the player
+         */
+        player.rePosition(player.getVelX(), player.getVelY());
+        if (falling) player.setVelY(player.getVelY() + (int) gravity);
+
+/**
+ * controller
+ */
+        gamePadUpdate(gamePads);
+
+
+/**
+ * map bound check
+ */
+
+        mapBound();
+
+        /**
+         * platform collision handle
+         */
+        platformCollision();
+
+        /**
+         * collision with player and enemy
+         */
+        enemyCollision();
+
+        /**
+         * blinking feature
+         */
+        timingMode(0, 1000, C);
+        timingMode(0, 1000, D);
+        timingMode(0, 1000, E);
+        timingMode(0, 1000, F);
+
+        /**
+         * attack feature
+         */
+        attack();
 
         /**
          * background and object scrolling
          */
+        scrolling();
 
-        if (!collision) {
-            if (!(player.getPosX() < gameWidth / 2)) {
-                for (Sprite p : moving) {
-                    p.setPosition(p.getPosX() - player.getVelX(), p.getPosY());
-                }
-                for (Sprite p : moving2) {
-                    p.setPosition(p.getPosX() - player.getVelX(), p.getPosY());
-                }
-                for (Sprite p : enemies) {
-                    p.setPosition(p.getPosX() - player.getVelX(), p.getPosY());
-                }
-            }
-        } else {
-            if (plat_top || plat_down) {
-                if (!(player.getPosX() < gameWidth / 2)) {
-
-                    for (Sprite p : moving) {
-                        p.setPosition(p.getPosX() - player.getVelX(), p.getPosY());
-                    }
-                    for (Sprite p : moving2) {
-                        p.setPosition(p.getPosX() - player.getVelX(), p.getPosY());
-                    }
-                    for (Sprite p : enemies) {
-                        p.setPosition(p.getPosX() - player.getVelX(), p.getPosY());
-                    }
-                }
-            }
-        }
     }
 
     public void keyPressed(KeyEvent e) {
