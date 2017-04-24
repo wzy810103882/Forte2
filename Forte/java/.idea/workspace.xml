@@ -22,8 +22,8 @@
       <file leaf-file-name="FortePrototype.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edu/virginia/lab1test/FortePrototype.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-783">
-              <caret line="346" column="40" lean-forward="true" selection-start-line="346" selection-start-column="40" selection-end-line="346" selection-end-column="40" />
+            <state relative-caret-position="-887">
+              <caret line="241" column="59" lean-forward="false" selection-start-line="241" selection-start-column="59" selection-end-line="241" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#FortePrototype#0;class#FortePrototype#0" expanded="false" />
@@ -40,15 +40,15 @@
                 <element signature="method#timingMode#0;class#FortePrototype#0" expanded="false" />
                 <element signature="e#8523#8537#0" expanded="false" />
                 <element signature="method#gamePadUpdate#0;class#FortePrototype#0" expanded="false" />
-                <element signature="e#9756#9778#0" expanded="false" />
-                <element signature="e#10357#10380#0" expanded="false" />
+                <element signature="e#10275#10298#0" expanded="false" />
                 <element signature="method#mapBound#0;class#FortePrototype#0" expanded="false" />
+                <element signature="method#platformCollision#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#enemyCollision#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#scrolling#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#attack#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#keyPressed#0;class#FortePrototype#0" expanded="false" />
-                <element signature="e#19071#19093#0" expanded="false" />
-                <element signature="e#19493#19516#0" expanded="false" />
+                <element signature="e#18990#19012#0" expanded="false" />
+                <element signature="e#19412#19435#0" expanded="false" />
                 <element signature="method#inRange#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#draw#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#getmute#0;class#FortePrototype#0" expanded="false" />
@@ -731,15 +731,15 @@
             <element signature="method#timingMode#0;class#FortePrototype#0" expanded="false" />
             <element signature="e#8523#8537#0" expanded="false" />
             <element signature="method#gamePadUpdate#0;class#FortePrototype#0" expanded="false" />
-            <element signature="e#9756#9778#0" expanded="false" />
-            <element signature="e#10357#10380#0" expanded="false" />
+            <element signature="e#10275#10298#0" expanded="false" />
             <element signature="method#mapBound#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#platformCollision#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#enemyCollision#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#scrolling#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#attack#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#keyPressed#0;class#FortePrototype#0" expanded="false" />
-            <element signature="e#19071#19093#0" expanded="false" />
-            <element signature="e#19493#19516#0" expanded="false" />
+            <element signature="e#18990#19012#0" expanded="false" />
+            <element signature="e#19412#19435#0" expanded="false" />
             <element signature="method#inRange#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#draw#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#getmute#0;class#FortePrototype#0" expanded="false" />
@@ -879,15 +879,15 @@
             <element signature="method#timingMode#0;class#FortePrototype#0" expanded="false" />
             <element signature="e#8523#8537#0" expanded="false" />
             <element signature="method#gamePadUpdate#0;class#FortePrototype#0" expanded="false" />
-            <element signature="e#9756#9778#0" expanded="false" />
-            <element signature="e#10357#10380#0" expanded="false" />
+            <element signature="e#10275#10298#0" expanded="false" />
             <element signature="method#mapBound#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#platformCollision#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#enemyCollision#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#scrolling#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#attack#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#keyPressed#0;class#FortePrototype#0" expanded="false" />
-            <element signature="e#19071#19093#0" expanded="false" />
-            <element signature="e#19493#19516#0" expanded="false" />
+            <element signature="e#18990#19012#0" expanded="false" />
+            <element signature="e#19412#19435#0" expanded="false" />
             <element signature="method#inRange#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#draw#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#getmute#0;class#FortePrototype#0" expanded="false" />
@@ -1027,15 +1027,15 @@
             <element signature="method#timingMode#0;class#FortePrototype#0" expanded="false" />
             <element signature="e#8523#8537#0" expanded="false" />
             <element signature="method#gamePadUpdate#0;class#FortePrototype#0" expanded="false" />
-            <element signature="e#9756#9778#0" expanded="false" />
-            <element signature="e#10357#10380#0" expanded="false" />
+            <element signature="e#10275#10298#0" expanded="false" />
             <element signature="method#mapBound#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#platformCollision#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#enemyCollision#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#scrolling#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#attack#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#keyPressed#0;class#FortePrototype#0" expanded="false" />
-            <element signature="e#19071#19093#0" expanded="false" />
-            <element signature="e#19493#19516#0" expanded="false" />
+            <element signature="e#18990#19012#0" expanded="false" />
+            <element signature="e#19412#19435#0" expanded="false" />
             <element signature="method#inRange#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#draw#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#getmute#0;class#FortePrototype#0" expanded="false" />
@@ -1121,15 +1121,15 @@
             <element signature="method#timingMode#0;class#FortePrototype#0" expanded="false" />
             <element signature="e#8523#8537#0" expanded="false" />
             <element signature="method#gamePadUpdate#0;class#FortePrototype#0" expanded="false" />
-            <element signature="e#9756#9778#0" expanded="false" />
-            <element signature="e#10357#10380#0" expanded="false" />
+            <element signature="e#10275#10298#0" expanded="false" />
             <element signature="method#mapBound#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#platformCollision#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#enemyCollision#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#scrolling#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#attack#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#keyPressed#0;class#FortePrototype#0" expanded="false" />
-            <element signature="e#19071#19093#0" expanded="false" />
-            <element signature="e#19493#19516#0" expanded="false" />
+            <element signature="e#18990#19012#0" expanded="false" />
+            <element signature="e#19412#19435#0" expanded="false" />
             <element signature="method#inRange#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#draw#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#getmute#0;class#FortePrototype#0" expanded="false" />
@@ -1207,15 +1207,15 @@
             <element signature="method#timingMode#0;class#FortePrototype#0" expanded="false" />
             <element signature="e#8523#8537#0" expanded="false" />
             <element signature="method#gamePadUpdate#0;class#FortePrototype#0" expanded="false" />
-            <element signature="e#9756#9778#0" expanded="false" />
-            <element signature="e#10357#10380#0" expanded="false" />
+            <element signature="e#10275#10298#0" expanded="false" />
             <element signature="method#mapBound#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#platformCollision#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#enemyCollision#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#scrolling#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#attack#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#keyPressed#0;class#FortePrototype#0" expanded="false" />
-            <element signature="e#19071#19093#0" expanded="false" />
-            <element signature="e#19493#19516#0" expanded="false" />
+            <element signature="e#18990#19012#0" expanded="false" />
+            <element signature="e#19412#19435#0" expanded="false" />
             <element signature="method#inRange#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#draw#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#getmute#0;class#FortePrototype#0" expanded="false" />
@@ -1252,15 +1252,15 @@
             <element signature="method#timingMode#0;class#FortePrototype#0" expanded="false" />
             <element signature="e#8523#8537#0" expanded="false" />
             <element signature="method#gamePadUpdate#0;class#FortePrototype#0" expanded="false" />
-            <element signature="e#9756#9778#0" expanded="false" />
-            <element signature="e#10357#10380#0" expanded="false" />
+            <element signature="e#10275#10298#0" expanded="false" />
             <element signature="method#mapBound#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#platformCollision#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#enemyCollision#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#scrolling#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#attack#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#keyPressed#0;class#FortePrototype#0" expanded="false" />
-            <element signature="e#19071#19093#0" expanded="false" />
-            <element signature="e#19493#19516#0" expanded="false" />
+            <element signature="e#18990#19012#0" expanded="false" />
+            <element signature="e#19412#19435#0" expanded="false" />
             <element signature="method#inRange#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#draw#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#getmute#0;class#FortePrototype#0" expanded="false" />
@@ -1494,8 +1494,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/virginia/lab1test/FortePrototype.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-783">
-          <caret line="346" column="40" lean-forward="true" selection-start-line="346" selection-start-column="40" selection-end-line="346" selection-end-column="40" />
+        <state relative-caret-position="-887">
+          <caret line="241" column="59" lean-forward="false" selection-start-line="241" selection-start-column="59" selection-end-line="241" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#FortePrototype#0;class#FortePrototype#0" expanded="false" />
@@ -1512,15 +1512,15 @@
             <element signature="method#timingMode#0;class#FortePrototype#0" expanded="false" />
             <element signature="e#8523#8537#0" expanded="false" />
             <element signature="method#gamePadUpdate#0;class#FortePrototype#0" expanded="false" />
-            <element signature="e#9756#9778#0" expanded="false" />
-            <element signature="e#10357#10380#0" expanded="false" />
+            <element signature="e#10275#10298#0" expanded="false" />
             <element signature="method#mapBound#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#platformCollision#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#enemyCollision#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#scrolling#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#attack#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#keyPressed#0;class#FortePrototype#0" expanded="false" />
-            <element signature="e#19071#19093#0" expanded="false" />
-            <element signature="e#19493#19516#0" expanded="false" />
+            <element signature="e#18990#19012#0" expanded="false" />
+            <element signature="e#19412#19435#0" expanded="false" />
             <element signature="method#inRange#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#draw#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#getmute#0;class#FortePrototype#0" expanded="false" />

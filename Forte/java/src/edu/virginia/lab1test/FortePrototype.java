@@ -242,9 +242,9 @@ public class FortePrototype extends Game {
     public void gamePadUpdate(ArrayList<GamePad> gamePads) {
         for (GamePad pad : gamePads) {
 
-            if (pad.getLeftStickXAxis() < -0.5) {
+            if (pad.getLeftStickXAxis() < -0.9) {
                 player.setVelX(-15);
-            } else if (pad.getLeftStickXAxis() > 0.5) {
+            } else if (pad.getLeftStickXAxis() > 0.9) {
                 player.setVelX(15);
             } else {
                 player.setVelX(0);
@@ -256,16 +256,14 @@ public class FortePrototype extends Game {
                 if (!falling) {
                     player.setVelY(-37);
                     falling = true;
-                    sfx.playSong("bass1.wav", 0);
+                  //  sfx.playSong("bass1.wav", 0);
 
                 }
             }
 
             if (pad.isButtonPressed(GamePad.BUTTON_SQUARE)) {
                 if (bullet_ready) {
-                    //player.setVelY(-30);
-                    //player.setVelX(-40);
-                    sfx.playSong("bass2.wav", -15);
+                  //  sfx.playSong("bass2.wav", -15);
                     Sprite bullet = new Sprite("bullet", "music_note.png");
                     bullet.setPosition(player.getPosition());
                     bullet.setVelY(-20);
@@ -278,7 +276,7 @@ public class FortePrototype extends Game {
                 if (bullet_ready) {
                     // player.setVelY(-30);
                     // player.setVelX(40);
-                    sfx.playSong("bass2.wav", -15);
+                  //  sfx.playSong("bass2.wav", -15);
                     Sprite bullet = new Sprite("bullet", "music_note.png");
                     bullet.setPosition(player.getPosition());
                     bullet.setVelY(-20);
@@ -330,22 +328,22 @@ public class FortePrototype extends Game {
                     }
                     // Left side
                     if (xdif < 0 && Math.abs(ydif) < Math.abs(xdif)) {
-                        player.setPosition(s.getPosX() - player.getScaledWidth() - 5, player.getPosY()+10);
+                        player.setPosition(s.getPosX() - player.getScaledWidth() - 5, player.getPosY());
                         falling = true;
                         plat_top = false;
                         plat_down = false;
-                        setVelY(5);
+                        setVelY(0);
 
                         // System.out.println("left");
                         break;
                     }
                     // Right side
                     if (xdif > 0 && Math.abs(ydif) < Math.abs(xdif)) {
-                        player.setPosition(s.getPosX() + s.getScaledWidth() + 5, player.getPosY()+10);
+                        player.setPosition(s.getPosX() + player.getScaledWidth() + 5, player.getPosY());
                         falling = true;
                         plat_top = false;
                         plat_down = false;
-                        setVelY(5);
+                        setVelY(0);
 
                         //  System.out.println("right");
                         break;
