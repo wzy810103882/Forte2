@@ -36,7 +36,7 @@ public class BassLine extends RTLine implements JMC{
         n.setDynamic(dynoPosition);
         n.setPan(panPosition);
         n.setRhythmValue((int) (Math.random() * 2 + 1) * 0.25);
-        n.setDuration(n.getRhythmValue() * 0.9);
+        //n.setDuration(n.getRhythmValue() * 0.9);
         return n;
 
         //Testing a non-random song.

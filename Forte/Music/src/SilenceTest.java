@@ -51,11 +51,11 @@ public class SilenceTest implements JMC, ChangeListener, ActionListener {
         dyno = new JSlider(1, 0, 120, 50);
         dyno.setEnabled(false);
         dyno.addChangeListener(this);
-        panel.add(dyno, "West");
+        panel.add(dyno, "East");
 
         // filter value display
-        val = new JLabel("1000");
-        panel.add(val, "East");
+        //val = new JLabel("1000");
+        //panel.add(val, "East");
 
         // start stop
         goBtn = new JButton("Start");
@@ -72,6 +72,7 @@ public class SilenceTest implements JMC, ChangeListener, ActionListener {
         if (e.getSource() == dyno) {
             //val.setText("" + (dyno.getValue() * 100));
             bass.setDynoValue(dyno.getValue()); //does this need a coefficient?
+            //System.out.println("Volume is currently: " + dyno.getValue());
             //mixer.actionLines(dyno, 2);
         }
 
