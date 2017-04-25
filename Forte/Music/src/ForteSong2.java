@@ -8,7 +8,7 @@ import jm.JMC;
 
 public class ForteSong2 extends RTLine implements JMC{
     private Note n = new Note(36, 0.5);
-    private int dynoPosition = 0;
+    private int dynoPosition = 50;
 
     //i added these. currently not using.
     //private int[] pitchArray = new int[] {C4,C4,C4,D4,E4,E4,D4,E4,F4,G4,C5,C5,C5,G4,G4,G4,E4,E4,E4,C4,C4,C4,G4,F4,E4,D4,C4};
