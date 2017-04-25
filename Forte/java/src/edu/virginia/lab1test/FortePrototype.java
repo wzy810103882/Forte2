@@ -1,5 +1,6 @@
 package edu.virginia.lab1test;
 
+import edu.virginia.Music.SilenceTest;
 import edu.virginia.engine.controller.GamePad;
 import edu.virginia.engine.display.DisplayObject;
 import edu.virginia.engine.display.Game;
@@ -8,6 +9,18 @@ import edu.virginia.engine.events.Event;
 import edu.virginia.engine.events.IEventListener;
 import edu.virginia.engine.util.GameClock;
 import edu.virginia.engine.util.Position;
+import jm.audio.RTMixer;
+import jm.JMC;
+import jm.audio.Instrument;
+import jm.audio.RTMixer;
+import jm.music.rt.RTLine;
+
+import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -23,6 +36,8 @@ public class FortePrototype extends Game implements IEventListener {
     boolean plat_top = false;
     boolean plat_down = false;
     boolean bullet_ready = true;
+
+    private RTMixer mixer;
 
     private Sprite healthbar = new Sprite("health", "health.png");
     private Sprite floor = new Sprite("Floor", "matt3.png");
@@ -841,6 +856,8 @@ System.out.println(door.getImageName());
 
     public static void main(String[] args) {
         FortePrototype game = new FortePrototype();
+        SilenceTest silenceTest = new SilenceTest();
+        silenceTest.start();
         game.start();
 
     }

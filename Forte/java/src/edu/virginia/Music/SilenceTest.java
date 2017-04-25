@@ -25,9 +25,7 @@ public class SilenceTest implements JMC, ChangeListener, ActionListener {
     private JButton goBtn;
     private RTLine[] lineArray = new RTLine[3];
 
-    public static void main(String[] args) {
-        new SilenceTest();
-    }
+    //public static void main(String[] args) {        new SilenceTest();    }
 
     public SilenceTest() {
         int sampleRate = 44100;
@@ -62,7 +60,7 @@ public class SilenceTest implements JMC, ChangeListener, ActionListener {
         //mixer = new RTMixer(lineArray);
 
         // show slider panel
-        makeGUI();
+        //makeGUI();
     }
 
     private void makeGUI() {
@@ -110,6 +108,11 @@ public class SilenceTest implements JMC, ChangeListener, ActionListener {
             dyno.setEnabled(true);
             goBtn.setEnabled(false);
         }
+    }
+
+    public void start(){
+        mixer = new RTMixer(lineArray);
+        mixer.begin();
     }
 
 
