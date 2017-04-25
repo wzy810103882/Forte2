@@ -1,5 +1,6 @@
 package edu.virginia.lab1test;
 
+import edu.virginia.Music.ForteSong;
 import edu.virginia.Music.SilenceTest;
 import edu.virginia.engine.controller.GamePad;
 import edu.virginia.engine.display.DisplayObject;
@@ -26,7 +27,7 @@ import java.awt.*;
 import java.util.ArrayList;
 
 //Gannon was here.
-public class FortePrototype extends Game implements IEventListener {
+public class FortePrototype extends Game implements IEventListener, JMC {
     static int gravity = 2;
     private double health = 100;
     boolean falling = false;
@@ -53,6 +54,23 @@ public class FortePrototype extends Game implements IEventListener {
     private boolean isEnd = false;
     private boolean BossEncountered = false;
     private boolean isVictoryEnd = false;
+    private SilenceTest silenceTest = new SilenceTest();
+
+    private double[] trumpetRhythmArray = new double[] {DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE,
+            QN, QN, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE,
+            EN, EN, QN };
+
+    private int[] trumpetPitchArray = new int[] {A4, FS4, G4, FS4, FS4, FS4, E4, FS4, E4, D4, D4, E4, REST};
+
+    private double[] bassRhythmArray = new double[] {DOTTED_QUARTER_NOTE, EN, EN, EN,    DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE,
+            QN, QN,    DOTTED_QUARTER_NOTE, EN, EN, EN,    DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE,
+            QN, QN };
+
+    private int[] bassPitchArray = new int[] {D3, A2, D3, REST,  B2, B2, B2, B2,    A2, A2, A2,  REST,  G2, G2, G2, G2};
+
+    private double[] whistleRhythmArray = new double[] {QN, QN, QN, QN, QN, EN, EN, QN, EN, EN };
+
+    private int[] whistlePitchArray = new int[] {REST, REST, REST, REST, REST, D4, D4, REST, D4, REST};
 
     private ArrayList<Sprite> particle = new ArrayList<Sprite>();
     private ArrayList<Sprite> bossObject = new ArrayList<Sprite>();
@@ -75,7 +93,8 @@ public class FortePrototype extends Game implements IEventListener {
     BossDamageEvent bossDamageEvent = new BossDamageEvent(BossDamageEvent.BossDamageEvent,boss);
     BossEvent bossCompleteEvent = new BossEvent(BossEvent.BossEvent, boss);
     BossKillsPlayerEvent bossKillsPlayerEvent= new BossKillsPlayerEvent(BossKillsPlayerEvent.BossKillsPlayerEvent,boss);
-    
+    SongStartEvent songStartEvent = new SongStartEvent(SongStartEvent.SongStartEvent,player);
+    /**
     BlinkOnEvent CblinkOnEvent = new BlinkOnEvent(BlinkOnEvent.BlinkOnEvent,C);
     BlinkOnEvent DblinkOnEvent = new BlinkOnEvent(BlinkOnEvent.BlinkOnEvent,D);
     BlinkOnEvent EblinkOnEvent = new BlinkOnEvent(BlinkOnEvent.BlinkOnEvent,E);
@@ -84,6 +103,7 @@ public class FortePrototype extends Game implements IEventListener {
     BlinkOffEvent DblinkOffEvent = new BlinkOffEvent(BlinkOffEvent.BlinkOffEvent,D);
     BlinkOffEvent EblinkOffEvent = new BlinkOffEvent(BlinkOffEvent.BlinkOffEvent,E);
     BlinkOffEvent FblinkOffEvent = new BlinkOffEvent(BlinkOffEvent.BlinkOffEvent,F);
+     */
 
     private GameClock mainClock = new GameClock();
 
@@ -105,6 +125,7 @@ public class FortePrototype extends Game implements IEventListener {
         boss.addEventListener(this, BossEvent.BossEvent);
         boss.addEventListener(this,BossDamageEvent.BossDamageEvent);
         boss.addEventListener(this,BossKillsPlayerEvent.BossKillsPlayerEvent);
+        player.addEventListener(this,SongStartEvent.SongStartEvent);
 /**
  * next position of enemy
  */
@@ -136,6 +157,7 @@ public class FortePrototype extends Game implements IEventListener {
         moving.add(player);
 
         platformSetup();
+
 
     }
 
@@ -215,6 +237,7 @@ public class FortePrototype extends Game implements IEventListener {
         door.setPosition(9800, gameHeight - 300);
         moving2.add(door);
     }
+
 
     public void setBackground(int number, Sprite background) {
         for (int i = 0; i < number; i++) {
@@ -342,7 +365,33 @@ public class FortePrototype extends Game implements IEventListener {
 
     }
 
-    public void timingMode(int start, int finish, Sprite temp) {
+    public void blink(double[] musicarray, int songLength, Sprite temp){
+        int globaltime = 0;
+        for (int a = 0; a < musicarray.length; a++){
+            int start = globaltime;
+            int finish = globaltime + (int) (0.5 * 1000*(musicarray[a]/3));
+            globaltime = globaltime + (int) (1000*(musicarray[a]/3));
+            timingMode(start,finish,songLength,temp,a);
+        }
+    }
+
+
+
+    public void blinkwithrest(double[] musicarray, int songLength, Sprite temp){
+        int globaltime = 0;
+        for (int a = 0; a < musicarray.length; a++){
+            int start = globaltime;
+
+            if (whistlePitchArray[a] > 0) {
+                int finish = globaltime + (int) (0.5 * 1000 * (musicarray[a] / 3));
+                timingMode(start, finish, songLength, temp);
+            }
+            globaltime = globaltime + (int) (1000 * (musicarray[a] / 3));
+        }
+    }
+
+
+    public void timingMode(int start, int finish, int songLength, Sprite temp, int index) {
 
         //  BufferedImage image = new BufferedImage(2,2,1);
         if (temp.isPrevChange()) {
@@ -352,15 +401,18 @@ public class FortePrototype extends Game implements IEventListener {
         //  if (bol) {
         //      image = temp.getDisplayImage();
         //  }
-        if (mainClock.getElapsedTime() % 2000 > start && (mainClock.getElapsedTime() % 2000) < start + 100) {
+        if (mainClock.getElapsedTime() % songLength > start && (mainClock.getElapsedTime() % songLength) < start + 18) {
             temp.setImage("Flash.png");
+            temp.setFlashing(true);
             temp.setStart(start);
             temp.setFinish(finish);
+
             //bol = false;
         }
 
-        if (mainClock.getElapsedTime() % 2000 > finish && (mainClock.getElapsedTime() % 2000) < finish + 100) {
+        if (mainClock.getElapsedTime() % songLength > finish && (mainClock.getElapsedTime() % songLength) < finish + 18) {
             temp.setImage(temp.getPrev());
+            temp.setFlashing(false);
         }
 
     }
@@ -529,6 +581,7 @@ public class FortePrototype extends Game implements IEventListener {
                             C.dispatchEvent(cevent);
                         } else if (e.getId() == "D") {
                             D.dispatchEvent(devent);
+                           // System.out.print("sss");
 
                         } else if (e.getId() == "E") {
                             E.dispatchEvent(eevent);
@@ -629,7 +682,6 @@ public class FortePrototype extends Game implements IEventListener {
 
     @Override
     public void update(ArrayList<String> pressedKeys, ArrayList<GamePad> gamePads) {
-System.out.println(door.getImageName());
         if (isStart) {
             if (!isEnd) {
                 if (!BossEncountered) {
@@ -648,10 +700,11 @@ System.out.println(door.getImageName());
                     platformCollision(objects);
 
                     enemyCollision();
-                    timingMode(0, 1000, C);
-                    timingMode(0, 1000, D);
-                    timingMode(0, 1000, E);
-                    timingMode(0, 1000, F);
+
+                    blink(trumpetRhythmArray,5331,C);
+                    blinkwithrest(whistleRhythmArray,2662,D);
+                    blink(bassRhythmArray,5328,E);
+
                     attack();
                     scrolling();
 
@@ -706,6 +759,8 @@ System.out.println(door.getImageName());
             for (GamePad pad : gamePads) {
                 if (pad.isButtonPressed(GamePad.BUTTON_L3)) {
                     this.start();
+                    mainClock.resetGameClock();
+                    player.dispatchEvent(songStartEvent);
                     isStart = true;
                     isEnd = false;
                     BossEncountered = false;
@@ -856,8 +911,6 @@ System.out.println(door.getImageName());
 
     public static void main(String[] args) {
         FortePrototype game = new FortePrototype();
-        SilenceTest silenceTest = new SilenceTest();
-        silenceTest.start();
         game.start();
 
     }
@@ -865,12 +918,17 @@ System.out.println(door.getImageName());
     @Override
     public void handleEvent(Event event) {
         DisplayObject source = (DisplayObject) event.getSource();
+
         if (source == door) {
             BossEncountered = true;
             player.setPosition(50, 50);
             boss.setPosition(500, 500);
             bossBackground.setPosition(0, 0);
             setBoosFloor(20, bossFloor);
+        }
+
+        if (source == player){
+            silenceTest.start();
         }
 
         if (source == boss) {
@@ -890,27 +948,28 @@ System.out.println(door.getImageName());
         }
 
         if (source == C){
-            if (C.getImageName().equals("Flash.png")){
+            if (C.isFlashing()){
+                C.nextPosition();
+            }
+            else {
+            }
+        }
+
+        if (source == D){
+
+            if (D.isFlashing()){
+                D.nextPosition();
 
             }
             else {
 
             }
-        }
-
-        if (source == D){
-            if (D.getImageName().equals("Flash.png")){
-
-            }
-            else {
-
-            }
 
         }
 
-        if (source == D){
-            if (E.getImageName().equals("Flash.png")){
-
+        if (source == E){
+            if (E.isFlashing()){
+                E.nextPosition();
             }
             else {
 

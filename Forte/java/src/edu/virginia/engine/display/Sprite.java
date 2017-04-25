@@ -31,11 +31,30 @@ public class Sprite extends DisplayObject {
 		this.imageName = imageName;
 	}
 
+    public boolean isFlashing() {
+        return isFlashing;
+    }
+
+    public void setFlashing(boolean flashing) {
+        isFlashing = flashing;
+    }
+
+    private int getCurrentFlashingIndex = 100;
+    private boolean isFlashing = false;
 	private String imageName;
 	private int start = 0;
 	private int finish = 0;
 	private BufferedImage prev;
 	private boolean prevChange = true;
+
+
+	public void nextPosition(){
+		if (this.getCurrentIndex() < this.getxArray().length){
+			this.setPosition(this.getxArray()[this.getCurrentIndex()],this.getyArray()[this.getCurrentIndex()]);
+			this.setVisible(true);
+			this.setCurrentIndex(this.getCurrentIndex()+1);
+		}
+	}
 
 	public int[] getxArray() {
 		return xArray;

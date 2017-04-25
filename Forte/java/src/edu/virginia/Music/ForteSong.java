@@ -58,7 +58,7 @@ public class ForteSong extends RTLine implements JMC{
             setDynoValue(0);
             //this.dynoPosition = 0;
         }*/
-        System.out.println("ArrayIndex is: " + arrayIndex);
+        //System.out.println("ArrayIndex is: " + arrayIndex);
         //n.setDynamic(dynoPosition);
 
         arrayIndex++;
