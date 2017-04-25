@@ -17,6 +17,7 @@ public class ForteSong3 extends RTLine implements JMC {
     //      ENT,ENT,ENT,ENT,ENT,ENT,ENT,ENT,ENT,ENT,ENT,ENT,QNT,ENT,QNT,ENT,HN};
     private int[] whistlePitchArray = new int[] {REST, REST, REST, REST, REST, D4, D4, REST, D4, REST};
     private double[] whistleRhythmArray = new double[] {QN, QN, QN, QN, QN, EN, EN, QN, EN, EN };
+    private boolean[] muteArray = new boolean[whistleRhythmArray.length];
     int arrayIndex = 0;
 
     /**
@@ -38,11 +39,18 @@ public class ForteSong3 extends RTLine implements JMC {
         n.setDuration(n.getRhythmValue() * 0.9);
         return n;*/
 
+        if(muteArray[arrayIndex])
+        {
+            n = new Note(REST, whistleRhythmArray[arrayIndex]);
 
-        n.setPitch(whistlePitchArray[arrayIndex]);
-        n.setRhythmValue(whistleRhythmArray[arrayIndex]);
-        n.setDynamic(dynoPosition);
-        n.setDuration(n.getRhythmValue());
+        }
+        else
+        {
+            n.setPitch(whistlePitchArray[arrayIndex]);
+            n.setRhythmValue(whistleRhythmArray[arrayIndex]);
+            n.setDynamic(dynoPosition);
+            n.setDuration(n.getRhythmValue());
+        }
 
 
         /*if(arrayIndex % 2 == 0)
@@ -65,6 +73,16 @@ public class ForteSong3 extends RTLine implements JMC {
         return n;
     }
 
+    public double[] getRhythmArray()
+    {
+        return whistleRhythmArray;
+    }
+
+    public boolean[] getMuteArray()
+    {
+        return muteArray;
+    }
+    
     /**
      * Allow other classes to set the notes pan value
      */

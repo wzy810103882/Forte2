@@ -5,6 +5,7 @@ import jm.audio.Instrument;
 import jm.music.data.Note;
 import jm.music.rt.RTLine;
 import jm.util.*;
+import java.util.*;
 
 import javax.swing.*;
 
@@ -15,11 +16,15 @@ public class ForteSong extends RTLine implements JMC{
     //i added these. currently not using.
     //private int[] pitchArray = new int[] {C4,C4,C4,D4,E4,E4,D4,E4,F4,G4,C5,C5,C5,G4,G4,G4,E4,E4,E4,C4,C4,C4,G4,F4,E4,D4,C4};
     //private double[] rhythmArray = new double[] {QN,QN,QNT,ENT,QN,QNT,ENT,QNT,QT,HN,
-      //      ENT,ENT,ENT,ENT,ENT,ENT,ENT,ENT,ENT,ENT,ENT,ENT,QNT,ENT,QNT,ENT,HN};
+    //      ENT,ENT,ENT,ENT,ENT,ENT,ENT,ENT,ENT,ENT,ENT,ENT,QNT,ENT,QNT,ENT,HN};
+
     private int[] trumpetPitchArray = new int[] {A4, FS4, G4, FS4, FS4, FS4, E4, FS4, E4, D4, D4, E4, REST};
     private double[] trumpetRhythmArray = new double[] {DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE,
-    QN, QN, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE,
+            QN, QN, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE,
             EN, EN, QN };
+    private boolean[] muteArray = new boolean[trumpetRhythmArray.length];
+
+
 
 
     int arrayIndex = 0;
@@ -43,10 +48,18 @@ public class ForteSong extends RTLine implements JMC{
         n.setDuration(n.getRhythmValue() * 0.9);
         return n;*/
 
-        n.setPitch(trumpetPitchArray[arrayIndex]);
-        n.setRhythmValue(trumpetRhythmArray[arrayIndex]);
-        n.setDynamic(dynoPosition);
-        n.setDuration(n.getRhythmValue());
+        if(muteArray[arrayIndex])
+        {
+            n = new Note(REST, trumpetRhythmArray[arrayIndex]);
+
+        }
+        else
+        {
+            n.setPitch(trumpetPitchArray[arrayIndex]);
+            n.setRhythmValue(trumpetRhythmArray[arrayIndex]);
+            n.setDynamic(dynoPosition);
+            n.setDuration(n.getRhythmValue());
+        }
 
 
         /*if(arrayIndex % 2 == 0)
@@ -69,6 +82,15 @@ public class ForteSong extends RTLine implements JMC{
         return n;
     }
 
+    public double[] getRhythmArray()
+    {
+        return trumpetRhythmArray;
+    }
+
+    public boolean[] getMuteArray()
+    {
+        return muteArray;
+    }
     /**
      * Allow other classes to set the notes pan value
      */

@@ -384,7 +384,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
 
             if (whistlePitchArray[a] > 0) {
                 int finish = globaltime + (int) (0.5 * 1000 * (musicarray[a] / 3));
-                timingMode(start, finish, songLength, temp);
+                timingMode(start, finish, songLength, temp, a);
             }
             globaltime = globaltime + (int) (1000 * (musicarray[a] / 3));
         }
