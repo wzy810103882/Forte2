@@ -7,7 +7,6 @@ import edu.virginia.engine.display.Sprite;
 import edu.virginia.engine.events.Event;
 import edu.virginia.engine.events.IEventListener;
 import edu.virginia.engine.util.GameClock;
-import edu.virginia.engine.util.MusicPlayer;
 import edu.virginia.engine.util.Position;
 
 import java.awt.*;
@@ -34,6 +33,7 @@ public class FortePrototype extends Game implements IEventListener {
     private Sprite player = new Sprite("Player", "Protagonist.png");
     private Sprite door = new Sprite("door", "door.png");
     private Sprite bossFloor = new Sprite("Floor", "matt3.png");
+
     private boolean isStart = false;
     private boolean isEnd = false;
     private boolean BossEncountered = false;
@@ -55,10 +55,20 @@ public class FortePrototype extends Game implements IEventListener {
     Devent devent = new Devent(Devent.Devent, D);
     Eevent eevent = new Eevent(Eevent.Eevent, E);
     Fevent fevent = new Fevent(Fevent.Fevent, F);
+
     BossEvent bevent = new BossEvent(BossEvent.BossEvent, door);
     BossDamageEvent bossDamageEvent = new BossDamageEvent(BossDamageEvent.BossDamageEvent,boss);
     BossEvent bossCompleteEvent = new BossEvent(BossEvent.BossEvent, boss);
     BossKillsPlayerEvent bossKillsPlayerEvent= new BossKillsPlayerEvent(BossKillsPlayerEvent.BossKillsPlayerEvent,boss);
+    
+    BlinkOnEvent CblinkOnEvent = new BlinkOnEvent(BlinkOnEvent.BlinkOnEvent,C);
+    BlinkOnEvent DblinkOnEvent = new BlinkOnEvent(BlinkOnEvent.BlinkOnEvent,D);
+    BlinkOnEvent EblinkOnEvent = new BlinkOnEvent(BlinkOnEvent.BlinkOnEvent,E);
+    BlinkOnEvent FblinkOnEvent = new BlinkOnEvent(BlinkOnEvent.BlinkOnEvent,F);
+    BlinkOffEvent CblinkOffEvent = new BlinkOffEvent(BlinkOffEvent.BlinkOffEvent,C);
+    BlinkOffEvent DblinkOffEvent = new BlinkOffEvent(BlinkOffEvent.BlinkOffEvent,D);
+    BlinkOffEvent EblinkOffEvent = new BlinkOffEvent(BlinkOffEvent.BlinkOffEvent,E);
+    BlinkOffEvent FblinkOffEvent = new BlinkOffEvent(BlinkOffEvent.BlinkOffEvent,F);
 
     private GameClock mainClock = new GameClock();
 
@@ -604,7 +614,7 @@ public class FortePrototype extends Game implements IEventListener {
 
     @Override
     public void update(ArrayList<String> pressedKeys, ArrayList<GamePad> gamePads) {
-
+System.out.println(door.getImageName());
         if (isStart) {
             if (!isEnd) {
                 if (!BossEncountered) {
@@ -860,6 +870,35 @@ public class FortePrototype extends Game implements IEventListener {
             if (event.getEventType().equals(BossDamageEvent.BossDamageEvent)){
                 health = health - 10;
             }
+        }
+
+        if (source == C){
+            if (C.getImageName().equals("Flash.png")){
+
+            }
+            else {
+
+            }
+        }
+
+        if (source == D){
+            if (D.getImageName().equals("Flash.png")){
+
+            }
+            else {
+
+            }
+
+        }
+
+        if (source == D){
+            if (E.getImageName().equals("Flash.png")){
+
+            }
+            else {
+
+            }
+
         }
 
 
