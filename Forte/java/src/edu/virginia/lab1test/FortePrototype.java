@@ -384,7 +384,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
 
             if (whistlePitchArray[a] > 0) {
                 int finish = globaltime + (int) (0.5 * 1000 * (musicarray[a] / 3));
-                timingMode(start, finish, songLength, temp);
+                timingMode(start, finish, songLength, temp,a);
             }
             globaltime = globaltime + (int) (1000 * (musicarray[a] / 3));
         }
@@ -406,13 +406,15 @@ public class FortePrototype extends Game implements IEventListener, JMC {
             temp.setFlashing(true);
             temp.setStart(start);
             temp.setFinish(finish);
-
+            temp.setCurrentFlashingIndex(index);
+           // System.out.print(temp.getCurrentFlashingIndex());
             //bol = false;
         }
 
         if (mainClock.getElapsedTime() % songLength > finish && (mainClock.getElapsedTime() % songLength) < finish + 18) {
             temp.setImage(temp.getPrev());
             temp.setFlashing(false);
+
         }
 
     }
@@ -950,6 +952,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         if (source == C){
             if (C.isFlashing()){
                 C.nextPosition();
+               System.out.println(C.getCurrentFlashingIndex());
             }
             else {
             }
@@ -959,6 +962,8 @@ public class FortePrototype extends Game implements IEventListener, JMC {
 
             if (D.isFlashing()){
                 D.nextPosition();
+                System.out.println(D.getCurrentFlashingIndex());
+
 
             }
             else {
@@ -970,6 +975,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         if (source == E){
             if (E.isFlashing()){
                 E.nextPosition();
+                System.out.println(E.getCurrentFlashingIndex());
             }
             else {
 
