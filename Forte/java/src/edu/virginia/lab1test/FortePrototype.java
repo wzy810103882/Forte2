@@ -10,18 +10,8 @@ import edu.virginia.engine.events.Event;
 import edu.virginia.engine.events.IEventListener;
 import edu.virginia.engine.util.GameClock;
 import edu.virginia.engine.util.Position;
-import jm.audio.RTMixer;
 import jm.JMC;
-import jm.audio.Instrument;
 import jm.audio.RTMixer;
-import jm.music.rt.RTLine;
-
-import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -56,21 +46,27 @@ public class FortePrototype extends Game implements IEventListener, JMC {
     private boolean isVictoryEnd = false;
     private SilenceTest silenceTest = new SilenceTest();
 
-    private double[] trumpetRhythmArray = new double[] {DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE,
+
+    private double[] trumpetRhythmArray = new double[]{DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE,
             QN, QN, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE,
-            EN, EN, QN };
+            EN, EN, QN};
 
-    private int[] trumpetPitchArray = new int[] {A4, FS4, G4, FS4, FS4, FS4, E4, FS4, E4, D4, D4, E4, REST};
+    private int[] trumpetPitchArray = new int[]{A4, FS4, G4, FS4, FS4, FS4, E4, FS4, E4, D4, D4, E4, REST};
 
-    private double[] bassRhythmArray = new double[] {DOTTED_QUARTER_NOTE, EN, EN, EN,    DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE,
-            QN, QN,    DOTTED_QUARTER_NOTE, EN, EN, EN,    DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE,
-            QN, QN };
+    private double[] bassRhythmArray = new double[]{DOTTED_QUARTER_NOTE, EN, EN, EN, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE,
+            QN, QN, DOTTED_QUARTER_NOTE, EN, EN, EN, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE,
+            QN, QN};
 
-    private int[] bassPitchArray = new int[] {D3, A2, D3, REST,  B2, B2, B2, B2,    A2, A2, A2,  REST,  G2, G2, G2, G2};
+    private int[] bassPitchArray = new int[]{D3, A2, D3, REST, B2, B2, B2, B2, A2, A2, A2, REST, G2, G2, G2, G2};
 
-    private double[] whistleRhythmArray = new double[] {QN, QN, QN, QN, QN, EN, EN, QN, EN, EN };
+    private double[] whistleRhythmArray = new double[]{QN, QN, QN, QN, QN, EN, EN, QN, EN, EN};
 
-    private int[] whistlePitchArray = new int[] {REST, REST, REST, REST, REST, D4, D4, REST, D4, REST};
+    private int[] whistlePitchArray = new int[]{REST, REST, REST, REST, REST, D4, D4, REST, D4, REST};
+
+
+    private boolean[] muteArray1 = new boolean[trumpetRhythmArray.length];
+    private boolean[] muteArray2 = new boolean[bassRhythmArray.length];
+    private boolean[] muteArray3 = new boolean[whistleRhythmArray.length];
 
     private ArrayList<Sprite> particle = new ArrayList<Sprite>();
     private ArrayList<Sprite> bossObject = new ArrayList<Sprite>();
@@ -90,19 +86,19 @@ public class FortePrototype extends Game implements IEventListener, JMC {
     Fevent fevent = new Fevent(Fevent.Fevent, F);
 
     BossEvent bevent = new BossEvent(BossEvent.BossEvent, door);
-    BossDamageEvent bossDamageEvent = new BossDamageEvent(BossDamageEvent.BossDamageEvent,boss);
+    BossDamageEvent bossDamageEvent = new BossDamageEvent(BossDamageEvent.BossDamageEvent, boss);
     BossEvent bossCompleteEvent = new BossEvent(BossEvent.BossEvent, boss);
-    BossKillsPlayerEvent bossKillsPlayerEvent= new BossKillsPlayerEvent(BossKillsPlayerEvent.BossKillsPlayerEvent,boss);
-    SongStartEvent songStartEvent = new SongStartEvent(SongStartEvent.SongStartEvent,player);
+    BossKillsPlayerEvent bossKillsPlayerEvent = new BossKillsPlayerEvent(BossKillsPlayerEvent.BossKillsPlayerEvent, boss);
+    SongStartEvent songStartEvent = new SongStartEvent(SongStartEvent.SongStartEvent, player);
     /**
-    BlinkOnEvent CblinkOnEvent = new BlinkOnEvent(BlinkOnEvent.BlinkOnEvent,C);
-    BlinkOnEvent DblinkOnEvent = new BlinkOnEvent(BlinkOnEvent.BlinkOnEvent,D);
-    BlinkOnEvent EblinkOnEvent = new BlinkOnEvent(BlinkOnEvent.BlinkOnEvent,E);
-    BlinkOnEvent FblinkOnEvent = new BlinkOnEvent(BlinkOnEvent.BlinkOnEvent,F);
-    BlinkOffEvent CblinkOffEvent = new BlinkOffEvent(BlinkOffEvent.BlinkOffEvent,C);
-    BlinkOffEvent DblinkOffEvent = new BlinkOffEvent(BlinkOffEvent.BlinkOffEvent,D);
-    BlinkOffEvent EblinkOffEvent = new BlinkOffEvent(BlinkOffEvent.BlinkOffEvent,E);
-    BlinkOffEvent FblinkOffEvent = new BlinkOffEvent(BlinkOffEvent.BlinkOffEvent,F);
+     * BlinkOnEvent CblinkOnEvent = new BlinkOnEvent(BlinkOnEvent.BlinkOnEvent,C);
+     * BlinkOnEvent DblinkOnEvent = new BlinkOnEvent(BlinkOnEvent.BlinkOnEvent,D);
+     * BlinkOnEvent EblinkOnEvent = new BlinkOnEvent(BlinkOnEvent.BlinkOnEvent,E);
+     * BlinkOnEvent FblinkOnEvent = new BlinkOnEvent(BlinkOnEvent.BlinkOnEvent,F);
+     * BlinkOffEvent CblinkOffEvent = new BlinkOffEvent(BlinkOffEvent.BlinkOffEvent,C);
+     * BlinkOffEvent DblinkOffEvent = new BlinkOffEvent(BlinkOffEvent.BlinkOffEvent,D);
+     * BlinkOffEvent EblinkOffEvent = new BlinkOffEvent(BlinkOffEvent.BlinkOffEvent,E);
+     * BlinkOffEvent FblinkOffEvent = new BlinkOffEvent(BlinkOffEvent.BlinkOffEvent,F);
      */
 
     private GameClock mainClock = new GameClock();
@@ -123,14 +119,14 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         F.addEventListener(this, Fevent.Fevent);
         door.addEventListener(this, BossEvent.BossEvent);
         boss.addEventListener(this, BossEvent.BossEvent);
-        boss.addEventListener(this,BossDamageEvent.BossDamageEvent);
-        boss.addEventListener(this,BossKillsPlayerEvent.BossKillsPlayerEvent);
-        player.addEventListener(this,SongStartEvent.SongStartEvent);
+        boss.addEventListener(this, BossDamageEvent.BossDamageEvent);
+        boss.addEventListener(this, BossKillsPlayerEvent.BossKillsPlayerEvent);
+        player.addEventListener(this, SongStartEvent.SongStartEvent);
 /**
  * next position of enemy
  */
-        int[] CxArray = {1500, 1980};
-        int[] CyArray = {gameHeight - 175, 410};
+        int[] CxArray = {500, 300,500, 300,500, 300,500, 300,500, 300,500};
+        int[] CyArray = {gameHeight - 175, gameHeight - 175,gameHeight - 175,gameHeight - 175,gameHeight - 175,gameHeight - 175,gameHeight - 175,gameHeight - 175,gameHeight - 175,gameHeight - 175,gameHeight - 175};
 
         int[] DxArray = {1600, 2100};
         int[] DyArray = {gameHeight - 175, gameHeight - 175};
@@ -365,27 +361,51 @@ public class FortePrototype extends Game implements IEventListener, JMC {
 
     }
 
-    public void blink(double[] musicarray, int songLength, Sprite temp){
-        int globaltime = 0;
-        for (int a = 0; a < musicarray.length; a++){
-            int start = globaltime;
-            int finish = globaltime + (int) (0.5 * 1000*(musicarray[a]/3));
-            globaltime = globaltime + (int) (1000*(musicarray[a]/3));
-            timingMode(start,finish,songLength,temp,a);
+    public void blink(SilenceTest mixer, int songLength, Sprite temp, int index) {
+
+        if (index == 0) {
+            int globaltime = 0;
+            for (int a = 0; a < mixer.getTrumpet().getTrumpetRhythmArray().length; a++) {
+                if (trumpetPitchArray[a] > 0) {
+                    if (!mixer.getTrumpet().getMuteArray()[a]) {
+                        int start = globaltime;
+                        int finish = globaltime + (int) (0.5 * 1000 * (mixer.getTrumpet().getTrumpetRhythmArray()[a] / 3));
+                        globaltime = globaltime + (int) (1000 * (mixer.getTrumpet().getTrumpetRhythmArray()[a] / 3));
+                        timingMode(start, finish, songLength, temp, a);
+                    }
+                }
+            }
+        }
+        else if (index == 1){
+            int globaltime = 0;
+            for (int a = 0; a < mixer.getBass().getBassRhythmArray().length; a++) {
+                if (bassPitchArray[a] >0) {
+                    if (!mixer.getBass().getMuteArray()[a]) {
+                        int start = globaltime;
+                        int finish = globaltime + (int) (0.5 * 1000 * (mixer.getBass().getBassRhythmArray()[a] / 3));
+                        globaltime = globaltime + (int) (1000 * (mixer.getBass().getBassRhythmArray()[a] / 3));
+                        timingMode(start, finish, songLength, temp, a);
+                    }
+                }
+            }
+        }
+
+        else{
+
         }
     }
 
 
-
-    public void blinkwithrest(double[] musicarray, int songLength, Sprite temp){
+    public void blinkwithrest(double[] musicarray, int songLength, Sprite temp) {
         int globaltime = 0;
-        for (int a = 0; a < musicarray.length; a++){
+        for (int a = 0; a < musicarray.length; a++) {
             int start = globaltime;
 
             if (whistlePitchArray[a] > 0) {
-                int finish = globaltime + (int) (0.5 * 1000 * (musicarray[a] / 3));
-                timingMode(start, finish, songLength, temp,a);
-
+                if (!silenceTest.getWhistle().getMuteArray()[a]) {
+                    int finish = globaltime + (int) (0.5 * 1000 * (musicarray[a] / 3));
+                    timingMode(start, finish, songLength, temp, a);
+                }
             }
             globaltime = globaltime + (int) (1000 * (musicarray[a] / 3));
         }
@@ -408,7 +428,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
             temp.setStart(start);
             temp.setFinish(finish);
             temp.setCurrentFlashingIndex(index);
-           // System.out.print(temp.getCurrentFlashingIndex());
+            // System.out.print(temp.getCurrentFlashingIndex());
             //bol = false;
         }
 
@@ -429,7 +449,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
 
     public void gamePadUpdate(ArrayList<GamePad> gamePads) {
         for (GamePad pad : gamePads) {
-           // pad.printButtonSummary();
+            // pad.printButtonSummary();
 
             if (pad.getLeftStickXAxis() > 0.9) {
                 player.setVelX(8);
@@ -584,7 +604,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                             C.dispatchEvent(cevent);
                         } else if (e.getId() == "D") {
                             D.dispatchEvent(devent);
-                           // System.out.print("sss");
+                            // System.out.print("sss");
 
                         } else if (e.getId() == "E") {
                             E.dispatchEvent(eevent);
@@ -704,9 +724,9 @@ public class FortePrototype extends Game implements IEventListener, JMC {
 
                     enemyCollision();
 
-                    blink(trumpetRhythmArray,5331,C);
-                    blinkwithrest(whistleRhythmArray,2662,D);
-                    blink(bassRhythmArray,5328,E);
+                    blink(silenceTest, 5331, C,0);
+                    blink(silenceTest,5328, D,1);
+                    blinkwithrest(whistleRhythmArray, 2662, E);
 
                     attack();
                     scrolling();
@@ -726,23 +746,23 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                     platformCollision(bossObject);
 
 
-                    for (Sprite p: particle) {
-                                if (p.nearby(boss)) {
-                                    if (p.collidesWith(boss, p.getVelX(), p.getVelY())) {
-                                        boss.dispatchEvent(bossDamageEvent);
-                                        // System.out.print("sss");
-                                        // System.out.print(healthbar.getPosX());
-                                    }
-                                }
+                    for (Sprite p : particle) {
+                        if (p.nearby(boss)) {
+                            if (p.collidesWith(boss, p.getVelX(), p.getVelY())) {
+                                boss.dispatchEvent(bossDamageEvent);
+                                // System.out.print("sss");
+                                // System.out.print(healthbar.getPosX());
+                            }
+                        }
                     }
 
-                    if (player.collidesWith(boss,player.getVelX(),player.getVelY())){
+                    if (player.collidesWith(boss, player.getVelX(), player.getVelY())) {
                         boss.dispatchEvent(bossKillsPlayerEvent);
                     }
 
-                    healthbar.setPosition(-(int) (1000*(1-(health/100))),0);
+                    healthbar.setPosition(-(int) (1000 * (1 - (health / 100))), 0);
 
-                    if (health < 0){
+                    if (health < 0) {
                         boss.dispatchEvent(bossCompleteEvent);
                     }
 
@@ -898,9 +918,8 @@ public class FortePrototype extends Game implements IEventListener, JMC {
             } else {
                 if (isVictoryEnd) {
                     g.drawString("Congratulations!", gameWidth / 2, gameHeight / 2);
-                }
-                else {
-                    g.drawString("GAME OVER",gameWidth / 2, gameHeight / 2);
+                } else {
+                    g.drawString("GAME OVER", gameWidth / 2, gameHeight / 2);
                 }
 
             }
@@ -930,7 +949,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
             setBoosFloor(20, bossFloor);
         }
 
-        if (source == player){
+        if (source == player) {
             silenceTest.start();
         }
 
@@ -945,40 +964,37 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                 isVictoryEnd = false;
             }
 
-            if (event.getEventType().equals(BossDamageEvent.BossDamageEvent)){
+            if (event.getEventType().equals(BossDamageEvent.BossDamageEvent)) {
                 health = health - 10;
             }
         }
 
-        if (source == C){
-            if (C.isFlashing()){
+        if (source == C) {
+            if (C.isFlashing()) {
                 C.nextPosition();
-               System.out.println(C.getCurrentFlashingIndex());
-            }
-            else {
+                silenceTest.getTrumpet().setMuteArray(C.getCurrentFlashingIndex(),true);
+            } else {
             }
         }
 
-        if (source == D){
+        if (source == D) {
 
-            if (D.isFlashing()){
+            if (D.isFlashing()) {
                 D.nextPosition();
-                System.out.println(D.getCurrentFlashingIndex());
+                silenceTest.getBass().setMuteArray(D.getCurrentFlashingIndex(),true);
 
-
-            }
-            else {
+            } else {
 
             }
 
         }
 
-        if (source == E){
-            if (E.isFlashing()){
+        if (source == E) {
+            if (E.isFlashing()) {
                 E.nextPosition();
-                System.out.println(E.getCurrentFlashingIndex());
-            }
-            else {
+                silenceTest.getWhistle().setMuteArray(E.getCurrentFlashingIndex(),true);
+
+            } else {
 
             }
 

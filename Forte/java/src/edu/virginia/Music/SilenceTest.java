@@ -20,6 +20,19 @@ public class SilenceTest implements JMC, ChangeListener, ActionListener {
 
     private ForteSong trumpet;
     private ForteSong2 bass;
+
+    public ForteSong getTrumpet() {
+        return trumpet;
+    }
+
+    public ForteSong2 getBass() {
+        return bass;
+    }
+
+    public ForteSong3 getWhistle() {
+        return whistle;
+    }
+
     private ForteSong3 whistle;
 
     private JButton goBtn;

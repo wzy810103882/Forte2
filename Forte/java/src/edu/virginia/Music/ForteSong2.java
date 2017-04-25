@@ -11,6 +11,14 @@ public class ForteSong2 extends RTLine implements JMC {
     private Note n = new Note(36, 0.5);
     private int dynoPosition = 120;
 
+    public int[] getBassPitchArray() {
+        return bassPitchArray;
+    }
+
+    public double[] getBassRhythmArray() {
+        return bassRhythmArray;
+    }
+
     //i added these. currently not using.
     //private int[] pitchArray = new int[] {C4,C4,C4,D4,E4,E4,D4,E4,F4,G4,C5,C5,C5,G4,G4,G4,E4,E4,E4,C4,C4,C4,G4,F4,E4,D4,C4};
     //private double[] rhythmArray = new double[] {QN,QN,QNT,ENT,QN,QNT,ENT,QNT,QT,HN,
@@ -29,6 +37,12 @@ public class ForteSong2 extends RTLine implements JMC {
         super(instArray);
     }
 
+
+
+    public void setMuteArray(int index, boolean status){
+        muteArray[index] = status;
+    }
+
     /**
      * Generate the next note when requested.
      */
@@ -43,15 +57,16 @@ public class ForteSong2 extends RTLine implements JMC {
         
         if(muteArray[arrayIndex])
         {
-            n = new Note(REST, bassRhythmArray[arrayIndex]);
-
-        }
-        else
-        {
             n.setPitch(bassPitchArray[arrayIndex]);
             n.setRhythmValue(bassRhythmArray[arrayIndex]);
             n.setDynamic(dynoPosition);
             n.setDuration(n.getRhythmValue());
+        }
+        else
+        {
+
+            n = new Note(REST, bassRhythmArray[arrayIndex]);
+
         }
 
         /*if(arrayIndex % 2 == 0)

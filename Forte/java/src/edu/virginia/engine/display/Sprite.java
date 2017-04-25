@@ -49,6 +49,7 @@ public class Sprite extends DisplayObject {
     }
 
     private int CurrentFlashingIndex = 100;
+
     private boolean isFlashing = false;
 	private String imageName;
 	private int start = 0;
