@@ -13,9 +13,14 @@ public class SilenceTest implements JMC, ChangeListener, ActionListener {
     private JSlider dyno;
     private RTMixer mixer;
     private JLabel val;
-    private GBassLine bass;
+    //private GBassLine bass;
+
+    private ForteSong trumpet;
+    private ForteSong2 bass;
+    private ForteSong3 whistle;
+
     private JButton goBtn;
-    private RTLine[] lineArray = new RTLine[1];
+    private RTLine[] lineArray = new RTLine[3];
 
     public static void main(String[] args) {
         new SilenceTest();
@@ -30,9 +35,27 @@ public class SilenceTest implements JMC, ChangeListener, ActionListener {
             instArray[i] = new SquareLPFInstRT2(sampleRate, 1000, channels);
         }
 
-        bass = new GBassLine(instArray);
-        bass.setTempo(120);
-        lineArray[0] = bass;
+        Instrument[] instArray2 = new Instrument[1];
+        for(int i=0;i<instArray2.length;i++){
+            instArray2[i] = new SquareLPFInstRT2(sampleRate, 1000, channels);
+        }
+
+        Instrument[] instArray3 = new Instrument[1];
+        for(int i=0;i<instArray3.length;i++){
+            instArray3[i] = new SquareLPFInstRT2(sampleRate, 1000, channels);
+        }
+
+        trumpet = new ForteSong(instArray);
+        trumpet.setTempo(180);
+        lineArray[0] = trumpet;
+
+        bass = new ForteSong2(instArray2);
+        bass.setTempo(180);
+        lineArray[1] = bass;
+
+        whistle = new ForteSong3(instArray3);
+        whistle.setTempo(180);
+        lineArray[2] = whistle;
         //mixer = new RTMixer(lineArray);
 
         // show slider panel
