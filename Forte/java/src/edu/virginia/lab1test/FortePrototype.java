@@ -24,14 +24,14 @@ public class FortePrototype extends Game implements IEventListener {
     boolean plat_top = false;
     boolean plat_down = false;
     boolean bullet_ready = true;
-    private Sprite floor = new Sprite("Floor", "Brick.png");
-    private Sprite background = new Sprite("background", "background.png");
-    private Sprite bossBackground = new Sprite("bossBackground", "background.png");
+    private Sprite floor = new Sprite("Floor", "matt3.png");
+    private Sprite background = new Sprite("background", "bg.png");
+    private Sprite bossBackground = new Sprite("bossBackground", "bg.png");
     private Sprite boss = new Sprite("boss", "Protagonist.png");
-    private Sprite platform = new Sprite("Platform", "Brick.png");
+    private Sprite platform = new Sprite("Platform", "matt3.png");
     private Sprite player = new Sprite("Player", "Protagonist.png");
     private Sprite door = new Sprite("door", "door.png");
-    private Sprite bossFloor = new Sprite("Floor", "Brick.png");
+    private Sprite bossFloor = new Sprite("Floor", "matt3.png");
     private boolean isStart = false;
     private boolean isEnd = false;
     private boolean BossEncountered = false;
@@ -47,10 +47,12 @@ public class FortePrototype extends Game implements IEventListener {
     Sprite D = new Sprite("D", "D.png");
     Sprite E = new Sprite("E", "E.png");
     Sprite F = new Sprite("F", "F.png");
+
     Cevent cevent = new Cevent(Cevent.Cevent, C);
     Devent devent = new Devent(Devent.Devent, D);
     Eevent eevent = new Eevent(Eevent.Eevent, E);
     Fevent fevent = new Fevent(Fevent.Fevent, F);
+
     BossEvent bevent = new BossEvent(BossEvent.BossEvent, door);
     BossEvent bossCompleteEvent = new BossEvent(BossEvent.BossEvent, boss);
     MusicPlayer sfx = new MusicPlayer();
@@ -70,7 +72,7 @@ public class FortePrototype extends Game implements IEventListener {
     public FortePrototype() {
         super("Forte Prototype", gameWidth, gameHeight);
         // player.setPosition(500, gameHeight - floor.getUnscaledHeight() - player.getUnscaledHeight());
-        player.setPosition(50, 50);
+        player.setPosition(50, 700);
         C.setPosition(260, gameHeight - floor.getUnscaledHeight() - C.getUnscaledHeight());
         D.setPosition(700, gameHeight - floor.getUnscaledHeight() - D.getUnscaledHeight());
         E.setPosition(780, gameHeight - floor.getUnscaledHeight() - E.getUnscaledHeight());
@@ -116,16 +118,6 @@ public class FortePrototype extends Game implements IEventListener {
          * platform positions
          */
 
-
-        /**
-         setHorizontalPlatform(500, gameHeight - 450, 3, platform);
-         setHorizontalPlatform(2000, gameHeight - 500, 4, platform);
-         setHorizontalPlatform(3000, gameHeight - 400, 7, platform);
-         setVerticalPlatformOnFloor(1000, 3, platform);
-         setVerticalPlatformOnFloor(1500, 2, platform);
-         setVerticalPlatformOnFloor(0, 8, platform);
-         setDiagonalPlatformOnFloor(2500, 3, true, platform);
-         */
         platformSetup();
         mainClock.resetGameClock();
 
@@ -368,7 +360,7 @@ public class FortePrototype extends Game implements IEventListener {
             if (pad.isButtonPressed(GamePad.BUTTON_SQUARE)) {
                 if (bullet_ready) {
                     //  sfx.playSong("bass2.wav", -15);
-                    Sprite bullet = new Sprite("bullet", "music_note.png");
+                    Sprite bullet = new Sprite("bullet", "music_note2.png");
                     bullet.setPosition(player.getPosition());
                     bullet.setVelY(-20);
                     bullet.setVelX(-30);
@@ -381,7 +373,7 @@ public class FortePrototype extends Game implements IEventListener {
                     // player.setVelY(-30);
                     // player.setVelX(40);
                     //  sfx.playSong("bass2.wav", -15);
-                    Sprite bullet = new Sprite("bullet", "music_note.png");
+                    Sprite bullet = new Sprite("bullet", "music_note2.png");
                     bullet.setPosition(player.getPosition());
                     bullet.setVelY(-20);
                     bullet.setVelX(30);
@@ -419,6 +411,9 @@ public class FortePrototype extends Game implements IEventListener {
                     int ybulletcenter = player.getPosY() + player.getUnscaledHeight() / 2;
                     int xdif = xbulletcenter - xscenter;
                     int ydif = ybulletcenter - yscenter;
+
+
+
                     // top
                     if (ydif < 0 && Math.abs(ydif) > Math.abs(xdif)) {
                         //player.setVelY(-(player.getVelY()));
@@ -430,29 +425,41 @@ public class FortePrototype extends Game implements IEventListener {
                         //  System.out.println("top");
                         break;
                     }
-                    // Left side
-                    if (xdif < 0 && Math.abs(ydif) < Math.abs(xdif)) {
-                        player.setPosition(s.getPosX() - player.getScaledWidth() - 5, player.getPosY());
-                        falling = true;
-                        plat_top = false;
-                        plat_down = false;
-                        setVelY(0);
 
-                        // System.out.println("left");
+
+                    if (s.getId() == "Floor"){
+                        falling = false;
+                        plat_top = true;
+                        plat_down = false;
+                        player.setPosition(player.getPosX(), s.getPosY() - player.getScaledHeight() - 1);
                         break;
                     }
+
+
                     // Right side
                     if (xdif > 0 && Math.abs(ydif) < Math.abs(xdif)) {
-                        player.setPosition(s.getPosX() + player.getScaledWidth() + 5, player.getPosY());
+                        player.setPosition(s.getPosX() + s.getUnscaledWidth() + 1, player.getPosY());
                         falling = true;
                         plat_top = false;
                         plat_down = false;
                         setVelY(0);
-
-                        //  System.out.println("right");
                         break;
+                        //  System.out.println("right");
 
                     }
+
+                    // Left side
+                    if (xdif < 0 && Math.abs(ydif) < Math.abs(xdif)) {
+                        player.setPosition(s.getPosX() - player.getScaledWidth() - 1, player.getPosY());
+                        falling = true;
+                        plat_top = false;
+                        plat_down = false;
+                        setVelY(0);
+                        break;
+                        // System.out.println("left");
+                    }
+
+
                     // Below
                     if (ydif > 0 && Math.abs(ydif) > Math.abs(xdif)) {
                         player.setPosition(player.getPosX(), s.getPosY() + s.getScaledHeight() + 1);
@@ -464,6 +471,9 @@ public class FortePrototype extends Game implements IEventListener {
                         break;
 
                     }
+
+
+
                 } else {
                     collision = false;
                     falling = true;
@@ -497,6 +507,8 @@ public class FortePrototype extends Game implements IEventListener {
             }
         }
     }
+
+
 
     public void scrolling() {
 
@@ -538,25 +550,40 @@ public class FortePrototype extends Game implements IEventListener {
         for (Sprite p : particle) {
             p.rePosition(p.getVelX(), p.getVelY());
             p.setVelY(p.getVelY() + (int) gravity);
+
+            for (Sprite o : objects){
+                if (o.isVisible()){
+                    if (o.nearby(p)){
+                        if (o.collidesWith(p,o.getVelX(),o.getVelY())){
+                            toRemove.add(p);
+                            p.setVisible(false);
+                          //  sfx.playSong("Error.wav",-20);
+                        }
+                    }
+                }
+            }
+
             for (Sprite e : enemies) {
                 if (e.isVisible()) {
-                    if (e.collidesWith(p, e.getVelX(), e.getVelY())) {
-                        toRemove.add(p);
-                        falling = true;
-                        if (e.getId() == "C") {
-                            C.dispatchEvent(cevent);
-                        }
-                        if (e.getId() == "D") {
-                            D.dispatchEvent(devent);
-                        }
+                    if (e.nearby(p)) {
+                        if (e.collidesWith(p, e.getVelX(), e.getVelY())) {
+                            toRemove.add(p);
+                            falling = true;
+                            if (e.getId() == "C") {
+                                C.dispatchEvent(cevent);
+                            }
+                            if (e.getId() == "D") {
+                                D.dispatchEvent(devent);
+                            }
 
-                        if (e.getId() == "E") {
-                            E.dispatchEvent(eevent);
-                        }
-                        if (e.getId() == "F") {
-                            F.dispatchEvent(fevent);
-                        }
+                            if (e.getId() == "E") {
+                                E.dispatchEvent(eevent);
+                            }
+                            if (e.getId() == "F") {
+                                F.dispatchEvent(fevent);
+                            }
 
+                        }
                     }
                 }
             }
