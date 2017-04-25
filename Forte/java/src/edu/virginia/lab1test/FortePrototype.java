@@ -187,7 +187,7 @@ public class FortePrototype extends Game implements IEventListener {
         setVerticalPlatformOnFloor(10300, 10, platform);
         setVerticalPlatformOnFloor(10400, 10, platform);
 
-        door.setPosition(200, gameHeight - 300);
+        door.setPosition(9800, gameHeight - 300);
         moving2.add(door);
     }
 
@@ -672,7 +672,9 @@ public class FortePrototype extends Game implements IEventListener {
                 for (GamePad pad : gamePads) {
                     if (pad.isButtonPressed(GamePad.BUTTON_L3)) {
                         exitGame();
+
                     }
+
                 }
             }
         } else {
@@ -854,7 +856,6 @@ public class FortePrototype extends Game implements IEventListener {
                 isEnd = true;
                 isVictoryEnd = false;
             }
-
 
             if (event.getEventType().equals(BossDamageEvent.BossDamageEvent)){
                 health = health - 10;
