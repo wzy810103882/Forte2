@@ -64,10 +64,6 @@ public class FortePrototype extends Game implements IEventListener, JMC {
     private int[] whistlePitchArray = new int[]{REST, REST, REST, REST, REST, D4, D4, REST, D4, REST};
 
 
-    private boolean[] muteArray1 = new boolean[trumpetRhythmArray.length];
-    private boolean[] muteArray2 = new boolean[bassRhythmArray.length];
-    private boolean[] muteArray3 = new boolean[whistleRhythmArray.length];
-
     private ArrayList<Sprite> particle = new ArrayList<Sprite>();
     private ArrayList<Sprite> bossObject = new ArrayList<Sprite>();
     private ArrayList<Sprite> objects = new ArrayList<Sprite>();
@@ -75,15 +71,28 @@ public class FortePrototype extends Game implements IEventListener, JMC {
     private ArrayList<Sprite> moving = new ArrayList<Sprite>();
     private ArrayList<Sprite> moving2 = new ArrayList<Sprite>();
 
+    int ground = gameHeight - 175;
+    int[] CxArray = {500, 1300,2200, 2900,4200, 5600,6600, 7500,8300, 8600,9700,15000};
+    int[] CyArray = {ground,ground,ground,ground,ground,ground,ground,ground,ground,ground,ground,ground};
+
+    int[] DxArray = {1000, 2000,3000,4000,5000,6000,7000,8000,8300,8700,9000,15000};
+    int[] DyArray = {ground - 300, ground - 600,ground-600,ground-450,ground-700,ground,ground,ground-300,ground-600,ground-500,ground-500,ground};
+
+    int[] ExArray = {1700, 2200};
+    int[] EyArray = {gameHeight - 175, gameHeight - 175};
+
+    int[] FxArray = {1800, 2300};
+    int[] FyArray = {gameHeight - 175, gameHeight - 175};
+
     Sprite C = new Sprite("C", "C.png");
     Sprite D = new Sprite("D", "D.png");
     Sprite E = new Sprite("E", "E.png");
-    Sprite F = new Sprite("F", "F.png");
+   // Sprite F = new Sprite("F", "F.png");
 
     Cevent cevent = new Cevent(Cevent.Cevent, C);
     Devent devent = new Devent(Devent.Devent, D);
     Eevent eevent = new Eevent(Eevent.Eevent, E);
-    Fevent fevent = new Fevent(Fevent.Fevent, F);
+  //  Fevent fevent = new Fevent(Fevent.Fevent, F);
 
     BossEvent bevent = new BossEvent(BossEvent.BossEvent, door);
     BossDamageEvent bossDamageEvent = new BossDamageEvent(BossDamageEvent.BossDamageEvent, boss);
@@ -106,17 +115,17 @@ public class FortePrototype extends Game implements IEventListener, JMC {
     public FortePrototype() {
         super("Forte Prototype", gameWidth, gameHeight);
 
-        player.setPosition(50, 50);
+        player.setPosition(150, 50);
 
         C.setPosition(260, gameHeight - floor.getUnscaledHeight() - C.getUnscaledHeight());
         D.setPosition(700, gameHeight - floor.getUnscaledHeight() - D.getUnscaledHeight());
         E.setPosition(780, gameHeight - floor.getUnscaledHeight() - E.getUnscaledHeight());
-        F.setPosition(910, gameHeight - floor.getUnscaledHeight() - F.getUnscaledHeight());
+       // F.setPosition(910, gameHeight - floor.getUnscaledHeight() - F.getUnscaledHeight());
 
         C.addEventListener(this, Cevent.Cevent);
         D.addEventListener(this, Devent.Devent);
         E.addEventListener(this, Eevent.Eevent);
-        F.addEventListener(this, Fevent.Fevent);
+      //  F.addEventListener(this, Fevent.Fevent);
         door.addEventListener(this, BossEvent.BossEvent);
         boss.addEventListener(this, BossEvent.BossEvent);
         boss.addEventListener(this, BossDamageEvent.BossDamageEvent);
@@ -125,17 +134,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
 /**
  * next position of enemy
  */
-        int[] CxArray = {500, 300,500, 300,500, 300,500, 300,500, 300,500};
-        int[] CyArray = {gameHeight - 175, gameHeight - 175,gameHeight - 175,gameHeight - 175,gameHeight - 175,gameHeight - 175,gameHeight - 175,gameHeight - 175,gameHeight - 175,gameHeight - 175,gameHeight - 175};
 
-        int[] DxArray = {1600, 2100};
-        int[] DyArray = {gameHeight - 175, gameHeight - 175};
-
-        int[] ExArray = {1700, 2200};
-        int[] EyArray = {gameHeight - 175, gameHeight - 175};
-
-        int[] FxArray = {1800, 2300};
-        int[] FyArray = {gameHeight - 175, gameHeight - 175};
 
         C.setxArray(CxArray);
         C.setyArray(CyArray);
@@ -143,13 +142,13 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         D.setyArray(DyArray);
         E.setxArray(ExArray);
         E.setyArray(EyArray);
-        F.setxArray(FxArray);
-        F.setyArray(FyArray);
+      //  F.setxArray(FxArray);
+      //  F.setyArray(FyArray);
 
         enemies.add(C);
         enemies.add(D);
         enemies.add(E);
-        enemies.add(F);
+       // enemies.add(F);
         moving.add(player);
 
         platformSetup();
@@ -230,7 +229,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         setVerticalPlatformOnFloor(10300, 10, platform);
         setVerticalPlatformOnFloor(10400, 10, platform);
 
-        door.setPosition(9800, gameHeight - 300);
+        door.setPosition(1, gameHeight - 300);
         moving2.add(door);
     }
 
@@ -610,7 +609,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                             E.dispatchEvent(eevent);
 
                         } else if (e.getId() == "F") {
-                            F.dispatchEvent(fevent);
+             //               F.dispatchEvent(fevent);
                         } else {
                             ;
                         }
@@ -635,6 +634,15 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                     for (Sprite p : enemies) {
                         p.setPosition(p.getPosX() - player.getVelX(), p.getPosY());
                     }
+                    for (int a = 0; a < CxArray.length; a++){
+                        CxArray[a] = CxArray[a] - player.getVelX();
+                    }
+                    for (int a = 0; a < DxArray.length; a++){
+                        DxArray[a] = DxArray[a] - player.getVelX();
+                    }
+                    for (int a = 0; a < ExArray.length; a++){
+                        ExArray[a] = ExArray[a] - player.getVelX();
+                    }
                 }
             }
         } else {
@@ -649,6 +657,12 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                         }
                         for (Sprite p : enemies) {
                             p.setPosition(p.getPosX() - player.getVelX(), p.getPosY());
+                        }
+                        for (int a = 0; a < CxArray.length; a++){
+                            CxArray[a] = CxArray[a] - player.getVelX();
+                        }
+                        for (int a = 0; a < ExArray.length; a++){
+                            ExArray[a] = ExArray[a] - player.getVelX();
                         }
                     }
                 }
@@ -691,7 +705,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                                 E.dispatchEvent(eevent);
                             }
                             if (e.getId() == "F") {
-                                F.dispatchEvent(fevent);
+                    //            F.dispatchEvent(fevent);
                             }
 
                         }
@@ -705,6 +719,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
 
     @Override
     public void update(ArrayList<String> pressedKeys, ArrayList<GamePad> gamePads) {
+        //System.out.println(C.getPosX());
         if (isStart) {
             if (!isEnd) {
                 if (!BossEncountered) {
@@ -764,6 +779,13 @@ public class FortePrototype extends Game implements IEventListener, JMC {
 
                     if (health < 0) {
                         boss.dispatchEvent(bossCompleteEvent);
+                    }
+
+                    if (mainClock.getElapsedTime() % 2000 > 0 && mainClock.getElapsedTime() %2000 < 20){
+                        int xBossPos = (int) (Math.random()*(gameWidth-boss.getScaledWidth()));
+                        int yBossPos = (int) (Math.random()*(gameHeight-boss.getScaledHeight())-100) + 100;
+
+                        boss.setPosition(xBossPos,yBossPos);
                     }
 
                 }
@@ -880,11 +902,8 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                         }
                     }
 
-                    if (door != null) door.draw(g);
-                    if (C != null) C.draw(g);
-                    if (D != null) D.draw(g);
-                    if (E != null) E.draw(g);
-                    if (F != null) F.draw(g);
+
+             //       if (F != null) F.draw(g);
 
                     if (player != null) player.draw(g);
                     for (Sprite temp : particle) {
@@ -894,6 +913,12 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                             }
                         }
                     }
+
+                    if (door != null) door.draw(g);
+                    if (C != null) C.draw(g);
+                    if (D != null) D.draw(g);
+                    if (E != null) E.draw(g);
+
                 } else {
                     bossBackground.draw(g);
                     for (Sprite temp : bossObject) {
