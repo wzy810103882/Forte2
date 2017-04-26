@@ -1,6 +1,5 @@
 package edu.virginia.lab1test;
 
-import edu.virginia.Music.ForteSong;
 import edu.virginia.Music.SilenceTest;
 import edu.virginia.engine.controller.GamePad;
 import edu.virginia.engine.display.DisplayObject;
@@ -12,9 +11,12 @@ import edu.virginia.engine.util.GameClock;
 import edu.virginia.engine.util.Position;
 import jm.JMC;
 import jm.audio.RTMixer;
+import jm.util.*;
+import jm.music.data.*;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.io.File;
 
 //Gannon was here.
 public class FortePrototype extends Game implements IEventListener, JMC {
@@ -46,7 +48,6 @@ public class FortePrototype extends Game implements IEventListener, JMC {
     private boolean isVictoryEnd = false;
     private SilenceTest silenceTest = new SilenceTest();
 
-
     private double[] trumpetRhythmArray = new double[]{DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE,
             QN, QN, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE,
             EN, EN, QN};
@@ -75,11 +76,11 @@ public class FortePrototype extends Game implements IEventListener, JMC {
     int[] CxArray = {500, 1300,2200, 2900,4200, 5600,6600, 7500,8300, 8600,9700,15000};
     int[] CyArray = {ground,ground,ground,ground,ground,ground,ground,ground,ground,ground,ground,ground};
 
-    int[] DxArray = {1000, 2000,3000,4000,5000,6000,7000,8000,8300,8700,9000,15000};
+    int[] DxArray = {1000, 2000,3000,4000,5000,6000,7000,7800,8100,8300,15000,15000};
     int[] DyArray = {ground - 300, ground - 600,ground-600,ground-450,ground-700,ground,ground,ground-300,ground-600,ground-500,ground-500,ground};
 
-    int[] ExArray = {1700, 2200};
-    int[] EyArray = {gameHeight - 175, gameHeight - 175};
+    int[] ExArray = {1700, 2200,3000,4000,15000};
+    int[] EyArray = {ground,ground,ground,ground,ground};
 
     int[] FxArray = {1800, 2300};
     int[] FyArray = {gameHeight - 175, gameHeight - 175};
@@ -229,7 +230,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         setVerticalPlatformOnFloor(10300, 10, platform);
         setVerticalPlatformOnFloor(10400, 10, platform);
 
-        door.setPosition(1, gameHeight - 300);
+        door.setPosition(9800, gameHeight - 300);
         moving2.add(door);
     }
 
@@ -715,8 +716,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         }
         particle.removeAll(toRemove);
     }
-
-
+    
     @Override
     public void update(ArrayList<String> pressedKeys, ArrayList<GamePad> gamePads) {
         //System.out.println(C.getPosX());
@@ -972,6 +972,12 @@ public class FortePrototype extends Game implements IEventListener, JMC {
             boss.setPosition(500, 500);
             bossBackground.setPosition(0, 0);
             setBoosFloor(20, bossFloor);
+            silenceTest.stop();
+            Score s = new Score("bossmusic.mid");
+            Read.midi(s, "bossmusic.mid");
+            Play.midi(s);
+
+
         }
 
         if (source == player) {
@@ -982,11 +988,14 @@ public class FortePrototype extends Game implements IEventListener, JMC {
             if (event.getEventType().equals(BossEvent.BossEvent)) {
                 isEnd = true;
                 isVictoryEnd = true;
+                Play.stopMidi();
+
             }
 
             if (event.getEventType().equals(BossKillsPlayerEvent.BossKillsPlayerEvent)) {
                 isEnd = true;
                 isVictoryEnd = false;
+                Play.stopMidi();
             }
 
             if (event.getEventType().equals(BossDamageEvent.BossDamageEvent)) {

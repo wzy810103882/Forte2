@@ -128,5 +128,9 @@ public class SilenceTest implements JMC, ChangeListener, ActionListener {
         mixer.begin();
     }
 
+    public void stop(){
+        mixer.stop();
+    }
+
 
 }
