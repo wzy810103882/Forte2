@@ -19,91 +19,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FortePrototype.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FortePrototype.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edu/virginia/lab1test/FortePrototype.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="408" column="0" lean-forward="false" selection-start-line="408" selection-start-column="0" selection-end-line="408" selection-end-column="0" />
+            <state relative-caret-position="4395">
+              <caret line="1107" column="11" lean-forward="true" selection-start-line="1107" selection-start-column="11" selection-end-line="1107" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3061#3069#0" expanded="true" />
-                <element signature="e#3129#3137#0" expanded="true" />
-                <element signature="e#3194#3202#0" expanded="true" />
-                <element signature="e#3259#3267#0" expanded="true" />
-                <element signature="e#3323#3331#0" expanded="true" />
-                <element signature="e#3388#3396#0" expanded="true" />
                 <element signature="docComment;field#mainClock#0;class#FortePrototype#0" expanded="false" />
-                <element signature="method#FortePrototype#0;class#FortePrototype#0" expanded="false" />
+                <element signature="e#6755#6780#0" expanded="false" />
                 <element signature="method#platformSetup#0;class#FortePrototype#0" expanded="false" />
+                <element signature="method#setBackground#0;class#FortePrototype#0" expanded="false" />
+                <element signature="method#setFloor#0;class#FortePrototype#0" expanded="false" />
+                <element signature="method#setBoosFloor#0;class#FortePrototype#0" expanded="false" />
+                <element signature="docComment;method#setHorizontalPlatform#0;class#FortePrototype#0" expanded="false" />
+                <element signature="method#setHorizontalPlatform#0;class#FortePrototype#0" expanded="false" />
+                <element signature="method#setHorizontalPlaformOnFloor#0;class#FortePrototype#0" expanded="false" />
+                <element signature="method#setVerticalPlatform#0;class#FortePrototype#0" expanded="false" />
+                <element signature="method#setVerticalPlatformOnFloor#0;class#FortePrototype#0" expanded="false" />
+                <element signature="method#setDiagonalPlatform#0;class#FortePrototype#0" expanded="false" />
+                <element signature="method#setDiagonalPlatformOnFloor#0;class#FortePrototype#0" expanded="false" />
+                <element signature="docComment;method#timing#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#timing#0;class#FortePrototype#0" expanded="false" />
-                <element signature="method#blinkwithrest#0;class#FortePrototype#0" expanded="false" />
+                <element signature="e#14209#14223#0" expanded="false" />
+                <element signature="method#timingMode#0;class#FortePrototype#0" expanded="false" />
+                <element signature="e#17044#17058#0" expanded="false" />
+                <element signature="e#17449#17501#0" expanded="false" />
+                <element signature="docComment;method#gamePadUpdate#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#gamePadUpdate#0;class#FortePrototype#0" expanded="false" />
+                <element signature="e#19120#19143#0" expanded="false" />
+                <element signature="method#mapBound#0;class#FortePrototype#0" expanded="false" />
+                <element signature="method#platformCollision#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#enemyCollision#0;class#FortePrototype#0" expanded="false" />
+                <element signature="method#scrolling#0;class#FortePrototype#0" expanded="false" />
+                <element signature="method#attack#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#update#0;class#FortePrototype#0" expanded="false" />
+                <element signature="docComment;method#inRange#0;class#FortePrototype#0" expanded="false" />
+                <element signature="method#inRange#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#draw#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#main#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#handleEvent#0;class#FortePrototype#0" expanded="false" />
-                <marker date="1493096218000" expanded="false" signature="10021:10259" ph="{...}" />
-                <marker date="1493096218000" expanded="false" signature="10312:10608" ph="{...}" />
-                <marker date="1493096218000" expanded="false" signature="10665:10934" ph="{...}" />
-                <marker date="1493096218000" expanded="false" signature="10940:11060" ph="/**...*/" />
-                <marker date="1493096218000" expanded="false" signature="11142:11414" ph="{...}" />
-                <marker date="1493096218000" expanded="false" signature="11496:11836" ph="{...}" />
-                <marker date="1493096218000" expanded="false" signature="11917:12196" ph="{...}" />
-                <marker date="1493096218000" expanded="false" signature="12277:12593" ph="{...}" />
-                <marker date="1493096218000" expanded="false" signature="12691:13094" ph="{...}" />
-                <marker date="1493096218000" expanded="false" signature="13192:13632" ph="{...}" />
-                <marker date="1493096218000" expanded="false" signature="13639:13741" ph="/**...*/" />
-                <marker date="1493096218000" expanded="false" signature="14006:14082" ph="//..." />
-                <marker date="1493096218000" expanded="false" signature="15682:15758" ph="//..." />
-                <marker date="1493096218000" expanded="false" signature="16291:16354" ph="/**...*/" />
-                <marker date="1493096218000" expanded="false" signature="17643:17765" ph="//..." />
-                <marker date="1493096218000" expanded="false" signature="18242:18754" ph="{...}" />
-                <marker date="1493096218000" expanded="false" signature="18817:21915" ph="{...}" />
-                <marker date="1493096218000" expanded="false" signature="22818:24164" ph="{...}" />
-                <marker date="1493096218000" expanded="false" signature="24191:25794" ph="{...}" />
-                <marker date="1493096218000" expanded="false" signature="24243:24251" ph="&lt;~&gt;" />
-                <marker date="1493096218000" expanded="false" signature="27589:27698" ph="//..." />
-                <marker date="1493096218000" expanded="false" signature="28847:30175" ph="/**...*/" />
-                <marker date="1493096218000" expanded="false" signature="30214:30574" ph="{...}" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Sprite.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/display/Sprite.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="41" column="45" lean-forward="false" selection-start-line="41" selection-start-column="45" selection-end-line="41" selection-end-column="45" />
-              <folding>
-                <element signature="e#848#849#0" expanded="true" />
-                <element signature="e#881#882#0" expanded="true" />
-                <element signature="e#930#931#0" expanded="true" />
-                <element signature="e#967#968#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ForteSong.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/virginia/Music/ForteSong.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ForteSong2.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/virginia/Music/ForteSong2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="17" column="38" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -111,28 +67,40 @@
       <file leaf-file-name="ForteSong3.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/virginia/Music/ForteSong3.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="17" column="36" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="345">
+              <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QuestManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/virginia/lab1test/QuestManager.java">
+      <file leaf-file-name="Durations.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/../Music/jMusic1.6.5.jar!/jm/constants/Durations.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="65" column="4" lean-forward="false" selection-start-line="65" selection-start-column="4" selection-end-line="71" selection-end-column="5" />
+            <state relative-caret-position="150">
+              <caret line="33" column="13" lean-forward="false" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SongStartEvent.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/virginia/lab1test/SongStartEvent.java">
+      <file leaf-file-name="Sprite.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/display/Sprite.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="630">
+              <caret line="67" column="55" lean-forward="false" selection-start-line="67" selection-start-column="55" selection-end-line="67" selection-end-column="55" />
+              <folding>
+                <element signature="method#Sprite#1;class#Sprite#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GamePad.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/controller/GamePad.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="21" column="40" lean-forward="false" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -141,18 +109,8 @@
       <file leaf-file-name="SilenceTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/virginia/Music/SilenceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="44" column="26" lean-forward="false" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BlinkOffEvent.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/virginia/lab1test/BlinkOffEvent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state relative-caret-position="1365">
+              <caret line="107" column="23" lean-forward="false" selection-start-line="107" selection-start-column="23" selection-end-line="107" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -169,19 +127,8 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>keyPressed</find>
-      <find>keypre</find>
-      <find>Keypre</find>
-      <find>setup</find>
-      <find>getvel</find>
-      <find>gameTimer</find>
-      <find>keypres</find>
-      <find>System</find>
-      <find>collision</find>
-      <find>serving</find>
       <find>player1serve</find>
       <find>top</find>
-      <find>moving</find>
       <find>moving2</find>
       <find>dispatch</find>
       <find>addevent</find>
@@ -193,12 +140,23 @@
       <find>1.0</find>
       <find>isend</find>
       <find>bevent</find>
-      <find>door</find>
       <find>sys</find>
-      <find>syst</find>
-      <find>nextpo</find>
       <find>sss</find>
       <find>blink</find>
+      <find>syst</find>
+      <find>timingmode</find>
+      <find>boss</find>
+      <find>moving</find>
+      <find>collision</find>
+      <find>instArray1</find>
+      <find>scrol</find>
+      <find>door</find>
+      <find>door.set</find>
+      <find>bossObject</find>
+      <find>setCurrentIndex</find>
+      <find>nextpo</find>
+      <find>QN</find>
+      <find>nextpos</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -220,11 +178,14 @@
         <option value="$PROJECT_DIR$/src/edu/virginia/lab1test/BlinkOnEvent.java" />
         <option value="$PROJECT_DIR$/src/edu/virginia/lab1test/BlinkOffEvent.java" />
         <option value="$PROJECT_DIR$/src/edu/virginia/lab1test/SongStartEvent.java" />
-        <option value="$PROJECT_DIR$/src/edu/virginia/Music/ForteSong2.java" />
-        <option value="$PROJECT_DIR$/src/edu/virginia/Music/ForteSong3.java" />
         <option value="$PROJECT_DIR$/src/edu/virginia/Music/ForteSong.java" />
-        <option value="$PROJECT_DIR$/src/edu/virginia/lab1test/FortePrototype.java" />
+        <option value="$PROJECT_DIR$/src/edu/virginia/Music/ForteSong2.java" />
+        <option value="$PROJECT_DIR$/src/edu/virginia/Music/SilenceTest.java" />
+        <option value="$PROJECT_DIR$/src/edu/virginia/Music/BossMusic.java" />
+        <option value="$PROJECT_DIR$/src/edu/virginia/Music/BossTrack1.java" />
         <option value="$PROJECT_DIR$/src/edu/virginia/engine/display/Sprite.java" />
+        <option value="$PROJECT_DIR$/src/edu/virginia/Music/ForteSong3.java" />
+        <option value="$PROJECT_DIR$/src/edu/virginia/lab1test/FortePrototype.java" />
       </list>
     </option>
   </component>
@@ -247,21 +208,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
@@ -360,38 +309,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="display" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="virginia" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="engine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -399,6 +324,15 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/edu/virginia/lab1test" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/edu/virginia/lab1test" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.FortePrototype">
     <configuration default="false" name="FortePrototype" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -712,14 +646,14 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39903265" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -727,7 +661,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="17" />
+      <option name="time" value="19" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -736,117 +670,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/edu/virginia/lab1test/FortePrototype.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3960">
-          <caret line="435" column="13" lean-forward="false" selection-start-line="425" selection-start-column="53" selection-end-line="435" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3061#3069#0" expanded="true" />
-            <element signature="e#3129#3137#0" expanded="true" />
-            <element signature="e#3194#3202#0" expanded="true" />
-            <element signature="e#3259#3267#0" expanded="true" />
-            <element signature="e#3323#3331#0" expanded="true" />
-            <element signature="e#3388#3396#0" expanded="true" />
-            <element signature="docComment;field#mainClock#0;class#FortePrototype#0" expanded="false" />
-            <element signature="method#FortePrototype#0;class#FortePrototype#0" expanded="false" />
-            <element signature="method#platformSetup#0;class#FortePrototype#0" expanded="false" />
-            <element signature="method#timing#0;class#FortePrototype#0" expanded="false" />
-            <element signature="method#blinkwithrest#0;class#FortePrototype#0" expanded="false" />
-            <element signature="method#gamePadUpdate#0;class#FortePrototype#0" expanded="false" />
-            <element signature="method#enemyCollision#0;class#FortePrototype#0" expanded="false" />
-            <element signature="method#update#0;class#FortePrototype#0" expanded="false" />
-            <element signature="method#draw#0;class#FortePrototype#0" expanded="false" />
-            <element signature="method#main#0;class#FortePrototype#0" expanded="false" />
-            <element signature="method#handleEvent#0;class#FortePrototype#0" expanded="false" />
-            <marker date="1493096218000" expanded="false" signature="10021:10259" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="10312:10608" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="10665:10934" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="10940:11060" ph="/**...*/" />
-            <marker date="1493096218000" expanded="false" signature="11142:11414" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="11496:11836" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="11917:12196" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="12277:12593" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="12691:13094" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="13192:13632" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="13639:13741" ph="/**...*/" />
-            <marker date="1493096218000" expanded="false" signature="14006:14082" ph="//..." />
-            <marker date="1493096218000" expanded="false" signature="15682:15758" ph="//..." />
-            <marker date="1493096218000" expanded="false" signature="16291:16354" ph="/**...*/" />
-            <marker date="1493096218000" expanded="false" signature="17643:17765" ph="//..." />
-            <marker date="1493096218000" expanded="false" signature="18242:18754" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="18817:21915" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="22818:24164" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="24191:25794" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="24243:24251" ph="&lt;~&gt;" />
-            <marker date="1493096218000" expanded="false" signature="27589:27698" ph="//..." />
-            <marker date="1493096218000" expanded="false" signature="28847:30175" ph="/**...*/" />
-            <marker date="1493096218000" expanded="false" signature="30214:30574" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/controller/GamePad.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="33" column="37" lean-forward="false" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/controller/GamePadComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/display/DisplayObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#DisplayObject#0;class#DisplayObject#0" expanded="false" />
-            <element signature="method#DisplayObject#1;class#DisplayObject#0" expanded="false" />
-            <element signature="method#setPosition#1;class#DisplayObject#0" expanded="false" />
-            <element signature="method#rePosition#0;class#DisplayObject#0" expanded="false" />
-            <element signature="method#setPivotPoint#1;class#DisplayObject#0" expanded="false" />
-            <element signature="method#getUnscaledWidth#0;class#DisplayObject#0" expanded="false" />
-            <element signature="method#getUnscaledHeight#0;class#DisplayObject#0" expanded="false" />
-            <element signature="method#getScaledWidth#0;class#DisplayObject#0" expanded="false" />
-            <element signature="method#getScaledHeight#0;class#DisplayObject#0" expanded="false" />
-            <element signature="method#setImage#0;class#DisplayObject#0" expanded="false" />
-            <element signature="method#readImage#0;class#DisplayObject#0" expanded="false" />
-            <element signature="method#setImage#1;class#DisplayObject#0" expanded="false" />
-            <element signature="method#addChild#0;class#DisplayObject#0" expanded="false" />
-            <element signature="method#addChildAt#0;class#DisplayObject#0" expanded="false" />
-            <element signature="method#removeChildAt#0;class#DisplayObject#0" expanded="false" />
-            <element signature="method#getHitbox#0;class#DisplayObject#0" expanded="false" />
-            <element signature="method#collidesWith#0;class#DisplayObject#0" expanded="false" />
-            <element signature="method#collidesWith#1;class#DisplayObject#0" expanded="false" />
-            <element signature="method#nearby#0;class#DisplayObject#0" expanded="false" />
-            <element signature="method#getSprite#0;class#DisplayObject#0" expanded="false" />
-            <element signature="method#draw#0;class#DisplayObject#0" expanded="false" />
-            <element signature="method#applyTransformations#0;class#DisplayObject#0" expanded="false" />
-            <element signature="method#reverseTransformations#0;class#DisplayObject#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/display/TweenEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding>
-            <element signature="e#187#188#0" expanded="false" />
-            <element signature="e#210#211#0" expanded="false" />
-            <element signature="e#239#240#0" expanded="false" />
-            <element signature="e#258#259#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/display/Game.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1815">
@@ -879,16 +702,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding>
-            <element signature="e#313#314#0" expanded="false" />
-            <element signature="e#341#342#0" expanded="false" />
-            <element signature="e#390#391#0" expanded="false" />
-            <element signature="e#424#425#0" expanded="false" />
-            <element signature="e#456#457#0" expanded="false" />
-            <element signature="e#487#488#0" expanded="false" />
-            <element signature="e#532#533#0" expanded="false" />
-            <element signature="e#572#573#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -898,46 +711,39 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3061#3069#0" expanded="true" />
-            <element signature="e#3129#3137#0" expanded="true" />
-            <element signature="e#3194#3202#0" expanded="true" />
-            <element signature="e#3259#3267#0" expanded="true" />
-            <element signature="e#3323#3331#0" expanded="true" />
-            <element signature="e#3388#3396#0" expanded="true" />
             <element signature="docComment;field#mainClock#0;class#FortePrototype#0" expanded="false" />
-            <element signature="method#FortePrototype#0;class#FortePrototype#0" expanded="false" />
+            <element signature="e#6755#6780#0" expanded="false" />
             <element signature="method#platformSetup#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setBackground#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setFloor#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setBoosFloor#0;class#FortePrototype#0" expanded="false" />
+            <element signature="docComment;method#setHorizontalPlatform#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setHorizontalPlatform#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setHorizontalPlaformOnFloor#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setVerticalPlatform#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setVerticalPlatformOnFloor#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setDiagonalPlatform#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setDiagonalPlatformOnFloor#0;class#FortePrototype#0" expanded="false" />
+            <element signature="docComment;method#timing#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#timing#0;class#FortePrototype#0" expanded="false" />
-            <element signature="method#blinkwithrest#0;class#FortePrototype#0" expanded="false" />
+            <element signature="e#14209#14223#0" expanded="false" />
+            <element signature="method#timingMode#0;class#FortePrototype#0" expanded="false" />
+            <element signature="e#17044#17058#0" expanded="false" />
+            <element signature="e#17449#17501#0" expanded="false" />
+            <element signature="docComment;method#gamePadUpdate#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#gamePadUpdate#0;class#FortePrototype#0" expanded="false" />
+            <element signature="e#19120#19143#0" expanded="false" />
+            <element signature="method#mapBound#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#platformCollision#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#enemyCollision#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#scrolling#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#attack#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#update#0;class#FortePrototype#0" expanded="false" />
+            <element signature="docComment;method#inRange#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#inRange#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#draw#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#main#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#handleEvent#0;class#FortePrototype#0" expanded="false" />
-            <marker date="1493096218000" expanded="false" signature="10021:10259" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="10312:10608" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="10665:10934" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="10940:11060" ph="/**...*/" />
-            <marker date="1493096218000" expanded="false" signature="11142:11414" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="11496:11836" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="11917:12196" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="12277:12593" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="12691:13094" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="13192:13632" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="13639:13741" ph="/**...*/" />
-            <marker date="1493096218000" expanded="false" signature="14006:14082" ph="//..." />
-            <marker date="1493096218000" expanded="false" signature="15682:15758" ph="//..." />
-            <marker date="1493096218000" expanded="false" signature="16291:16354" ph="/**...*/" />
-            <marker date="1493096218000" expanded="false" signature="17643:17765" ph="//..." />
-            <marker date="1493096218000" expanded="false" signature="18242:18754" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="18817:21915" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="22818:24164" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="24191:25794" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="24243:24251" ph="&lt;~&gt;" />
-            <marker date="1493096218000" expanded="false" signature="27589:27698" ph="//..." />
-            <marker date="1493096218000" expanded="false" signature="28847:30175" ph="/**...*/" />
-            <marker date="1493096218000" expanded="false" signature="30214:30574" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -958,12 +764,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="33" column="26" lean-forward="false" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
-          <folding>
-            <element signature="e#848#849#0" expanded="true" />
-            <element signature="e#881#882#0" expanded="true" />
-            <element signature="e#930#931#0" expanded="true" />
-            <element signature="e#967#968#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1004,7 +805,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
           <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1486#1487#0" expanded="false" />
+            <element signature="e#1507#1508#0" expanded="false" />
+            <element signature="e#1538#1539#0" expanded="false" />
+            <element signature="e#1559#1560#0" expanded="false" />
+            <element signature="e#1590#1591#0" expanded="false" />
+            <element signature="e#1611#1612#0" expanded="false" />
+            <element signature="e#1642#1643#0" expanded="false" />
+            <element signature="e#1663#1664#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1014,46 +825,39 @@
           <caret line="298" column="33" lean-forward="false" selection-start-line="298" selection-start-column="33" selection-end-line="298" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3061#3069#0" expanded="true" />
-            <element signature="e#3129#3137#0" expanded="true" />
-            <element signature="e#3194#3202#0" expanded="true" />
-            <element signature="e#3259#3267#0" expanded="true" />
-            <element signature="e#3323#3331#0" expanded="true" />
-            <element signature="e#3388#3396#0" expanded="true" />
             <element signature="docComment;field#mainClock#0;class#FortePrototype#0" expanded="false" />
-            <element signature="method#FortePrototype#0;class#FortePrototype#0" expanded="false" />
+            <element signature="e#6755#6780#0" expanded="false" />
             <element signature="method#platformSetup#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setBackground#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setFloor#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setBoosFloor#0;class#FortePrototype#0" expanded="false" />
+            <element signature="docComment;method#setHorizontalPlatform#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setHorizontalPlatform#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setHorizontalPlaformOnFloor#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setVerticalPlatform#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setVerticalPlatformOnFloor#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setDiagonalPlatform#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setDiagonalPlatformOnFloor#0;class#FortePrototype#0" expanded="false" />
+            <element signature="docComment;method#timing#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#timing#0;class#FortePrototype#0" expanded="false" />
-            <element signature="method#blinkwithrest#0;class#FortePrototype#0" expanded="false" />
+            <element signature="e#14209#14223#0" expanded="false" />
+            <element signature="method#timingMode#0;class#FortePrototype#0" expanded="false" />
+            <element signature="e#17044#17058#0" expanded="false" />
+            <element signature="e#17449#17501#0" expanded="false" />
+            <element signature="docComment;method#gamePadUpdate#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#gamePadUpdate#0;class#FortePrototype#0" expanded="false" />
+            <element signature="e#19120#19143#0" expanded="false" />
+            <element signature="method#mapBound#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#platformCollision#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#enemyCollision#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#scrolling#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#attack#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#update#0;class#FortePrototype#0" expanded="false" />
+            <element signature="docComment;method#inRange#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#inRange#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#draw#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#main#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#handleEvent#0;class#FortePrototype#0" expanded="false" />
-            <marker date="1493096218000" expanded="false" signature="10021:10259" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="10312:10608" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="10665:10934" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="10940:11060" ph="/**...*/" />
-            <marker date="1493096218000" expanded="false" signature="11142:11414" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="11496:11836" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="11917:12196" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="12277:12593" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="12691:13094" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="13192:13632" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="13639:13741" ph="/**...*/" />
-            <marker date="1493096218000" expanded="false" signature="14006:14082" ph="//..." />
-            <marker date="1493096218000" expanded="false" signature="15682:15758" ph="//..." />
-            <marker date="1493096218000" expanded="false" signature="16291:16354" ph="/**...*/" />
-            <marker date="1493096218000" expanded="false" signature="17643:17765" ph="//..." />
-            <marker date="1493096218000" expanded="false" signature="18242:18754" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="18817:21915" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="22818:24164" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="24191:25794" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="24243:24251" ph="&lt;~&gt;" />
-            <marker date="1493096218000" expanded="false" signature="27589:27698" ph="//..." />
-            <marker date="1493096218000" expanded="false" signature="28847:30175" ph="/**...*/" />
-            <marker date="1493096218000" expanded="false" signature="30214:30574" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1062,12 +866,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="33" column="26" lean-forward="false" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
-          <folding>
-            <element signature="e#848#849#0" expanded="true" />
-            <element signature="e#881#882#0" expanded="true" />
-            <element signature="e#930#931#0" expanded="true" />
-            <element signature="e#967#968#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1108,7 +907,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
           <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1486#1487#0" expanded="false" />
+            <element signature="e#1507#1508#0" expanded="false" />
+            <element signature="e#1538#1539#0" expanded="false" />
+            <element signature="e#1559#1560#0" expanded="false" />
+            <element signature="e#1590#1591#0" expanded="false" />
+            <element signature="e#1611#1612#0" expanded="false" />
+            <element signature="e#1642#1643#0" expanded="false" />
+            <element signature="e#1663#1664#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1118,46 +927,39 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3061#3069#0" expanded="true" />
-            <element signature="e#3129#3137#0" expanded="true" />
-            <element signature="e#3194#3202#0" expanded="true" />
-            <element signature="e#3259#3267#0" expanded="true" />
-            <element signature="e#3323#3331#0" expanded="true" />
-            <element signature="e#3388#3396#0" expanded="true" />
             <element signature="docComment;field#mainClock#0;class#FortePrototype#0" expanded="false" />
-            <element signature="method#FortePrototype#0;class#FortePrototype#0" expanded="false" />
+            <element signature="e#6755#6780#0" expanded="false" />
             <element signature="method#platformSetup#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setBackground#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setFloor#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setBoosFloor#0;class#FortePrototype#0" expanded="false" />
+            <element signature="docComment;method#setHorizontalPlatform#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setHorizontalPlatform#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setHorizontalPlaformOnFloor#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setVerticalPlatform#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setVerticalPlatformOnFloor#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setDiagonalPlatform#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setDiagonalPlatformOnFloor#0;class#FortePrototype#0" expanded="false" />
+            <element signature="docComment;method#timing#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#timing#0;class#FortePrototype#0" expanded="false" />
-            <element signature="method#blinkwithrest#0;class#FortePrototype#0" expanded="false" />
+            <element signature="e#14209#14223#0" expanded="false" />
+            <element signature="method#timingMode#0;class#FortePrototype#0" expanded="false" />
+            <element signature="e#17044#17058#0" expanded="false" />
+            <element signature="e#17449#17501#0" expanded="false" />
+            <element signature="docComment;method#gamePadUpdate#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#gamePadUpdate#0;class#FortePrototype#0" expanded="false" />
+            <element signature="e#19120#19143#0" expanded="false" />
+            <element signature="method#mapBound#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#platformCollision#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#enemyCollision#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#scrolling#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#attack#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#update#0;class#FortePrototype#0" expanded="false" />
+            <element signature="docComment;method#inRange#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#inRange#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#draw#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#main#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#handleEvent#0;class#FortePrototype#0" expanded="false" />
-            <marker date="1493096218000" expanded="false" signature="10021:10259" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="10312:10608" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="10665:10934" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="10940:11060" ph="/**...*/" />
-            <marker date="1493096218000" expanded="false" signature="11142:11414" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="11496:11836" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="11917:12196" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="12277:12593" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="12691:13094" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="13192:13632" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="13639:13741" ph="/**...*/" />
-            <marker date="1493096218000" expanded="false" signature="14006:14082" ph="//..." />
-            <marker date="1493096218000" expanded="false" signature="15682:15758" ph="//..." />
-            <marker date="1493096218000" expanded="false" signature="16291:16354" ph="/**...*/" />
-            <marker date="1493096218000" expanded="false" signature="17643:17765" ph="//..." />
-            <marker date="1493096218000" expanded="false" signature="18242:18754" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="18817:21915" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="22818:24164" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="24191:25794" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="24243:24251" ph="&lt;~&gt;" />
-            <marker date="1493096218000" expanded="false" signature="27589:27698" ph="//..." />
-            <marker date="1493096218000" expanded="false" signature="28847:30175" ph="/**...*/" />
-            <marker date="1493096218000" expanded="false" signature="30214:30574" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1166,7 +968,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
           <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1486#1487#0" expanded="false" />
+            <element signature="e#1507#1508#0" expanded="false" />
+            <element signature="e#1538#1539#0" expanded="false" />
+            <element signature="e#1559#1560#0" expanded="false" />
+            <element signature="e#1590#1591#0" expanded="false" />
+            <element signature="e#1611#1612#0" expanded="false" />
+            <element signature="e#1642#1643#0" expanded="false" />
+            <element signature="e#1663#1664#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1176,46 +988,39 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3061#3069#0" expanded="true" />
-            <element signature="e#3129#3137#0" expanded="true" />
-            <element signature="e#3194#3202#0" expanded="true" />
-            <element signature="e#3259#3267#0" expanded="true" />
-            <element signature="e#3323#3331#0" expanded="true" />
-            <element signature="e#3388#3396#0" expanded="true" />
             <element signature="docComment;field#mainClock#0;class#FortePrototype#0" expanded="false" />
-            <element signature="method#FortePrototype#0;class#FortePrototype#0" expanded="false" />
+            <element signature="e#6755#6780#0" expanded="false" />
             <element signature="method#platformSetup#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setBackground#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setFloor#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setBoosFloor#0;class#FortePrototype#0" expanded="false" />
+            <element signature="docComment;method#setHorizontalPlatform#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setHorizontalPlatform#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setHorizontalPlaformOnFloor#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setVerticalPlatform#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setVerticalPlatformOnFloor#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setDiagonalPlatform#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setDiagonalPlatformOnFloor#0;class#FortePrototype#0" expanded="false" />
+            <element signature="docComment;method#timing#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#timing#0;class#FortePrototype#0" expanded="false" />
-            <element signature="method#blinkwithrest#0;class#FortePrototype#0" expanded="false" />
+            <element signature="e#14209#14223#0" expanded="false" />
+            <element signature="method#timingMode#0;class#FortePrototype#0" expanded="false" />
+            <element signature="e#17044#17058#0" expanded="false" />
+            <element signature="e#17449#17501#0" expanded="false" />
+            <element signature="docComment;method#gamePadUpdate#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#gamePadUpdate#0;class#FortePrototype#0" expanded="false" />
+            <element signature="e#19120#19143#0" expanded="false" />
+            <element signature="method#mapBound#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#platformCollision#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#enemyCollision#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#scrolling#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#attack#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#update#0;class#FortePrototype#0" expanded="false" />
+            <element signature="docComment;method#inRange#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#inRange#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#draw#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#main#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#handleEvent#0;class#FortePrototype#0" expanded="false" />
-            <marker date="1493096218000" expanded="false" signature="10021:10259" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="10312:10608" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="10665:10934" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="10940:11060" ph="/**...*/" />
-            <marker date="1493096218000" expanded="false" signature="11142:11414" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="11496:11836" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="11917:12196" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="12277:12593" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="12691:13094" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="13192:13632" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="13639:13741" ph="/**...*/" />
-            <marker date="1493096218000" expanded="false" signature="14006:14082" ph="//..." />
-            <marker date="1493096218000" expanded="false" signature="15682:15758" ph="//..." />
-            <marker date="1493096218000" expanded="false" signature="16291:16354" ph="/**...*/" />
-            <marker date="1493096218000" expanded="false" signature="17643:17765" ph="//..." />
-            <marker date="1493096218000" expanded="false" signature="18242:18754" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="18817:21915" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="22818:24164" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="24191:25794" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="24243:24251" ph="&lt;~&gt;" />
-            <marker date="1493096218000" expanded="false" signature="27589:27698" ph="//..." />
-            <marker date="1493096218000" expanded="false" signature="28847:30175" ph="/**...*/" />
-            <marker date="1493096218000" expanded="false" signature="30214:30574" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1224,7 +1029,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="855">
           <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1486#1487#0" expanded="false" />
+            <element signature="e#1507#1508#0" expanded="false" />
+            <element signature="e#1538#1539#0" expanded="false" />
+            <element signature="e#1559#1560#0" expanded="false" />
+            <element signature="e#1590#1591#0" expanded="false" />
+            <element signature="e#1611#1612#0" expanded="false" />
+            <element signature="e#1642#1643#0" expanded="false" />
+            <element signature="e#1663#1664#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1233,7 +1048,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-20">
           <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1255,7 +1069,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1263,12 +1076,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding>
-            <element signature="e#187#188#0" expanded="false" />
-            <element signature="e#210#211#0" expanded="false" />
-            <element signature="e#239#240#0" expanded="false" />
-            <element signature="e#258#259#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1276,16 +1083,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding>
-            <element signature="e#313#314#0" expanded="false" />
-            <element signature="e#341#342#0" expanded="false" />
-            <element signature="e#390#391#0" expanded="false" />
-            <element signature="e#424#425#0" expanded="false" />
-            <element signature="e#456#457#0" expanded="false" />
-            <element signature="e#487#488#0" expanded="false" />
-            <element signature="e#532#533#0" expanded="false" />
-            <element signature="e#572#573#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1301,7 +1098,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1383,14 +1179,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/controller/GamePad.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="21" column="40" lean-forward="false" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/virginia/lab1test/BossEvent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1431,7 +1219,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1447,7 +1234,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1463,48 +1249,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#292#293#0" expanded="false" />
+            <element signature="e#332#333#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/virginia/lab1test/SongStartEvent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/virginia/Music/SilenceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="44" column="26" lean-forward="false" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/virginia/Music/ForteSong3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="17" column="36" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/virginia/Music/ForteSong2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="17" column="38" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/virginia/Music/ForteSong.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#301#302#0" expanded="false" />
+            <element signature="e#341#342#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1513,77 +1273,155 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/virginia/lab1test/QuestManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
+        <state relative-caret-position="555">
           <caret line="65" column="4" lean-forward="false" selection-start-line="65" selection-start-column="4" selection-end-line="71" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1486#1487#0" expanded="false" />
+            <element signature="e#1507#1508#0" expanded="false" />
+            <element signature="e#1538#1539#0" expanded="false" />
+            <element signature="e#1559#1560#0" expanded="false" />
+            <element signature="e#1590#1591#0" expanded="false" />
+            <element signature="e#1611#1612#0" expanded="false" />
+            <element signature="e#1642#1643#0" expanded="false" />
+            <element signature="e#1663#1664#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/virginia/Music/ForteSong2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="13" column="38" lean-forward="false" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+          <folding>
+            <element signature="e#357#358#0" expanded="false" />
+            <element signature="e#401#402#0" expanded="false" />
+            <element signature="e#439#440#0" expanded="false" />
+            <element signature="e#1423#1424#0" expanded="false" />
+            <element signature="e#1464#1465#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/virginia/Music/ForteSong.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="22" column="41" lean-forward="false" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#847#848#0" expanded="false" />
+            <element signature="e#894#895#0" expanded="false" />
+            <element signature="e#935#936#0" expanded="false" />
+            <element signature="e#1481#1482#0" expanded="false" />
+            <element signature="e#1522#1523#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/virginia/Music/SquareLPFInstRT2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/virginia/Music/BossTrack1.java" />
+    <entry file="file://$PROJECT_DIR$/src/edu/virginia/Music/BossMusic.java" />
+    <entry file="jar://$PROJECT_DIR$/../Music/jMusic1.6.5.jar!/jm/util/Play.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="34" column="30" lean-forward="false" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/virginia/Music/SilenceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1365">
+          <caret line="107" column="23" lean-forward="false" selection-start-line="107" selection-start-column="23" selection-end-line="107" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/controller/GamePad.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" column="40" lean-forward="false" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/display/Sprite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="67" column="55" lean-forward="false" selection-start-line="67" selection-start-column="55" selection-end-line="67" selection-end-column="55" />
+          <folding>
+            <element signature="method#Sprite#1;class#Sprite#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../Music/jMusic1.6.5.jar!/jm/constants/Durations.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="33" column="13" lean-forward="false" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/virginia/Music/ForteSong3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/virginia/lab1test/FortePrototype.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="408" column="0" lean-forward="false" selection-start-line="408" selection-start-column="0" selection-end-line="408" selection-end-column="0" />
+        <state relative-caret-position="4395">
+          <caret line="1107" column="11" lean-forward="true" selection-start-line="1107" selection-start-column="11" selection-end-line="1107" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3061#3069#0" expanded="true" />
-            <element signature="e#3129#3137#0" expanded="true" />
-            <element signature="e#3194#3202#0" expanded="true" />
-            <element signature="e#3259#3267#0" expanded="true" />
-            <element signature="e#3323#3331#0" expanded="true" />
-            <element signature="e#3388#3396#0" expanded="true" />
             <element signature="docComment;field#mainClock#0;class#FortePrototype#0" expanded="false" />
-            <element signature="method#FortePrototype#0;class#FortePrototype#0" expanded="false" />
+            <element signature="e#6755#6780#0" expanded="false" />
             <element signature="method#platformSetup#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setBackground#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setFloor#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setBoosFloor#0;class#FortePrototype#0" expanded="false" />
+            <element signature="docComment;method#setHorizontalPlatform#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setHorizontalPlatform#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setHorizontalPlaformOnFloor#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setVerticalPlatform#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setVerticalPlatformOnFloor#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setDiagonalPlatform#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#setDiagonalPlatformOnFloor#0;class#FortePrototype#0" expanded="false" />
+            <element signature="docComment;method#timing#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#timing#0;class#FortePrototype#0" expanded="false" />
-            <element signature="method#blinkwithrest#0;class#FortePrototype#0" expanded="false" />
+            <element signature="e#14209#14223#0" expanded="false" />
+            <element signature="method#timingMode#0;class#FortePrototype#0" expanded="false" />
+            <element signature="e#17044#17058#0" expanded="false" />
+            <element signature="e#17449#17501#0" expanded="false" />
+            <element signature="docComment;method#gamePadUpdate#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#gamePadUpdate#0;class#FortePrototype#0" expanded="false" />
+            <element signature="e#19120#19143#0" expanded="false" />
+            <element signature="method#mapBound#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#platformCollision#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#enemyCollision#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#scrolling#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#attack#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#update#0;class#FortePrototype#0" expanded="false" />
+            <element signature="docComment;method#inRange#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#inRange#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#draw#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#main#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#handleEvent#0;class#FortePrototype#0" expanded="false" />
-            <marker date="1493096218000" expanded="false" signature="10021:10259" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="10312:10608" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="10665:10934" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="10940:11060" ph="/**...*/" />
-            <marker date="1493096218000" expanded="false" signature="11142:11414" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="11496:11836" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="11917:12196" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="12277:12593" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="12691:13094" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="13192:13632" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="13639:13741" ph="/**...*/" />
-            <marker date="1493096218000" expanded="false" signature="14006:14082" ph="//..." />
-            <marker date="1493096218000" expanded="false" signature="15682:15758" ph="//..." />
-            <marker date="1493096218000" expanded="false" signature="16291:16354" ph="/**...*/" />
-            <marker date="1493096218000" expanded="false" signature="17643:17765" ph="//..." />
-            <marker date="1493096218000" expanded="false" signature="18242:18754" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="18817:21915" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="22818:24164" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="24191:25794" ph="{...}" />
-            <marker date="1493096218000" expanded="false" signature="24243:24251" ph="&lt;~&gt;" />
-            <marker date="1493096218000" expanded="false" signature="27589:27698" ph="//..." />
-            <marker date="1493096218000" expanded="false" signature="28847:30175" ph="/**...*/" />
-            <marker date="1493096218000" expanded="false" signature="30214:30574" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/display/Sprite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="41" column="45" lean-forward="false" selection-start-line="41" selection-start-column="45" selection-end-line="41" selection-end-column="45" />
-          <folding>
-            <element signature="e#848#849#0" expanded="true" />
-            <element signature="e#881#882#0" expanded="true" />
-            <element signature="e#930#931#0" expanded="true" />
-            <element signature="e#967#968#0" expanded="true" />
           </folding>
         </state>
       </provider>

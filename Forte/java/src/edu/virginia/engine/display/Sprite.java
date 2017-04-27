@@ -57,6 +57,7 @@ public class Sprite extends DisplayObject {
 	private BufferedImage prev;
 	private boolean prevChange = true;
 
+	private int CurrentPositionIndex = 0;
 
 	public void nextPosition(){
 		if (this.getCurrentIndex() < this.getxArray().length){
@@ -64,6 +65,8 @@ public class Sprite extends DisplayObject {
 			this.setVisible(true);
 			this.setCurrentIndex(this.getCurrentIndex()+1);
 		}
+		System.out.println(this.getImageName() + " " + currentIndex);
+
 	}
 
 	public int[] getxArray() {
