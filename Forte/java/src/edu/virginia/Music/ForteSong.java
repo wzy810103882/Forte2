@@ -48,7 +48,9 @@ public class ForteSong extends RTLine implements JMC{
     public void setMuteArray(int index, boolean status){
         muteArray[index] = status;
     }
-
+    public void clearMuteArray(){
+        muteArray = new boolean[trumpetRhythmArray.length];
+    }
     /**
      * Generate the next note when requested.
      */

@@ -65,7 +65,7 @@ public class Sprite extends DisplayObject {
 			this.setVisible(true);
 			this.setCurrentIndex(this.getCurrentIndex()+1);
 		}
-		System.out.println(this.getImageName() + " " + currentIndex);
+	//	System.out.println(this.getImageName() + " " + currentIndex);
 
 	}
 

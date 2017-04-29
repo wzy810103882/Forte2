@@ -35,11 +35,27 @@ public class SilenceTest implements JMC, ChangeListener, ActionListener {
 
     private ForteSong3 whistle;
 
+
+    public boolean isHasStarted() {
+        return hasStarted;
+    }
+
+    public void setHasStarted(boolean hasStarted) {
+        this.hasStarted = hasStarted;
+    }
+
+    private boolean hasStarted = false;
+
     private JButton goBtn;
     private RTLine[] lineArray = new RTLine[3];
 
     //public static void main(String[] args) {        new SilenceTest();    }
 
+    public void clearallmuteArray(){
+        getTrumpet().clearMuteArray();
+        getWhistle().clearMuteArray();
+        getBass().clearMuteArray();
+    }
     public SilenceTest() {
         int sampleRate = 44100;
         int channels = 2;
@@ -126,11 +142,15 @@ public class SilenceTest implements JMC, ChangeListener, ActionListener {
     public void start(){
         mixer = new RTMixer(lineArray);
         mixer.begin();
+        hasStarted = true;
     }
 
     public void stop(){
         mixer.stop();
+        hasStarted = false;
     }
+
+
 
 
 }

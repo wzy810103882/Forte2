@@ -16,7 +16,6 @@ import jm.util.Play;
 import jm.util.Read;
 
 import java.awt.*;
-import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
 //Gannon was here.
@@ -40,6 +39,11 @@ public class FortePrototype extends Game implements IEventListener, JMC {
     private Sprite boss = new Sprite("boss", "Protagonist.png");
     private Sprite platform = new Sprite("Platform", "blue.png");
     private Sprite player = new Sprite("Player", "Protagonist.png");
+
+    private Sprite levelonedoor = new Sprite("door", "door.png");
+    private Sprite leveltwodoor = new Sprite("door", "door.png");
+    private Sprite levelthreedoor = new Sprite("door", "door.png");
+
     private Sprite door = new Sprite("door", "door.png");
     private Sprite bossFloor = new Sprite("Floor", "blue.png");
     private Sprite startSreen = new Sprite("start", "pinkbg.png");
@@ -73,6 +77,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
     private ArrayList<Sprite> moving = new ArrayList<Sprite>();
     private ArrayList<Sprite> moving2 = new ArrayList<Sprite>();
 
+
     int ground = gameHeight - 175;
     int[] CxArray = {500, 1300, 2200, 2900, 4200, 5600, 6600, 7500, 8300, 8600, 9700, 15000};
     int[] CyArray = {ground, ground, ground, ground, ground, ground, ground, ground, ground, ground, ground, ground};
@@ -83,24 +88,62 @@ public class FortePrototype extends Game implements IEventListener, JMC {
     int[] ExArray = {1700, 2200, 3000, 4000, 15000};
     int[] EyArray = {ground, ground, ground, ground, ground};
 
-    int[] FxArray = {1800, 2300};
-    int[] FyArray = {gameHeight - 175, gameHeight - 175};
+
+    int[] CxArrayleveltwo = {500, 1300, 2200, 2900, 4200, 5600, 6600, 7500, 8300, 8600, 9700, 15000};
+    int[] CyArrayleveltwo = {ground, ground, ground, ground, ground, ground, ground, ground, ground, ground, ground, ground};
+
+    int[] DxArrayleveltwo = {1000, 2000, 3000, 4000, 5000, 6000, 7000, 7800, 8100, 8300, 15000, 15000};
+    int[] DyArrayleveltwo = {ground - 300, ground - 600, ground - 600, ground - 450, ground - 700, ground, ground, ground - 300, ground - 600, ground - 500, ground - 500, ground};
+
+    int[] ExArrayleveltwo = {1700, 2200, 3000, 4000, 15000};
+    int[] EyArrayleveltwo = {ground, ground, ground, ground, ground};
+
+
+    int[] CxArraylevelthree = {500, 1300, 2200, 2900, 4200, 5600, 6600, 7500, 8300, 8600, 9700, 15000};
+    int[] CyArraylevelthree = {ground, ground, ground, ground, ground, ground, ground, ground, ground, ground, ground, ground};
+
+    int[] DxArraylevelthree = {1000, 2000, 3000, 4000, 5000, 6000, 7000, 7800, 8100, 8300, 15000, 15000};
+    int[] DyArraylevelthree = {ground - 300, ground - 600, ground - 600, ground - 450, ground - 700, ground, ground, ground - 300, ground - 600, ground - 500, ground - 500, ground};
+
+    int[] ExArraylevelthree = {1700, 2200, 3000, 4000, 15000};
+    int[] EyArraylevelthree = {ground, ground, ground, ground, ground};
+
+
+    int[] CxArraybuffer = CxArray;
+    int[] CyArraybuffer = CyArray;
+    int[] DxArraybuffer = DxArray;
+    int[] DyArraybuffer = DyArray;
+    int[] ExArraybuffer = ExArray;
+    int[] EyArraybuffer = EyArray;
+    int[] CxArraybufferleveltwo = CxArrayleveltwo;
+    int[] CyArraybufferleveltwo = CyArrayleveltwo;
+    int[] DxArraybufferleveltwo = DxArrayleveltwo;
+    int[] DyArraybufferleveltwo = DyArrayleveltwo;
+    int[] ExArraybufferleveltwo = ExArrayleveltwo;
+    int[] EyArraybufferleveltwo = EyArrayleveltwo;
+    int[] CxArraybufferlevelthree = CxArraylevelthree;
+    int[] CyArraybufferlevelthree = CyArraylevelthree;
+    int[] DxArraybufferlevelthree = DxArraylevelthree;
+    int[] DyArraybufferlevelthree = DyArraylevelthree;
+    int[] ExArraybufferlevelthree = ExArraylevelthree;
+    int[] EyArraybufferlevelthree = EyArraylevelthree;
 
     Sprite C = new Sprite("C", "C.png");
     Sprite D = new Sprite("D", "D.png");
     Sprite E = new Sprite("E", "E.png");
-    // Sprite F = new Sprite("F", "F.png");
 
     Cevent cevent = new Cevent(Cevent.Cevent, C);
     Devent devent = new Devent(Devent.Devent, D);
     Eevent eevent = new Eevent(Eevent.Eevent, E);
-    //  Fevent fevent = new Fevent(Fevent.Fevent, F);
 
-    BossEvent bevent = new BossEvent(BossEvent.BossEvent, door);
     BossDamageEvent bossDamageEvent = new BossDamageEvent(BossDamageEvent.BossDamageEvent, boss);
     BossEvent bossCompleteEvent = new BossEvent(BossEvent.BossEvent, boss);
     BossKillsPlayerEvent bossKillsPlayerEvent = new BossKillsPlayerEvent(BossKillsPlayerEvent.BossKillsPlayerEvent, boss);
     SongStartEvent songStartEvent = new SongStartEvent(SongStartEvent.SongStartEvent, player);
+    LevelTwoEvent levelTwoEvent = new LevelTwoEvent(LevelTwoEvent.LevelTwoEvent, levelonedoor);
+    LevelThreeEvent levelThreeEvent = new LevelThreeEvent(LevelThreeEvent.LevelThreeEvent, leveltwodoor);
+    BossEvent bevent = new BossEvent(BossEvent.BossEvent, levelthreedoor);
+
     /**
      * BlinkOnEvent CblinkOnEvent = new BlinkOnEvent(BlinkOnEvent.BlinkOnEvent,C);
      * BlinkOnEvent DblinkOnEvent = new BlinkOnEvent(BlinkOnEvent.BlinkOnEvent,D);
@@ -117,26 +160,33 @@ public class FortePrototype extends Game implements IEventListener, JMC {
     public FortePrototype() {
         super("Forte Prototype", gameWidth, gameHeight);
 
-        player.setPosition(150, 50);
-
-        C.setPosition(260, gameHeight - floor.getUnscaledHeight() - C.getUnscaledHeight());
-        D.setPosition(700, gameHeight - floor.getUnscaledHeight() - D.getUnscaledHeight());
-        E.setPosition(780, gameHeight - floor.getUnscaledHeight() - E.getUnscaledHeight());
-        // F.setPosition(910, gameHeight - floor.getUnscaledHeight() - F.getUnscaledHeight());
-
         C.addEventListener(this, Cevent.Cevent);
         D.addEventListener(this, Devent.Devent);
         E.addEventListener(this, Eevent.Eevent);
-        //  F.addEventListener(this, Fevent.Fevent);
         door.addEventListener(this, BossEvent.BossEvent);
         boss.addEventListener(this, BossEvent.BossEvent);
         boss.addEventListener(this, BossDamageEvent.BossDamageEvent);
         boss.addEventListener(this, BossKillsPlayerEvent.BossKillsPlayerEvent);
         player.addEventListener(this, SongStartEvent.SongStartEvent);
-/**
- * next position of enemy
- */
+        levelonedoor.addEventListener(this, LevelTwoEvent.LevelTwoEvent);
+        leveltwodoor.addEventListener(this, LevelThreeEvent.LevelThreeEvent);
+        levelthreedoor.addEventListener(this, BossEvent.BossEvent);
+        enemies.add(C);
+        enemies.add(D);
+        enemies.add(E);
+        bossObject.add(boss);
+    }
 
+
+    public void levelonesetup() {
+        player.setPosition(150, 50);
+
+        CxArray = CxArraybuffer;
+        CyArray = CyArraybuffer;
+        DxArray = DxArraybuffer;
+        DyArray = DyArraybuffer;
+        ExArray = ExArraybuffer;
+        EyArray = EyArraybuffer;
 
         C.setxArray(CxArray);
         C.setyArray(CyArray);
@@ -144,17 +194,89 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         D.setyArray(DyArray);
         E.setxArray(ExArray);
         E.setyArray(EyArray);
+        C.setCurrentIndex(0);
+        D.setCurrentIndex(0);
+        E.setCurrentIndex(0);
         //  F.setxArray(FxArray);
         //  F.setyArray(FyArray);
 
-        enemies.add(C);
-        enemies.add(D);
-        enemies.add(E);
-        // enemies.add(F);
-        moving.add(player);
-        bossObject.add(boss);
-        platformSetup();
+        C.setPosition(260, gameHeight - floor.getUnscaledHeight() - C.getUnscaledHeight());
+        D.setPosition(700, gameHeight - floor.getUnscaledHeight() - D.getUnscaledHeight());
+        E.setPosition(780, gameHeight - floor.getUnscaledHeight() - E.getUnscaledHeight());
 
+        levelonedoor.setPosition(9800, gameHeight - 300);
+        platformSetup();
+        moving2.add(levelonedoor);
+        moving.add(player);
+
+
+    }
+
+    public void leveltwosetup() {
+        player.setPosition(150, 50);
+
+        CxArrayleveltwo = CxArraybufferleveltwo;
+        CyArrayleveltwo = CyArraybufferleveltwo;
+        DxArrayleveltwo = DxArraybufferleveltwo;
+        DyArrayleveltwo = DyArraybufferleveltwo;
+        ExArrayleveltwo = ExArraybufferleveltwo;
+        EyArrayleveltwo = EyArraybufferleveltwo;
+
+        C.setxArray(CxArrayleveltwo);
+        C.setyArray(CyArrayleveltwo);
+        D.setxArray(DxArrayleveltwo);
+        D.setyArray(DyArrayleveltwo);
+        E.setxArray(ExArrayleveltwo);
+        E.setyArray(EyArrayleveltwo);
+        C.setCurrentIndex(0);
+        D.setCurrentIndex(0);
+        E.setCurrentIndex(0);
+        //  F.setxArray(FxArray);
+        //  F.setyArray(FyArray);
+
+        C.setPosition(260, gameHeight - floor.getUnscaledHeight() - C.getUnscaledHeight());
+        D.setPosition(700, gameHeight - floor.getUnscaledHeight() - D.getUnscaledHeight());
+        E.setPosition(780, gameHeight - floor.getUnscaledHeight() - E.getUnscaledHeight());
+        leveltwodoor.setPosition(9800, gameHeight - 300);
+        platformSetupleveltwo();
+        moving2.add(leveltwodoor);
+        moving.add(player);
+
+
+    }
+
+    public void levelthreeup() {
+        player.setPosition(150, 50);
+
+        CxArraylevelthree = CxArraybufferlevelthree;
+        CyArraylevelthree = CyArraybufferlevelthree;
+        DxArraylevelthree = DxArraybufferlevelthree;
+        DyArraylevelthree = DyArraybufferlevelthree;
+        ExArraylevelthree= ExArraybufferlevelthree;
+        EyArraylevelthree = EyArraybufferlevelthree;
+
+        C.setxArray(CxArraylevelthree);
+        C.setyArray(CyArraylevelthree);
+        D.setxArray(DxArraylevelthree);
+        D.setyArray(DyArraylevelthree);
+        E.setxArray(ExArraylevelthree);
+        E.setyArray(EyArraylevelthree);
+
+        C.setCurrentIndex(0);
+        D.setCurrentIndex(0);
+        E.setCurrentIndex(0);
+        //  F.setxArray(FxArray);
+        //  F.setyArray(FyArray);
+
+        C.setPosition(260, gameHeight - floor.getUnscaledHeight() - C.getUnscaledHeight());
+        D.setPosition(700, gameHeight - floor.getUnscaledHeight() - D.getUnscaledHeight());
+        E.setPosition(780, gameHeight - floor.getUnscaledHeight() - E.getUnscaledHeight());
+
+        levelthreedoor.setPosition(9800, gameHeight - 300);
+
+        platformSetuplevelthree();
+        moving2.add(levelthreedoor);
+        moving.add(player);
 
     }
 
@@ -164,7 +286,10 @@ public class FortePrototype extends Game implements IEventListener, JMC {
          * -300 first tier
          * -900 is the top
          */
-
+        particle.clear();
+        objects.clear();
+        moving.clear();
+        moving2.clear();
         setFloor(110, floor);
         setBackground(20, background);
 
@@ -231,8 +356,165 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         setVerticalPlatformOnFloor(10300, 10, platform);
         setVerticalPlatformOnFloor(10400, 10, platform);
 
-        door.setPosition(9800, gameHeight - 300);
-        moving2.add(door);
+
+    }
+
+    public void platformSetupleveltwo() {
+        /**
+         * -200 is reference floor
+         * -300 first tier
+         * -900 is the top
+         */
+        particle.clear();
+        objects.clear();
+        moving.clear();
+        moving2.clear();
+        setFloor(110, floor);
+        setBackground(20, background);
+
+        setHorizontalPlaformOnFloor(800, 3, platform);
+        setHorizontalPlatform(900, gameHeight - 300, 2, platform);
+        setHorizontalPlatform(1000, gameHeight - 400, 1, platform);
+
+        setHorizontalPlatform(1500, gameHeight - 400, 4, platform);
+
+        setHorizontalPlatform(1900, gameHeight - 600, 3, platform);
+
+        setVerticalPlatformOnFloor(2000, 2, platform);
+
+        setVerticalPlatformOnFloor(2300, 2, platform);
+        setVerticalPlatformOnFloor(2400, 2, platform);
+        setVerticalPlatformOnFloor(2500, 2, platform);
+        setVerticalPlatformOnFloor(2600, 2, platform);
+
+        setHorizontalPlaformOnFloor(3000, 10, platform);
+        setHorizontalPlatform(3000, gameHeight - 300, 8, platform);
+        setHorizontalPlatform(3000, gameHeight - 400, 6, platform);
+        setHorizontalPlatform(3300, gameHeight - 500, 3, platform);
+        setHorizontalPlatform(3400, gameHeight - 600, 2, platform);
+        setHorizontalPlatform(3400, gameHeight - 700, 2, platform);
+
+        setVerticalPlatformOnFloor(4400, 1, platform);
+        setVerticalPlatformOnFloor(4600, 2, platform);
+        setVerticalPlatformOnFloor(4800, 3, platform);
+        setVerticalPlatformOnFloor(5000, 4, platform);
+        setVerticalPlatformOnFloor(5200, 5, platform);
+        setVerticalPlatformOnFloor(5400, 2, platform);
+
+
+        setHorizontalPlatform(5700, gameHeight - 500, 4, platform);
+        setVerticalPlatform(6000, gameHeight - 600, 2, platform);
+
+        setHorizontalPlatform(6400, gameHeight - 700, 2, platform);
+        setVerticalPlatformOnFloor(6700, 3, platform);
+        setHorizontalPlatform(6800, gameHeight - 700, 2, platform);
+
+        setHorizontalPlatform(7200, gameHeight - 700, 1, platform);
+        setHorizontalPlatform(7500, gameHeight - 700, 1, platform);
+
+        setVerticalPlatformOnFloor(7800, 3, platform);
+        setVerticalPlatform(7800, gameHeight - 600, 3, platform);
+
+
+        setVerticalPlatform(8100, gameHeight - 500, 1, platform);
+        setVerticalPlatform(8300, gameHeight - 500, 1, platform);
+        setVerticalPlatform(8500, gameHeight - 500, 1, platform);
+        setVerticalPlatform(8700, gameHeight - 500, 1, platform);
+
+        setVerticalPlatformOnFloor(8800, 3, platform);
+        setVerticalPlatformOnFloor(8900, 5, platform);
+        setVerticalPlatformOnFloor(9100, 3, platform);
+        setVerticalPlatformOnFloor(9200, 2, platform);
+        setVerticalPlatformOnFloor(9300, 2, platform);
+        setVerticalPlatformOnFloor(9400, 1, platform);
+        setVerticalPlatformOnFloor(9500, 1, platform);
+
+        setVerticalPlatformOnFloor(10000, 10, platform);
+        setVerticalPlatformOnFloor(10100, 10, platform);
+        setVerticalPlatformOnFloor(10200, 10, platform);
+        setVerticalPlatformOnFloor(10300, 10, platform);
+        setVerticalPlatformOnFloor(10400, 10, platform);
+
+
+    }
+
+    public void platformSetuplevelthree() {
+        /**
+         * -200 is reference floor
+         * -300 first tier
+         * -900 is the top
+         */
+        particle.clear();
+        objects.clear();
+        moving.clear();
+        moving2.clear();
+        setFloor(110, floor);
+        setBackground(20, background);
+
+        setHorizontalPlaformOnFloor(800, 3, platform);
+        setHorizontalPlatform(900, gameHeight - 300, 2, platform);
+        setHorizontalPlatform(1000, gameHeight - 400, 1, platform);
+
+        setHorizontalPlatform(1500, gameHeight - 400, 4, platform);
+
+        setHorizontalPlatform(1900, gameHeight - 600, 3, platform);
+
+        setVerticalPlatformOnFloor(2000, 2, platform);
+
+        setVerticalPlatformOnFloor(2300, 2, platform);
+        setVerticalPlatformOnFloor(2400, 2, platform);
+        setVerticalPlatformOnFloor(2500, 2, platform);
+        setVerticalPlatformOnFloor(2600, 2, platform);
+
+        setHorizontalPlaformOnFloor(3000, 10, platform);
+        setHorizontalPlatform(3000, gameHeight - 300, 8, platform);
+        setHorizontalPlatform(3000, gameHeight - 400, 6, platform);
+        setHorizontalPlatform(3300, gameHeight - 500, 3, platform);
+        setHorizontalPlatform(3400, gameHeight - 600, 2, platform);
+        setHorizontalPlatform(3400, gameHeight - 700, 2, platform);
+
+        setVerticalPlatformOnFloor(4400, 1, platform);
+        setVerticalPlatformOnFloor(4600, 2, platform);
+        setVerticalPlatformOnFloor(4800, 3, platform);
+        setVerticalPlatformOnFloor(5000, 4, platform);
+        setVerticalPlatformOnFloor(5200, 5, platform);
+        setVerticalPlatformOnFloor(5400, 2, platform);
+
+
+        setHorizontalPlatform(5700, gameHeight - 500, 4, platform);
+        setVerticalPlatform(6000, gameHeight - 600, 2, platform);
+
+        setHorizontalPlatform(6400, gameHeight - 700, 2, platform);
+        setVerticalPlatformOnFloor(6700, 3, platform);
+        setHorizontalPlatform(6800, gameHeight - 700, 2, platform);
+
+        setHorizontalPlatform(7200, gameHeight - 700, 1, platform);
+        setHorizontalPlatform(7500, gameHeight - 700, 1, platform);
+
+        setVerticalPlatformOnFloor(7800, 3, platform);
+        setVerticalPlatform(7800, gameHeight - 600, 3, platform);
+
+
+        setVerticalPlatform(8100, gameHeight - 500, 1, platform);
+        setVerticalPlatform(8300, gameHeight - 500, 1, platform);
+        setVerticalPlatform(8500, gameHeight - 500, 1, platform);
+        setVerticalPlatform(8700, gameHeight - 500, 1, platform);
+
+        setVerticalPlatformOnFloor(8800, 3, platform);
+        setVerticalPlatformOnFloor(8900, 5, platform);
+        setVerticalPlatformOnFloor(9100, 3, platform);
+        setVerticalPlatformOnFloor(9200, 2, platform);
+        setVerticalPlatformOnFloor(9300, 2, platform);
+        setVerticalPlatformOnFloor(9400, 1, platform);
+        setVerticalPlatformOnFloor(9500, 1, platform);
+
+        setVerticalPlatformOnFloor(10000, 10, platform);
+        setVerticalPlatformOnFloor(10100, 10, platform);
+        setVerticalPlatformOnFloor(10200, 10, platform);
+        setVerticalPlatformOnFloor(10300, 10, platform);
+        setVerticalPlatformOnFloor(10400, 10, platform);
+
+
     }
 
     public void setBackground(int number, Sprite background) {
@@ -655,57 +937,9 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         }
     }
 
-    private int scrollingspeed = 3;
+    private int scrollingspeed = 5;
 
     public void scrolling() {
-/**
- if (!collision) {
- if (!(player.getPosX() < gameWidth / 2)) {
- if (player.getVelX() > 0) {
- for (Sprite p : moving) {
- p.setPosition(p.getPosX() - player.getVelX(), p.getPosY());
- }
- for (Sprite p : moving2) {
- p.setPosition(p.getPosX() - player.getVelX(), p.getPosY());
- }
- for (Sprite p : enemies) {
- p.setPosition(p.getPosX() - player.getVelX(), p.getPosY());
- }
- for (int a = 0; a < CxArray.length; a++){
- CxArray[a] = CxArray[a] - player.getVelX();
- }
- for (int a = 0; a < DxArray.length; a++){
- DxArray[a] = DxArray[a] - player.getVelX();
- }
- for (int a = 0; a < ExArray.length; a++){
- ExArray[a] = ExArray[a] - player.getVelX();
- }
- }
- }
- } else {
- if (plat_top || plat_down) {
- if (!(player.getPosX() < gameWidth / 2)) {
- if (player.getVelX() > 0) {
- for (Sprite p : moving) {
- p.setPosition(p.getPosX() - player.getVelX(), p.getPosY());
- }
- for (Sprite p : moving2) {
- p.setPosition(p.getPosX() - player.getVelX(), p.getPosY());
- }
- for (Sprite p : enemies) {
- p.setPosition(p.getPosX() - player.getVelX(), p.getPosY());
- }
- for (int a = 0; a < CxArray.length; a++){
- CxArray[a] = CxArray[a] - player.getVelX();
- }
- for (int a = 0; a < ExArray.length; a++){
- ExArray[a] = ExArray[a] - player.getVelX();
- }
- }
- }
- }
- }
- */
 
         for (Sprite p : moving) {
             p.setPosition(p.getPosX() - scrollingspeed, p.getPosY());
@@ -716,14 +950,38 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         for (Sprite p : enemies) {
             p.setPosition(p.getPosX() - scrollingspeed, p.getPosY());
         }
-        for (int a = 0; a < CxArray.length; a++) {
-            CxArray[a] = CxArray[a] - scrollingspeed;
+        if (isAtlevelOne) {
+            for (int a = 0; a < CxArray.length; a++) {
+                CxArray[a] = CxArray[a] - scrollingspeed;
+            }
+            for (int a = 0; a < DxArray.length; a++) {
+                DxArray[a] = DxArray[a] - scrollingspeed;
+            }
+            for (int a = 0; a < ExArray.length; a++) {
+                ExArray[a] = ExArray[a] - scrollingspeed;
+            }
         }
-        for (int a = 0; a < DxArray.length; a++) {
-            DxArray[a] = DxArray[a] - scrollingspeed;
+        if (isAtlevelTwo){
+            for (int a = 0; a < CxArrayleveltwo.length; a++) {
+                CxArrayleveltwo[a] = CxArrayleveltwo[a] - scrollingspeed;
+            }
+            for (int a = 0; a < DxArrayleveltwo.length; a++) {
+                DxArrayleveltwo[a] = DxArrayleveltwo[a] - scrollingspeed;
+            }
+            for (int a = 0; a < ExArrayleveltwo.length; a++) {
+                ExArrayleveltwo[a] = ExArrayleveltwo[a] - scrollingspeed;
+            }
         }
-        for (int a = 0; a < ExArray.length; a++) {
-            ExArray[a] = ExArray[a] - scrollingspeed;
+        if (isAtlevelThree){
+            for (int a = 0; a < CxArraylevelthree.length; a++) {
+                CxArraylevelthree[a] = CxArraylevelthree[a] - scrollingspeed;
+            }
+            for (int a = 0; a < DxArraylevelthree.length; a++) {
+                DxArraylevelthree[a] = DxArraylevelthree[a] - scrollingspeed;
+            }
+            for (int a = 0; a < ExArraylevelthree.length; a++) {
+                ExArraylevelthree[a] = ExArraylevelthree[a] - scrollingspeed;
+            }
         }
     }
 
@@ -775,9 +1033,33 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         particle.removeAll(toRemove);
     }
 
+
+    private boolean islevelone = true;
+    private boolean isleveltwo = false;
+    private boolean islevelthree = false;
+
+    /**
+     * public void levelcheck() {
+     * if (islevelone) {
+     * levelonesetup();
+     * islevelone = false;
+     * }
+     * if (isleveltwo) {
+     * leveltwosetup();
+     * isleveltwo = false;
+     * }
+     * if (islevelthree){
+     * levelthreeup();
+     * islevelthree = false;
+     * }
+     * }
+     */
+
     @Override
     public void update(ArrayList<String> pressedKeys, ArrayList<GamePad> gamePads) {
         //System.out.println(C.getPosX());
+
+        //   levelcheck();
         if (isStart) {
             if (!isEnd) {
                 if (!BossEncountered) {
@@ -809,9 +1091,23 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                             e.nextPosition();
                         }
                     }
+                    if (isAtlevelOne) {
+                        if (player.collidesWith(levelonedoor, player.getVelX(), player.getVelY())) {
+                            levelonedoor.dispatchEvent(levelTwoEvent);
+                        }
+                    }
+                    if (isAtlevelTwo) {
+                        if (player.collidesWith(leveltwodoor, player.getVelX(), player.getVelY())) {
+                            leveltwodoor.dispatchEvent(levelThreeEvent);
+                        }
 
-                    if (player.collidesWith(door, player.getVelX(), player.getVelY())) {
-                        door.dispatchEvent(bevent);
+                    }
+
+                    if (isAtlevelThree) {
+                        if (player.collidesWith(levelthreedoor, player.getVelX(), player.getVelY())) {
+                            levelthreedoor.dispatchEvent(bevent);
+                        }
+
                     }
                 } else {
 
@@ -823,7 +1119,6 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                     mapBound();
                     attack(bossObject);
                     platformCollision(bossObject);
-
 
                     for (Sprite p : particle) {
                         if (p.nearby(boss)) {
@@ -847,7 +1142,6 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                     if (mainClock.getElapsedTime() % 2000 > 0 && mainClock.getElapsedTime() % 2000 < 20) {
                         int xBossPos = (int) (Math.random() * (gameWidth - boss.getScaledWidth()));
                         int yBossPos = (int) (Math.random() * (gameHeight - boss.getScaledHeight()) - 100) + 100;
-
                         boss.setPosition(xBossPos, yBossPos);
                     }
 
@@ -864,7 +1158,6 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                 }
             }
         } else {
-            //bgtiming(0, 1000,2000,startSreen);
             blink(silenceTest, 5331, startSreen, 2);
             for (GamePad pad : gamePads) {
                 if (pad.isButtonPressed(GamePad.BUTTON_L3)) {
@@ -946,6 +1239,10 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         return true;
     }
 
+    private boolean isAtlevelOne = true;
+    private boolean isAtlevelTwo = false;
+    private boolean isAtlevelThree = false;
+
     @Override
     public void draw(Graphics g) {
         if (isStart) {
@@ -978,8 +1275,16 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                             }
                         }
                     }
+                    if (isAtlevelOne) {
+                        if (levelonedoor != null) levelonedoor.draw(g);
+                    }
+                    if (isAtlevelTwo) {
+                        if (leveltwodoor != null) leveltwodoor.draw(g);
+                    }
+                    if (isAtlevelThree) {
+                        if (levelthreedoor != null) levelthreedoor.draw(g);
+                    }
 
-                    if (door != null) door.draw(g);
                     if (C != null) C.draw(g);
                     if (D != null) D.draw(g);
                     if (E != null) E.draw(g);
@@ -1031,7 +1336,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
     public void handleEvent(Event event) {
         DisplayObject source = (DisplayObject) event.getSource();
 
-        if (source == door) {
+        if (source == levelthreedoor) {
             BossEncountered = true;
             player.setPosition(50, 50);
             boss.setPosition(500, 500);
@@ -1043,7 +1348,48 @@ public class FortePrototype extends Game implements IEventListener, JMC {
             Play.midi(s);
         }
 
+        if (source == levelonedoor) {
+            isleveltwo = true;
+            isAtlevelTwo = true;
+            isAtlevelOne = false;
+            isAtlevelThree = false;
+            leveltwosetup();
+            silenceTest.clearallmuteArray();
+
+            if (silenceTest.isHasStarted()){
+                silenceTest.stop();
+            }
+            silenceTest = new SilenceTest();
+
+            silenceTest.start();
+
+        }
+
+        if (source == leveltwodoor) {
+            islevelthree = true;
+            isAtlevelTwo = false;
+            isAtlevelOne = false;
+            isAtlevelThree = true;
+            levelthreeup();
+            silenceTest.clearallmuteArray();
+            if (silenceTest.isHasStarted()){
+                silenceTest.stop();
+            }
+            silenceTest = new SilenceTest();
+            silenceTest.start();
+        }
+
         if (source == player) {
+            islevelone = true;
+            isAtlevelTwo = false;
+            isAtlevelOne = true;
+            isAtlevelThree = false;
+            levelonesetup();
+            silenceTest.clearallmuteArray();
+            if (silenceTest.isHasStarted()){
+                silenceTest.stop();
+            }
+            silenceTest = new SilenceTest();
             silenceTest.start();
         }
 
@@ -1102,56 +1448,58 @@ public class FortePrototype extends Game implements IEventListener, JMC {
 
     }
 
-    public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_UP) {
-            player.setVelY(-37);
-            falling = true;
+    /**
+     public void keyPressed(KeyEvent e) {
+     if (e.getKeyCode() == KeyEvent.VK_UP) {
+     player.setVelY(-37);
+     falling = true;
 
-        }
+     }
 
-        if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-            player.setVelX(-15);
+     if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+     player.setVelX(-15);
 
-        }
-        if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            player.setVelX(15);
+     }
+     if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+     player.setVelX(15);
 
-        }
+     }
 
-        if (e.getKeyCode() == KeyEvent.VK_A) {
-            //player.setVelY(-30);
-            //player.setVelX(-40);
-            Sprite bullet = new Sprite("bullet", "music_note.png");
-            bullet.setPosition(player.getPosition());
-            bullet.setVelY(-20);
-            bullet.setVelX(-30);
-            particle.add(bullet);
-            falling = true;
-        }
+     if (e.getKeyCode() == KeyEvent.VK_A) {
+     //player.setVelY(-30);
+     //player.setVelX(-40);
+     Sprite bullet = new Sprite("bullet", "music_note.png");
+     bullet.setPosition(player.getPosition());
+     bullet.setVelY(-20);
+     bullet.setVelX(-30);
+     particle.add(bullet);
+     falling = true;
+     }
 
-        if (e.getKeyCode() == KeyEvent.VK_S) {
-            // player.setVelY(-30);
-            // player.setVelX(40);
-            Sprite bullet = new Sprite("bullet", "music_note.png");
-            bullet.setPosition(player.getPosition());
-            bullet.setVelY(-20);
-            bullet.setVelX(30);
-            particle.add(bullet);
-            falling = true;
-        }
+     if (e.getKeyCode() == KeyEvent.VK_S) {
+     // player.setVelY(-30);
+     // player.setVelX(40);
+     Sprite bullet = new Sprite("bullet", "music_note.png");
+     bullet.setPosition(player.getPosition());
+     bullet.setVelY(-20);
+     bullet.setVelX(30);
+     particle.add(bullet);
+     falling = true;
+     }
 
-        if (!isStart) {
-            if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-                isStart = true;
-            }
-        }
+     if (!isStart) {
+     if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+     isStart = true;
+     }
+     }
 
 
-    }
+     }
 
-    public void keyReleased(KeyEvent e) {
-        player.setVelX(0);
-    }
+     public void keyReleased(KeyEvent e) {
+     player.setVelX(0);
+     }
+     */
 
 
 }
