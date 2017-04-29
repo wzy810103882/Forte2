@@ -16,7 +16,9 @@ public class SilenceTest implements JMC, ChangeListener, ActionListener {
     private JLabel val;
     //private GBassLine bass;
 
-    private ForteSong trumpet;
+    private Phrase phrase = new Phrase("stuff", 0.0, JMC.BIRD);
+    private BirdLine birdline;
+    //private ForteSong trumpet;
     private ForteSong2 bass;
     private ForteSong3 whistle;
 
@@ -33,22 +35,27 @@ public class SilenceTest implements JMC, ChangeListener, ActionListener {
 
         Instrument[] instArray = new Instrument[1];
         for(int i=0;i<instArray.length;i++){
-            instArray[i] = new SquareLPFInstRT2(sampleRate, 1000, channels);
+            instArray[i] = new SawLPFInstRT2(sampleRate, 1000, channels);
         }
 
         Instrument[] instArray2 = new Instrument[1];
         for(int i=0;i<instArray2.length;i++){
-            instArray2[i] = new SquareLPFInstRT2(sampleRate, 1000, channels);
+            instArray2[i] = new SawLPFInstRT2(sampleRate, 1000, channels);
         }
 
         Instrument[] instArray3 = new Instrument[1];
         for(int i=0;i<instArray3.length;i++){
-            instArray3[i] = new SquareLPFInstRT2(sampleRate, 1000, channels);
+            instArray3[i] = new SawLPFInstRT2(sampleRate, 1000, channels);
         }
 
-        trumpet = new ForteSong(instArray);
-        trumpet.setTempo(180);
-        lineArray[0] = trumpet;
+
+        birdline = new BirdLine(phrase, instArray);
+        birdline.setTempo(180);
+        lineArray[0] = birdline;
+
+        //trumpet = new ForteSong(instArray);
+        //trumpet.setTempo(180);
+        //lineArray[0] = trumpet;
 
         bass = new ForteSong2(instArray2);
         bass.setTempo(180);

@@ -19,9 +19,10 @@ public class ThirdSongMixer implements JMC, ChangeListener, ActionListener {
     private ForteSong7 trumpet;
     private ForteSong8 bass;
     private ForteSong9 whistle;
+    private ForteSong10 melody;
 
     private JButton goBtn;
-    private RTLine[] lineArray = new RTLine[3];
+    private RTLine[] lineArray = new RTLine[4];
 
     public static void main(String[] args) {
         new ThirdSongMixer();
@@ -46,6 +47,11 @@ public class ThirdSongMixer implements JMC, ChangeListener, ActionListener {
             instArray3[i] = new SawLPFInstRT2(sampleRate, 1000, channels);
         }
 
+        Instrument[] instArray4 = new Instrument[1];
+        for(int i=0;i<instArray4.length;i++){
+            instArray4[i] = new SquareLPFInstRT2(sampleRate, 1000, channels);
+        }
+
         trumpet = new ForteSong7(instArray);
         trumpet.setTempo(200);
         lineArray[0] = trumpet;
@@ -57,7 +63,10 @@ public class ThirdSongMixer implements JMC, ChangeListener, ActionListener {
         whistle = new ForteSong9(instArray3);
         whistle.setTempo(200);
         lineArray[2] = whistle;
-        //mixer = new RTMixer(lineArray);
+
+        melody = new ForteSong10(instArray4);
+        melody.setTempo(200);
+        lineArray[3] = melody;
 
         // show slider panel
         makeGUI();

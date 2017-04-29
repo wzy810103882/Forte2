@@ -15,7 +15,7 @@ public class ForteSong8 extends RTLine implements JMC{
     //private double[] rhythmArray = new double[] {QN,QN,QNT,ENT,QN,QNT,ENT,QNT,QT,HN,
     //      ENT,ENT,ENT,ENT,ENT,ENT,ENT,ENT,ENT,ENT,ENT,ENT,QNT,ENT,QNT,ENT,HN};
     private int[] melodyPitchArray = new int[] {FS3, FS3, FS3, FS3, REST, E3, E3, E3, E3, REST, D3, D3, D3, D3, REST,
-            E3, E3, E3, E3, REST, E3, E3, E3, E3, REST};
+            E3, E3, E3, E3, REST, FS3, FS3, FS3, FS3, REST};
     private double[] melodyRhythmArray = new double[] {DOTTED_HALF_NOTE, DOTTED_HALF_NOTE, DOTTED_HALF_NOTE, QN, QN,
             DOTTED_HALF_NOTE, DOTTED_HALF_NOTE, DOTTED_HALF_NOTE, QN, QN, DOTTED_HALF_NOTE, DOTTED_HALF_NOTE,
             DOTTED_HALF_NOTE, QN, QN, DOTTED_HALF_NOTE, DOTTED_HALF_NOTE, DOTTED_HALF_NOTE, QN, QN, DOTTED_HALF_NOTE,
