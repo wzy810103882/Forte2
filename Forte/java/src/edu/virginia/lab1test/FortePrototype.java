@@ -208,6 +208,14 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         bossObject.add(boss);
     }
 
+    public void randomSpawn(Sprite s){
+        int xlowerbound = player.getPosX();
+        int xupperbound = player.getPosX() + 1000;
+        int ylowerbound = 0;
+        int yupperbound = 700;
+        s.setPosition(xlowerbound + (int)(Math.random() * ((xupperbound - xlowerbound) + 1)),ylowerbound + (int)(Math.random() * ((yupperbound - ylowerbound) + 1)));
+    }
+    
     public void levelonesetup() {
         player.setPosition(150, 50);
 

@@ -25,6 +25,23 @@
             <state relative-caret-position="240">
               <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
               <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1178#1179#0" expanded="false" />
+                <element signature="e#1217#1218#0" expanded="false" />
+                <element signature="e#1280#1281#0" expanded="false" />
+                <element signature="e#1336#1337#0" expanded="false" />
+                <element signature="e#1382#1383#0" expanded="false" />
+                <element signature="e#1422#1423#0" expanded="false" />
+                <element signature="e#1490#1491#0" expanded="false" />
+                <element signature="e#1548#1549#0" expanded="false" />
+                <element signature="e#1684#1685#0" expanded="false" />
+                <element signature="e#1725#1726#0" expanded="false" />
+                <element signature="e#1759#1760#0" expanded="false" />
+                <element signature="e#1824#1825#0" expanded="false" />
+                <element signature="e#1866#1867#0" expanded="false" />
+                <element signature="e#1898#1899#0" expanded="false" />
+                <element signature="e#1983#1984#0" expanded="false" />
+                <element signature="e#2015#2016#0" expanded="false" />
                 <element signature="e#2685#2738#0" expanded="false" />
               </folding>
             </state>
@@ -37,6 +54,23 @@
             <state relative-caret-position="600">
               <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
               <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1282#1283#0" expanded="false" />
+                <element signature="e#1321#1322#0" expanded="false" />
+                <element signature="e#1384#1385#0" expanded="false" />
+                <element signature="e#1440#1441#0" expanded="false" />
+                <element signature="e#1486#1487#0" expanded="false" />
+                <element signature="e#1526#1527#0" expanded="false" />
+                <element signature="e#1594#1595#0" expanded="false" />
+                <element signature="e#1652#1653#0" expanded="false" />
+                <element signature="e#1788#1789#0" expanded="false" />
+                <element signature="e#1829#1830#0" expanded="false" />
+                <element signature="e#1863#1864#0" expanded="false" />
+                <element signature="e#1928#1929#0" expanded="false" />
+                <element signature="e#1970#1971#0" expanded="false" />
+                <element signature="e#2002#2003#0" expanded="false" />
+                <element signature="e#2087#2088#0" expanded="false" />
+                <element signature="e#2119#2120#0" expanded="false" />
                 <element signature="e#2788#2841#0" expanded="false" />
               </folding>
             </state>
@@ -49,6 +83,23 @@
             <state relative-caret-position="690">
               <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
               <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1325#1326#0" expanded="false" />
+                <element signature="e#1357#1358#0" expanded="false" />
+                <element signature="e#1400#1401#0" expanded="false" />
+                <element signature="e#1439#1440#0" expanded="false" />
+                <element signature="e#1502#1503#0" expanded="false" />
+                <element signature="e#1558#1559#0" expanded="false" />
+                <element signature="e#1604#1605#0" expanded="false" />
+                <element signature="e#1644#1645#0" expanded="false" />
+                <element signature="e#1712#1713#0" expanded="false" />
+                <element signature="e#1770#1771#0" expanded="false" />
+                <element signature="e#1906#1907#0" expanded="false" />
+                <element signature="e#1947#1948#0" expanded="false" />
+                <element signature="e#1981#1982#0" expanded="false" />
+                <element signature="e#2046#2047#0" expanded="false" />
+                <element signature="e#2088#2089#0" expanded="false" />
+                <element signature="e#2120#2121#0" expanded="false" />
                 <element signature="e#2790#2843#0" expanded="false" />
               </folding>
             </state>
@@ -61,6 +112,23 @@
             <state relative-caret-position="705">
               <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
               <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1539#1540#0" expanded="false" />
+                <element signature="e#1571#1572#0" expanded="false" />
+                <element signature="e#1614#1615#0" expanded="false" />
+                <element signature="e#1653#1654#0" expanded="false" />
+                <element signature="e#1716#1717#0" expanded="false" />
+                <element signature="e#1772#1773#0" expanded="false" />
+                <element signature="e#1818#1819#0" expanded="false" />
+                <element signature="e#1858#1859#0" expanded="false" />
+                <element signature="e#1926#1927#0" expanded="false" />
+                <element signature="e#1984#1985#0" expanded="false" />
+                <element signature="e#2120#2121#0" expanded="false" />
+                <element signature="e#2161#2162#0" expanded="false" />
+                <element signature="e#2195#2196#0" expanded="false" />
+                <element signature="e#2260#2261#0" expanded="false" />
+                <element signature="e#2302#2303#0" expanded="false" />
+                <element signature="e#2334#2335#0" expanded="false" />
                 <element signature="e#3003#3056#0" expanded="false" />
               </folding>
             </state>
@@ -70,7 +138,7 @@
       <file leaf-file-name="ForteSong10.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/virginia/Music/ForteSong10.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
+            <state relative-caret-position="-67">
               <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
               <folding>
                 <element signature="e#2078#2131#0" expanded="false" />
@@ -99,17 +167,24 @@
       <file leaf-file-name="FortePrototype.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edu/virginia/lab1test/FortePrototype.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="820" column="40" lean-forward="true" selection-start-line="820" selection-start-column="40" selection-end-line="820" selection-end-column="40" />
+            <state relative-caret-position="175">
+              <caret line="217" column="4" lean-forward="false" selection-start-line="217" selection-start-column="4" selection-end-line="217" selection-end-column="4" />
               <folding>
+                <element signature="e#3861#3869#0" expanded="true" />
+                <element signature="e#3929#3937#0" expanded="true" />
+                <element signature="e#3994#4002#0" expanded="true" />
+                <element signature="e#4059#4067#0" expanded="true" />
+                <element signature="e#4123#4131#0" expanded="true" />
+                <element signature="e#4188#4196#0" expanded="true" />
                 <element signature="docComment;field#mainClock#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#FortePrototype#0;class#FortePrototype#0" expanded="false" />
+                <element signature="method#randomSpawn#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#levelonesetup#0;class#FortePrototype#0" expanded="false" />
-                <element signature="e#11266#11291#0" expanded="false" />
+                <element signature="e#11637#11662#0" expanded="false" />
                 <element signature="method#leveltwosetup#0;class#FortePrototype#0" expanded="false" />
-                <element signature="e#12825#12850#0" expanded="false" />
+                <element signature="e#13196#13221#0" expanded="false" />
                 <element signature="method#levelthreeup#0;class#FortePrototype#0" expanded="false" />
-                <element signature="e#14589#14614#0" expanded="false" />
+                <element signature="e#14960#14985#0" expanded="false" />
                 <element signature="method#platformSetup#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#platformSetupleveltwo#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#platformSetuplevelthree#0;class#FortePrototype#0" expanded="false" />
@@ -125,38 +200,38 @@
                 <element signature="method#setDiagonalPlatformOnFloor#0;class#FortePrototype#0" expanded="false" />
                 <element signature="docComment;method#timing#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#timing#0;class#FortePrototype#0" expanded="false" />
-                <element signature="e#29916#29930#0" expanded="false" />
+                <element signature="e#30287#30301#0" expanded="false" />
                 <element signature="method#blink#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#blinksecondsong#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#blinkthirdsong#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#blinkwithrest#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#bgtiming#0;class#FortePrototype#0" expanded="false" />
-                <element signature="e#39163#39177#0" expanded="false" />
-                <element signature="e#39521#39573#0" expanded="false" />
+                <element signature="e#39534#39548#0" expanded="false" />
+                <element signature="e#39892#39944#0" expanded="false" />
                 <element signature="method#timingMode#0;class#FortePrototype#0" expanded="false" />
-                <element signature="e#40127#40141#0" expanded="false" />
-                <element signature="e#40532#40584#0" expanded="false" />
+                <element signature="e#40498#40512#0" expanded="false" />
+                <element signature="e#40903#40955#0" expanded="false" />
                 <element signature="docComment;method#gamePadUpdate#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#gamePadUpdate#0;class#FortePrototype#0" expanded="false" />
-                <element signature="e#42830#42853#0" expanded="false" />
+                <element signature="e#43201#43224#0" expanded="false" />
                 <element signature="method#mapBound#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#platformCollision#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#enemyCollision#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#scrolling#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#attack#0;class#FortePrototype#0" expanded="false" />
+                <element signature="e#50724#50732#0" expanded="true" />
                 <element signature="docComment;method#update#0;class#FortePrototype#0" expanded="false" />
-                <element signature="method#update#0;class#FortePrototype#0" expanded="false" />
                 <element signature="docComment;method#inRange#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#inRange#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#draw#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#main#0;class#FortePrototype#0" expanded="false" />
                 <element signature="method#handleEvent#0;class#FortePrototype#0" expanded="false" />
-                <marker date="1493589858000" expanded="false" signature="59105:60741" ph="{...}" />
-                <marker date="1493589858000" expanded="false" signature="68474:69484" ph="{...}" />
-                <marker date="1493589858000" expanded="false" signature="68789:68839" ph="//..." />
-                <marker date="1493589858000" expanded="false" signature="69105:69156" ph="//..." />
-                <marker date="1493589858000" expanded="false" signature="69526:69534" ph=" { " />
-                <marker date="1493589858000" expanded="false" signature="69552:69559" ph=" }" />
+                <marker date="1493595898000" expanded="false" signature="59476:61112" ph="{...}" />
+                <marker date="1493595898000" expanded="false" signature="68845:69855" ph="{...}" />
+                <marker date="1493595898000" expanded="false" signature="69160:69210" ph="//..." />
+                <marker date="1493595898000" expanded="false" signature="69476:69527" ph="//..." />
+                <marker date="1493595898000" expanded="false" signature="69897:69905" ph=" { " />
+                <marker date="1493595898000" expanded="false" signature="69923:69930" ph=" }" />
               </folding>
             </state>
           </provider>
@@ -167,7 +242,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="465">
               <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -178,7 +255,21 @@
             <state relative-caret-position="420">
               <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
               <folding>
-                <element signature="e#1278#1279#0" expanded="true" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#731#732#0" expanded="false" />
+                <element signature="e#770#771#0" expanded="false" />
+                <element signature="e#833#834#0" expanded="false" />
+                <element signature="e#889#890#0" expanded="false" />
+                <element signature="e#935#936#0" expanded="false" />
+                <element signature="e#975#976#0" expanded="false" />
+                <element signature="e#1043#1044#0" expanded="false" />
+                <element signature="e#1101#1102#0" expanded="false" />
+                <element signature="e#1312#1313#0" expanded="false" />
+                <element signature="e#1377#1378#0" expanded="false" />
+                <element signature="e#1419#1420#0" expanded="false" />
+                <element signature="e#1451#1452#0" expanded="false" />
+                <element signature="e#1561#1562#0" expanded="false" />
+                <element signature="e#1593#1594#0" expanded="false" />
                 <element signature="e#2263#2316#0" expanded="false" />
               </folding>
             </state>
@@ -191,15 +282,24 @@
             <state relative-caret-position="1800">
               <caret line="156" column="0" lean-forward="false" selection-start-line="156" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1893#1894#0" expanded="false" />
+                <element signature="e#1937#1938#0" expanded="false" />
                 <element signature="method#setUpMainFrame#0;class#Game#0" expanded="false" />
+                <element signature="e#2367#2368#0" expanded="false" />
+                <element signature="e#2392#2393#0" expanded="false" />
                 <element signature="method#stop#0;class#Game#0" expanded="false" />
                 <element signature="method#exitGame#0;class#Game#0" expanded="false" />
                 <element signature="method#closeGame#0;class#Game#0" expanded="false" />
+                <element signature="e#3342#3343#0" expanded="false" />
+                <element signature="e#3362#3363#0" expanded="false" />
                 <element signature="method#repaintGame#0;class#Game#0" expanded="false" />
                 <element signature="method#pollControllers#0;class#Game#0" expanded="false" />
                 <element signature="method#draw#0;class#Game#0" expanded="false" />
+                <element signature="e#4471#4472#0" expanded="false" />
+                <element signature="e#4499#4500#0" expanded="false" />
                 <element signature="method#setScenePanel#0;class#Game#0" expanded="false" />
+                <element signature="e#4756#4757#0" expanded="false" />
+                <element signature="e#4780#4781#0" expanded="false" />
                 <element signature="method#keyPressed#0;class#Game#0" expanded="false" />
                 <element signature="method#keyReleased#0;class#Game#0" expanded="false" />
                 <element signature="method#mouseClicked#0;class#Game#0" expanded="false" />
@@ -766,13 +866,13 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32769045" sideWeight="0.50277776" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32769045" sideWeight="0.49722221" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32769045" sideWeight="0.49722221" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1052,10 +1152,10 @@
         <state relative-caret-position="435">
           <caret line="45" column="47" lean-forward="false" selection-start-line="45" selection-start-column="47" selection-end-line="45" selection-end-column="47" />
           <folding>
-            <element signature="e#320#321#0" expanded="true" />
-            <element signature="e#357#358#0" expanded="true" />
-            <element signature="e#1498#1499#0" expanded="true" />
-            <element signature="e#1561#1562#0" expanded="true" />
+            <element signature="e#320#321#0" expanded="false" />
+            <element signature="e#357#358#0" expanded="false" />
+            <element signature="e#1498#1499#0" expanded="false" />
+            <element signature="e#1561#1562#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1080,8 +1180,8 @@
         <state relative-caret-position="240">
           <caret line="46" column="5" lean-forward="false" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
           <folding>
-            <element signature="e#1570#1571#0" expanded="true" />
-            <element signature="e#1636#1637#0" expanded="true" />
+            <element signature="e#1570#1571#0" expanded="false" />
+            <element signature="e#1636#1637#0" expanded="false" />
             <element signature="docComment;method#ForteSong3#0;class#ForteSong3#0" expanded="false" />
             <element signature="docComment;method#getNextNote#0;class#ForteSong3#0" expanded="false" />
             <element signature="method#getNextNote#0;class#ForteSong3#0" expanded="false" />
@@ -1125,15 +1225,24 @@
         <state relative-caret-position="1800">
           <caret line="156" column="0" lean-forward="false" selection-start-line="156" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1893#1894#0" expanded="false" />
+            <element signature="e#1937#1938#0" expanded="false" />
             <element signature="method#setUpMainFrame#0;class#Game#0" expanded="false" />
+            <element signature="e#2367#2368#0" expanded="false" />
+            <element signature="e#2392#2393#0" expanded="false" />
             <element signature="method#stop#0;class#Game#0" expanded="false" />
             <element signature="method#exitGame#0;class#Game#0" expanded="false" />
             <element signature="method#closeGame#0;class#Game#0" expanded="false" />
+            <element signature="e#3342#3343#0" expanded="false" />
+            <element signature="e#3362#3363#0" expanded="false" />
             <element signature="method#repaintGame#0;class#Game#0" expanded="false" />
             <element signature="method#pollControllers#0;class#Game#0" expanded="false" />
             <element signature="method#draw#0;class#Game#0" expanded="false" />
+            <element signature="e#4471#4472#0" expanded="false" />
+            <element signature="e#4499#4500#0" expanded="false" />
             <element signature="method#setScenePanel#0;class#Game#0" expanded="false" />
+            <element signature="e#4756#4757#0" expanded="false" />
+            <element signature="e#4780#4781#0" expanded="false" />
             <element signature="method#keyPressed#0;class#Game#0" expanded="false" />
             <element signature="method#keyReleased#0;class#Game#0" expanded="false" />
             <element signature="method#mouseClicked#0;class#Game#0" expanded="false" />
@@ -1151,16 +1260,16 @@
         <state relative-caret-position="474">
           <caret line="99" column="17" lean-forward="false" selection-start-line="99" selection-start-column="17" selection-end-line="99" selection-end-column="17" />
           <folding>
-            <element signature="e#1164#1165#0" expanded="true" />
-            <element signature="e#1203#1204#0" expanded="true" />
-            <element signature="e#1266#1267#0" expanded="true" />
-            <element signature="e#1322#1323#0" expanded="true" />
-            <element signature="e#1368#1369#0" expanded="true" />
-            <element signature="e#1408#1409#0" expanded="true" />
-            <element signature="e#1476#1477#0" expanded="true" />
-            <element signature="e#1534#1535#0" expanded="true" />
-            <element signature="e#1745#1746#0" expanded="true" />
-            <element signature="e#1810#1811#0" expanded="true" />
+            <element signature="e#1164#1165#0" expanded="false" />
+            <element signature="e#1203#1204#0" expanded="false" />
+            <element signature="e#1266#1267#0" expanded="false" />
+            <element signature="e#1322#1323#0" expanded="false" />
+            <element signature="e#1368#1369#0" expanded="false" />
+            <element signature="e#1408#1409#0" expanded="false" />
+            <element signature="e#1476#1477#0" expanded="false" />
+            <element signature="e#1534#1535#0" expanded="false" />
+            <element signature="e#1745#1746#0" expanded="false" />
+            <element signature="e#1810#1811#0" expanded="false" />
             <element signature="e#2670#2723#0" expanded="false" />
           </folding>
         </state>
@@ -1171,16 +1280,16 @@
         <state relative-caret-position="474">
           <caret line="98" column="17" lean-forward="false" selection-start-line="98" selection-start-column="17" selection-end-line="98" selection-end-column="17" />
           <folding>
-            <element signature="e#728#729#0" expanded="true" />
-            <element signature="e#767#768#0" expanded="true" />
-            <element signature="e#830#831#0" expanded="true" />
-            <element signature="e#886#887#0" expanded="true" />
-            <element signature="e#932#933#0" expanded="true" />
-            <element signature="e#972#973#0" expanded="true" />
-            <element signature="e#1040#1041#0" expanded="true" />
-            <element signature="e#1098#1099#0" expanded="true" />
-            <element signature="e#1309#1310#0" expanded="true" />
-            <element signature="e#1374#1375#0" expanded="true" />
+            <element signature="e#728#729#0" expanded="false" />
+            <element signature="e#767#768#0" expanded="false" />
+            <element signature="e#830#831#0" expanded="false" />
+            <element signature="e#886#887#0" expanded="false" />
+            <element signature="e#932#933#0" expanded="false" />
+            <element signature="e#972#973#0" expanded="false" />
+            <element signature="e#1040#1041#0" expanded="false" />
+            <element signature="e#1098#1099#0" expanded="false" />
+            <element signature="e#1309#1310#0" expanded="false" />
+            <element signature="e#1374#1375#0" expanded="false" />
             <element signature="e#2234#2287#0" expanded="false" />
           </folding>
         </state>
@@ -1192,8 +1301,8 @@
           <caret line="63" column="25" lean-forward="false" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
           <folding>
             <element signature="e#323#360#0" expanded="false" />
-            <element signature="e#1489#1490#0" expanded="true" />
-            <element signature="e#1555#1556#0" expanded="true" />
+            <element signature="e#1489#1490#0" expanded="false" />
+            <element signature="e#1555#1556#0" expanded="false" />
             <element signature="docComment;method#ForteSong#0;class#ForteSong#0" expanded="false" />
             <element signature="docComment;method#getNextNote#0;class#ForteSong#0" expanded="false" />
             <element signature="e#2709#2762#0" expanded="false" />
@@ -1209,6 +1318,23 @@
         <state relative-caret-position="240">
           <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1178#1179#0" expanded="false" />
+            <element signature="e#1217#1218#0" expanded="false" />
+            <element signature="e#1280#1281#0" expanded="false" />
+            <element signature="e#1336#1337#0" expanded="false" />
+            <element signature="e#1382#1383#0" expanded="false" />
+            <element signature="e#1422#1423#0" expanded="false" />
+            <element signature="e#1490#1491#0" expanded="false" />
+            <element signature="e#1548#1549#0" expanded="false" />
+            <element signature="e#1684#1685#0" expanded="false" />
+            <element signature="e#1725#1726#0" expanded="false" />
+            <element signature="e#1759#1760#0" expanded="false" />
+            <element signature="e#1824#1825#0" expanded="false" />
+            <element signature="e#1866#1867#0" expanded="false" />
+            <element signature="e#1898#1899#0" expanded="false" />
+            <element signature="e#1983#1984#0" expanded="false" />
+            <element signature="e#2015#2016#0" expanded="false" />
             <element signature="e#2685#2738#0" expanded="false" />
           </folding>
         </state>
@@ -1219,6 +1345,23 @@
         <state relative-caret-position="600">
           <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1282#1283#0" expanded="false" />
+            <element signature="e#1321#1322#0" expanded="false" />
+            <element signature="e#1384#1385#0" expanded="false" />
+            <element signature="e#1440#1441#0" expanded="false" />
+            <element signature="e#1486#1487#0" expanded="false" />
+            <element signature="e#1526#1527#0" expanded="false" />
+            <element signature="e#1594#1595#0" expanded="false" />
+            <element signature="e#1652#1653#0" expanded="false" />
+            <element signature="e#1788#1789#0" expanded="false" />
+            <element signature="e#1829#1830#0" expanded="false" />
+            <element signature="e#1863#1864#0" expanded="false" />
+            <element signature="e#1928#1929#0" expanded="false" />
+            <element signature="e#1970#1971#0" expanded="false" />
+            <element signature="e#2002#2003#0" expanded="false" />
+            <element signature="e#2087#2088#0" expanded="false" />
+            <element signature="e#2119#2120#0" expanded="false" />
             <element signature="e#2788#2841#0" expanded="false" />
           </folding>
         </state>
@@ -1229,6 +1372,23 @@
         <state relative-caret-position="690">
           <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1325#1326#0" expanded="false" />
+            <element signature="e#1357#1358#0" expanded="false" />
+            <element signature="e#1400#1401#0" expanded="false" />
+            <element signature="e#1439#1440#0" expanded="false" />
+            <element signature="e#1502#1503#0" expanded="false" />
+            <element signature="e#1558#1559#0" expanded="false" />
+            <element signature="e#1604#1605#0" expanded="false" />
+            <element signature="e#1644#1645#0" expanded="false" />
+            <element signature="e#1712#1713#0" expanded="false" />
+            <element signature="e#1770#1771#0" expanded="false" />
+            <element signature="e#1906#1907#0" expanded="false" />
+            <element signature="e#1947#1948#0" expanded="false" />
+            <element signature="e#1981#1982#0" expanded="false" />
+            <element signature="e#2046#2047#0" expanded="false" />
+            <element signature="e#2088#2089#0" expanded="false" />
+            <element signature="e#2120#2121#0" expanded="false" />
             <element signature="e#2790#2843#0" expanded="false" />
           </folding>
         </state>
@@ -1239,17 +1399,24 @@
         <state relative-caret-position="705">
           <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1539#1540#0" expanded="false" />
+            <element signature="e#1571#1572#0" expanded="false" />
+            <element signature="e#1614#1615#0" expanded="false" />
+            <element signature="e#1653#1654#0" expanded="false" />
+            <element signature="e#1716#1717#0" expanded="false" />
+            <element signature="e#1772#1773#0" expanded="false" />
+            <element signature="e#1818#1819#0" expanded="false" />
+            <element signature="e#1858#1859#0" expanded="false" />
+            <element signature="e#1926#1927#0" expanded="false" />
+            <element signature="e#1984#1985#0" expanded="false" />
+            <element signature="e#2120#2121#0" expanded="false" />
+            <element signature="e#2161#2162#0" expanded="false" />
+            <element signature="e#2195#2196#0" expanded="false" />
+            <element signature="e#2260#2261#0" expanded="false" />
+            <element signature="e#2302#2303#0" expanded="false" />
+            <element signature="e#2334#2335#0" expanded="false" />
             <element signature="e#3003#3056#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/virginia/Music/ForteSong10.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding>
-            <element signature="e#2078#2131#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1259,14 +1426,59 @@
         <state relative-caret-position="240">
           <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
-            <element signature="e#751#752#0" expanded="true" />
-            <element signature="e#783#784#0" expanded="true" />
+            <element signature="e#751#752#0" expanded="false" />
+            <element signature="e#783#784#0" expanded="false" />
             <element signature="method#SecondSongMixer#0;class#SecondSongMixer#0" expanded="false" />
             <element signature="method#makeGUI#0;class#SecondSongMixer#0" expanded="false" />
             <element signature="method#stateChanged#0;class#SecondSongMixer#0" expanded="false" />
             <element signature="method#actionPerformed#0;class#SecondSongMixer#0" expanded="false" />
             <element signature="method#start#0;class#SecondSongMixer#0" expanded="false" />
             <element signature="method#stop#0;class#SecondSongMixer#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/virginia/Music/ForteSong4.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#731#732#0" expanded="false" />
+            <element signature="e#770#771#0" expanded="false" />
+            <element signature="e#833#834#0" expanded="false" />
+            <element signature="e#889#890#0" expanded="false" />
+            <element signature="e#935#936#0" expanded="false" />
+            <element signature="e#975#976#0" expanded="false" />
+            <element signature="e#1043#1044#0" expanded="false" />
+            <element signature="e#1101#1102#0" expanded="false" />
+            <element signature="e#1312#1313#0" expanded="false" />
+            <element signature="e#1377#1378#0" expanded="false" />
+            <element signature="e#1419#1420#0" expanded="false" />
+            <element signature="e#1451#1452#0" expanded="false" />
+            <element signature="e#1561#1562#0" expanded="false" />
+            <element signature="e#1593#1594#0" expanded="false" />
+            <element signature="e#2263#2316#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/events/EventDispatcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/virginia/Music/ForteSong10.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-67">
+          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding>
+            <element signature="e#2078#2131#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1286,38 +1498,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/virginia/Music/ForteSong4.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding>
-            <element signature="e#1278#1279#0" expanded="true" />
-            <element signature="e#2263#2316#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/events/EventDispatcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/virginia/lab1test/FortePrototype.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="820" column="40" lean-forward="true" selection-start-line="820" selection-start-column="40" selection-end-line="820" selection-end-column="40" />
+        <state relative-caret-position="175">
+          <caret line="217" column="4" lean-forward="false" selection-start-line="217" selection-start-column="4" selection-end-line="217" selection-end-column="4" />
           <folding>
+            <element signature="e#3861#3869#0" expanded="true" />
+            <element signature="e#3929#3937#0" expanded="true" />
+            <element signature="e#3994#4002#0" expanded="true" />
+            <element signature="e#4059#4067#0" expanded="true" />
+            <element signature="e#4123#4131#0" expanded="true" />
+            <element signature="e#4188#4196#0" expanded="true" />
             <element signature="docComment;field#mainClock#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#FortePrototype#0;class#FortePrototype#0" expanded="false" />
+            <element signature="method#randomSpawn#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#levelonesetup#0;class#FortePrototype#0" expanded="false" />
-            <element signature="e#11266#11291#0" expanded="false" />
+            <element signature="e#11637#11662#0" expanded="false" />
             <element signature="method#leveltwosetup#0;class#FortePrototype#0" expanded="false" />
-            <element signature="e#12825#12850#0" expanded="false" />
+            <element signature="e#13196#13221#0" expanded="false" />
             <element signature="method#levelthreeup#0;class#FortePrototype#0" expanded="false" />
-            <element signature="e#14589#14614#0" expanded="false" />
+            <element signature="e#14960#14985#0" expanded="false" />
             <element signature="method#platformSetup#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#platformSetupleveltwo#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#platformSetuplevelthree#0;class#FortePrototype#0" expanded="false" />
@@ -1333,38 +1533,38 @@
             <element signature="method#setDiagonalPlatformOnFloor#0;class#FortePrototype#0" expanded="false" />
             <element signature="docComment;method#timing#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#timing#0;class#FortePrototype#0" expanded="false" />
-            <element signature="e#29916#29930#0" expanded="false" />
+            <element signature="e#30287#30301#0" expanded="false" />
             <element signature="method#blink#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#blinksecondsong#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#blinkthirdsong#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#blinkwithrest#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#bgtiming#0;class#FortePrototype#0" expanded="false" />
-            <element signature="e#39163#39177#0" expanded="false" />
-            <element signature="e#39521#39573#0" expanded="false" />
+            <element signature="e#39534#39548#0" expanded="false" />
+            <element signature="e#39892#39944#0" expanded="false" />
             <element signature="method#timingMode#0;class#FortePrototype#0" expanded="false" />
-            <element signature="e#40127#40141#0" expanded="false" />
-            <element signature="e#40532#40584#0" expanded="false" />
+            <element signature="e#40498#40512#0" expanded="false" />
+            <element signature="e#40903#40955#0" expanded="false" />
             <element signature="docComment;method#gamePadUpdate#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#gamePadUpdate#0;class#FortePrototype#0" expanded="false" />
-            <element signature="e#42830#42853#0" expanded="false" />
+            <element signature="e#43201#43224#0" expanded="false" />
             <element signature="method#mapBound#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#platformCollision#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#enemyCollision#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#scrolling#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#attack#0;class#FortePrototype#0" expanded="false" />
+            <element signature="e#50724#50732#0" expanded="true" />
             <element signature="docComment;method#update#0;class#FortePrototype#0" expanded="false" />
-            <element signature="method#update#0;class#FortePrototype#0" expanded="false" />
             <element signature="docComment;method#inRange#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#inRange#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#draw#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#main#0;class#FortePrototype#0" expanded="false" />
             <element signature="method#handleEvent#0;class#FortePrototype#0" expanded="false" />
-            <marker date="1493589858000" expanded="false" signature="59105:60741" ph="{...}" />
-            <marker date="1493589858000" expanded="false" signature="68474:69484" ph="{...}" />
-            <marker date="1493589858000" expanded="false" signature="68789:68839" ph="//..." />
-            <marker date="1493589858000" expanded="false" signature="69105:69156" ph="//..." />
-            <marker date="1493589858000" expanded="false" signature="69526:69534" ph=" { " />
-            <marker date="1493589858000" expanded="false" signature="69552:69559" ph=" }" />
+            <marker date="1493595898000" expanded="false" signature="59476:61112" ph="{...}" />
+            <marker date="1493595898000" expanded="false" signature="68845:69855" ph="{...}" />
+            <marker date="1493595898000" expanded="false" signature="69160:69210" ph="//..." />
+            <marker date="1493595898000" expanded="false" signature="69476:69527" ph="//..." />
+            <marker date="1493595898000" expanded="false" signature="69897:69905" ph=" { " />
+            <marker date="1493595898000" expanded="false" signature="69923:69930" ph=" }" />
           </folding>
         </state>
       </provider>
