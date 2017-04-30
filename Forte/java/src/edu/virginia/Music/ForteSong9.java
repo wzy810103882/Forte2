@@ -1,84 +1,89 @@
 package edu.virginia.Music;
 
-import jm.JMC;
+import jm.music.rt.RTLine;
 import jm.audio.Instrument;
 import jm.music.data.Note;
-import jm.music.rt.RTLine;
-import jm.util.*;
-import java.util.*;
-
 import javax.swing.*;
+import jm.util.*;
 
-public class ForteSong extends RTLine implements JMC{
+import jm.JMC;
+
+public class ForteSong9 extends RTLine implements JMC{
     private Note n = new Note(36, 0.5);
-    private int dynoPosition = 120;
+    private int dynoPosition = 50;
 
     //i added these. currently not using.
     //private int[] pitchArray = new int[] {C4,C4,C4,D4,E4,E4,D4,E4,F4,G4,C5,C5,C5,G4,G4,G4,E4,E4,E4,C4,C4,C4,G4,F4,E4,D4,C4};
     //private double[] rhythmArray = new double[] {QN,QN,QNT,ENT,QN,QNT,ENT,QNT,QT,HN,
     //      ENT,ENT,ENT,ENT,ENT,ENT,ENT,ENT,ENT,ENT,ENT,ENT,QNT,ENT,QNT,ENT,HN};
+    private int[] melodyPitchArray = new int[] {REST, A3, CS4, A3, REST, A3, CS4, A3, REST, A3, CS4, A3, REST, A3, REST,
+            A3, CS4, A3, REST, A3, CS4, A3, REST, A3, CS4, A3, REST, REST, REST, A3, CS4, A3, REST, A3, CS4, A3, REST,
+            A3, CS4, A3, REST, A3, REST, A3, CS4, A3, REST, A3, CS4, A3, REST, A3, CS4, A3, REST, A3, REST, B3, CS4, B3,
+            REST, B3, CS4, B3, REST, B3, CS4, B3, REST, B3 };
+    private double[] melodyRhythmArray = new double[] {QN, EN, EN, QN, QN, EN, EN, QN, QN, EN, EN, QN, QN, QN,
+            QN, EN, EN, QN, QN, EN, EN, QN, QN, EN, EN, QN, QN, QN, QN, EN, EN, QN, QN, EN, EN, QN, QN, EN,
+            EN, QN, QN, QN, QN, EN, EN, QN, QN, EN, EN, QN, QN, EN, EN, QN, QN, QN, QN, EN, EN, QN, QN, EN,
+            EN, QN, QN, EN, EN, QN, QN, QN};
 
-    private int[] trumpetPitchArray = new int[] {A4, FS4, G4, FS4, FS4, FS4, E4, FS4, E4, D4, D4, E4, REST};
-
-    public int[] getTrumpetPitchArray() {
-        return trumpetPitchArray;
-    }
-
-    public double[] getTrumpetRhythmArray() {
-        return trumpetRhythmArray;
-    }
-
-    private double[] trumpetRhythmArray = new double[] {DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE,
-            QN, QN, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE,
-            EN, EN, QN };
-
-    private boolean[] muteArray = new boolean[trumpetRhythmArray.length];
-
-
-    public boolean[] getMuteArray()
-    {
-        return muteArray;
-    }
-    public void setMuteArray(int index, boolean status){
-        muteArray[index] = status;
-    }
-    public void clearMuteArray(){
-        muteArray = new boolean[trumpetRhythmArray.length];
-    }
 
     int arrayIndex = 0;
 
     /**
      * Constructor
      */
-    public ForteSong(Instrument[] instArray) {
+    public ForteSong9(Instrument[] instArray) {
         super(instArray);
     }
 
+
+    public int[] getMelodyPitchArray() {
+        return melodyPitchArray;
+    }
+
+    public void setMelodyPitchArray(int[] melodyPitchArray) {
+        this.melodyPitchArray = melodyPitchArray;
+    }
+
+    public double[] getMelodyRhythmArray() {
+        return melodyRhythmArray;
+    }
+
+    public void setMelodyRhythmArray(double[] melodyRhythmArray) {
+        this.melodyRhythmArray = melodyRhythmArray;
+    }
+
+
+
+    private boolean[] muteArray = new boolean[melodyRhythmArray.length];
+
+
+
+    public void setMuteArray(int index, boolean status){
+        muteArray[index] = status;
+    }
+    public void clearMuteArray(){
+        muteArray = new boolean[melodyRhythmArray.length];
+    }
+    public boolean[] getMuteArray()
+    {
+        return muteArray;
+    }
 
     /**
      * Generate the next note when requested.
      */
     public synchronized Note getNextNote() {
-        /*n.setPitch(pitch + intervals[(int) (Math.random() * intervals.length)]);
-        //n.setDynamic((int) (Math.random() * 80 + 45));
-        n.setDynamic(dynoPosition);
-        n.setPan(panPosition);
-        n.setRhythmValue((int) (Math.random() * 2 + 1) * 0.25);
-        n.setDuration(n.getRhythmValue() * 0.9);
-        return n;*/
-
         if(muteArray[arrayIndex])
         {
-            n.setPitch(trumpetPitchArray[arrayIndex]);
-            n.setRhythmValue(trumpetRhythmArray[arrayIndex]);
+            n.setPitch(melodyPitchArray[arrayIndex]);
+            n.setRhythmValue(melodyRhythmArray[arrayIndex]);
             n.setDynamic(dynoPosition);
             n.setDuration(n.getRhythmValue());
 
         }
         else
         {
-            n = new Note(REST, trumpetRhythmArray[arrayIndex]);
+            n = new Note(REST, melodyRhythmArray[arrayIndex]);
 
         }
 
@@ -96,18 +101,12 @@ public class ForteSong extends RTLine implements JMC{
         //n.setDynamic(dynoPosition);
 
         arrayIndex++;
-        if(arrayIndex == trumpetRhythmArray.length)
+        if(arrayIndex == melodyRhythmArray.length)
         {
             arrayIndex = 0;
         }
         return n;
     }
-
-    public double[] getRhythmArray()
-    {
-        return trumpetRhythmArray;
-    }
-
 
     /**
      * Allow other classes to set the notes pan value

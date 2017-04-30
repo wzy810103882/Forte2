@@ -1,6 +1,8 @@
 package edu.virginia.lab1test;
 
+import edu.virginia.Music.SecondSongMixer;
 import edu.virginia.Music.SilenceTest;
+import edu.virginia.Music.ThirdSongMixer;
 import edu.virginia.engine.controller.GamePad;
 import edu.virginia.engine.display.DisplayObject;
 import edu.virginia.engine.display.Game;
@@ -40,6 +42,15 @@ public class FortePrototype extends Game implements IEventListener, JMC {
     private Sprite platform = new Sprite("Platform", "blue.png");
     private Sprite player = new Sprite("Player", "Protagonist.png");
 
+    private Sprite platformleveltwo = new Sprite("Platform", "matt3.png");
+    private Sprite floorleveltwo = new Sprite("Floor", "matt3.png");
+    private Sprite backgroundleveltwo = new Sprite("background", "bg.png");
+
+
+    private Sprite platformlevelthree = new Sprite("Platform", "sunburstround.png");
+    private Sprite floorlevelthree = new Sprite("Floor", "sunburstround.png");
+    private Sprite backgroundlevelthree = new Sprite("background", "background.png");
+
     private Sprite levelonedoor = new Sprite("door", "door.png");
     private Sprite leveltwodoor = new Sprite("door", "door.png");
     private Sprite levelthreedoor = new Sprite("door", "door.png");
@@ -52,6 +63,8 @@ public class FortePrototype extends Game implements IEventListener, JMC {
     private boolean BossEncountered = false;
     private boolean isVictoryEnd = false;
     private SilenceTest silenceTest = new SilenceTest();
+    private SecondSongMixer secondSongMixer = new SecondSongMixer();
+    private ThirdSongMixer thirdSongMixer = new ThirdSongMixer();
 
     private double[] trumpetRhythmArray = new double[]{DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE,
             QN, QN, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE,
@@ -88,6 +101,8 @@ public class FortePrototype extends Game implements IEventListener, JMC {
     int[] ExArray = {1700, 2200, 3000, 4000, 15000};
     int[] EyArray = {ground, ground, ground, ground, ground};
 
+    int[] FxArray = {1700, 2200, 3000, 4000, 15000};
+    int[] FyArray = {1700, 2200, 3000, 4000, 15000};
 
     int[] CxArrayleveltwo = {500, 1300, 2200, 2900, 4200, 5600, 6600, 7500, 8300, 8600, 9700, 15000};
     int[] CyArrayleveltwo = {ground, ground, ground, ground, ground, ground, ground, ground, ground, ground, ground, ground};
@@ -98,6 +113,8 @@ public class FortePrototype extends Game implements IEventListener, JMC {
     int[] ExArrayleveltwo = {1700, 2200, 3000, 4000, 15000};
     int[] EyArrayleveltwo = {ground, ground, ground, ground, ground};
 
+    int[] FxArrayleveltwo = {1700, 2200, 3000, 4000, 15000};
+    int[] FyArrayleveltwo = {ground, ground, ground, ground, ground};
 
     int[] CxArraylevelthree = {500, 1300, 2200, 2900, 4200, 5600, 6600, 7500, 8300, 8600, 9700, 15000};
     int[] CyArraylevelthree = {ground, ground, ground, ground, ground, ground, ground, ground, ground, ground, ground, ground};
@@ -108,6 +125,8 @@ public class FortePrototype extends Game implements IEventListener, JMC {
     int[] ExArraylevelthree = {1700, 2200, 3000, 4000, 15000};
     int[] EyArraylevelthree = {ground, ground, ground, ground, ground};
 
+    int[] FxArraylevelthree = {1700, 2200, 3000, 4000, 15000};
+    int[] FyArraylevelthree = {ground, ground, ground, ground, ground};
 
     int[] CxArraybuffer = CxArray;
     int[] CyArraybuffer = CyArray;
@@ -115,26 +134,36 @@ public class FortePrototype extends Game implements IEventListener, JMC {
     int[] DyArraybuffer = DyArray;
     int[] ExArraybuffer = ExArray;
     int[] EyArraybuffer = EyArray;
+    int[] FxArraybuffer = FxArray;
+    int[] FyArraybuffer = FyArray;
+
     int[] CxArraybufferleveltwo = CxArrayleveltwo;
     int[] CyArraybufferleveltwo = CyArrayleveltwo;
     int[] DxArraybufferleveltwo = DxArrayleveltwo;
     int[] DyArraybufferleveltwo = DyArrayleveltwo;
     int[] ExArraybufferleveltwo = ExArrayleveltwo;
     int[] EyArraybufferleveltwo = EyArrayleveltwo;
+    int[] FxArraybufferleveltwo = FxArrayleveltwo;
+    int[] FyArraybufferleveltwo = FyArrayleveltwo;
+
     int[] CxArraybufferlevelthree = CxArraylevelthree;
     int[] CyArraybufferlevelthree = CyArraylevelthree;
     int[] DxArraybufferlevelthree = DxArraylevelthree;
     int[] DyArraybufferlevelthree = DyArraylevelthree;
     int[] ExArraybufferlevelthree = ExArraylevelthree;
     int[] EyArraybufferlevelthree = EyArraylevelthree;
+    int[] FxArraybufferlevelthree = FxArraylevelthree;
+    int[] FyArraybufferlevelthree = FyArraylevelthree;
 
     Sprite C = new Sprite("C", "C.png");
     Sprite D = new Sprite("D", "D.png");
     Sprite E = new Sprite("E", "E.png");
+    Sprite F = new Sprite("F", "F.png");
 
     Cevent cevent = new Cevent(Cevent.Cevent, C);
     Devent devent = new Devent(Devent.Devent, D);
     Eevent eevent = new Eevent(Eevent.Eevent, E);
+    Fevent fevent = new Fevent(Fevent.Fevent, F);
 
     BossDamageEvent bossDamageEvent = new BossDamageEvent(BossDamageEvent.BossDamageEvent, boss);
     BossEvent bossCompleteEvent = new BossEvent(BossEvent.BossEvent, boss);
@@ -163,6 +192,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         C.addEventListener(this, Cevent.Cevent);
         D.addEventListener(this, Devent.Devent);
         E.addEventListener(this, Eevent.Eevent);
+        F.addEventListener(this, Fevent.Fevent);
         door.addEventListener(this, BossEvent.BossEvent);
         boss.addEventListener(this, BossEvent.BossEvent);
         boss.addEventListener(this, BossDamageEvent.BossDamageEvent);
@@ -174,9 +204,9 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         enemies.add(C);
         enemies.add(D);
         enemies.add(E);
+        enemies.add(F);
         bossObject.add(boss);
     }
-
 
     public void levelonesetup() {
         player.setPosition(150, 50);
@@ -187,6 +217,8 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         DyArray = DyArraybuffer;
         ExArray = ExArraybuffer;
         EyArray = EyArraybuffer;
+        FxArray = FxArraybuffer;
+        FyArray = FyArraybuffer;
 
         C.setxArray(CxArray);
         C.setyArray(CyArray);
@@ -194,16 +226,29 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         D.setyArray(DyArray);
         E.setxArray(ExArray);
         E.setyArray(EyArray);
+        F.setxArray(FxArray);
+        F.setyArray(FyArray);
         C.setCurrentIndex(0);
         D.setCurrentIndex(0);
         E.setCurrentIndex(0);
+        F.setCurrentIndex(0);
+
+        C.setCurrentFlashingIndex(0);
+        D.setCurrentFlashingIndex(0);
+        E.setCurrentFlashingIndex(0);
+        F.setCurrentFlashingIndex(0);
+
         //  F.setxArray(FxArray);
         //  F.setyArray(FyArray);
 
         C.setPosition(260, gameHeight - floor.getUnscaledHeight() - C.getUnscaledHeight());
         D.setPosition(700, gameHeight - floor.getUnscaledHeight() - D.getUnscaledHeight());
         E.setPosition(780, gameHeight - floor.getUnscaledHeight() - E.getUnscaledHeight());
+        F.setPosition(900, gameHeight - floor.getUnscaledHeight() - E.getUnscaledHeight());
 
+        if (enemies.contains(F)) {
+            enemies.remove(F);
+        }
         levelonedoor.setPosition(9800, gameHeight - 300);
         platformSetup();
         moving2.add(levelonedoor);
@@ -221,6 +266,8 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         DyArrayleveltwo = DyArraybufferleveltwo;
         ExArrayleveltwo = ExArraybufferleveltwo;
         EyArrayleveltwo = EyArraybufferleveltwo;
+        FxArrayleveltwo = FxArraybufferleveltwo;
+        FyArrayleveltwo = FyArraybufferleveltwo;
 
         C.setxArray(CxArrayleveltwo);
         C.setyArray(CyArrayleveltwo);
@@ -228,16 +275,29 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         D.setyArray(DyArrayleveltwo);
         E.setxArray(ExArrayleveltwo);
         E.setyArray(EyArrayleveltwo);
+        F.setxArray(FxArrayleveltwo);
+        F.setyArray(FyArrayleveltwo);
+
         C.setCurrentIndex(0);
         D.setCurrentIndex(0);
         E.setCurrentIndex(0);
+        F.setCurrentIndex(0);
         //  F.setxArray(FxArray);
         //  F.setyArray(FyArray);
+
+        C.setCurrentFlashingIndex(0);
+        D.setCurrentFlashingIndex(0);
+        E.setCurrentFlashingIndex(0);
+        F.setCurrentFlashingIndex(0);
 
         C.setPosition(260, gameHeight - floor.getUnscaledHeight() - C.getUnscaledHeight());
         D.setPosition(700, gameHeight - floor.getUnscaledHeight() - D.getUnscaledHeight());
         E.setPosition(780, gameHeight - floor.getUnscaledHeight() - E.getUnscaledHeight());
+        F.setPosition(900, gameHeight - floor.getUnscaledHeight() - E.getUnscaledHeight());
         leveltwodoor.setPosition(9800, gameHeight - 300);
+        if (!enemies.contains(F)) {
+            enemies.add(F);
+        }
         platformSetupleveltwo();
         moving2.add(leveltwodoor);
         moving.add(player);
@@ -252,8 +312,10 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         CyArraylevelthree = CyArraybufferlevelthree;
         DxArraylevelthree = DxArraybufferlevelthree;
         DyArraylevelthree = DyArraybufferlevelthree;
-        ExArraylevelthree= ExArraybufferlevelthree;
+        ExArraylevelthree = ExArraybufferlevelthree;
         EyArraylevelthree = EyArraybufferlevelthree;
+        FxArraylevelthree = FxArraybufferlevelthree;
+        FyArraylevelthree = FyArraybufferlevelthree;
 
         C.setxArray(CxArraylevelthree);
         C.setyArray(CyArraylevelthree);
@@ -261,18 +323,30 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         D.setyArray(DyArraylevelthree);
         E.setxArray(ExArraylevelthree);
         E.setyArray(EyArraylevelthree);
+        F.setxArray(FxArraylevelthree);
+        F.setyArray(FyArraylevelthree);
 
         C.setCurrentIndex(0);
         D.setCurrentIndex(0);
         E.setCurrentIndex(0);
+        F.setCurrentIndex(0);
         //  F.setxArray(FxArray);
         //  F.setyArray(FyArray);
+
+        C.setCurrentFlashingIndex(0);
+        D.setCurrentFlashingIndex(0);
+        E.setCurrentFlashingIndex(0);
+        F.setCurrentFlashingIndex(0);
 
         C.setPosition(260, gameHeight - floor.getUnscaledHeight() - C.getUnscaledHeight());
         D.setPosition(700, gameHeight - floor.getUnscaledHeight() - D.getUnscaledHeight());
         E.setPosition(780, gameHeight - floor.getUnscaledHeight() - E.getUnscaledHeight());
-
+        F.setPosition(900, gameHeight - floor.getUnscaledHeight() - E.getUnscaledHeight());
         levelthreedoor.setPosition(9800, gameHeight - 300);
+
+        if (!enemies.contains(F)) {
+            enemies.add(F);
+        }
 
         platformSetuplevelthree();
         moving2.add(levelthreedoor);
@@ -369,71 +443,71 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         objects.clear();
         moving.clear();
         moving2.clear();
-        setFloor(110, floor);
-        setBackground(20, background);
+        setFloor(110, floorleveltwo);
+        setBackground(20, backgroundleveltwo);
 
-        setHorizontalPlaformOnFloor(800, 3, platform);
-        setHorizontalPlatform(900, gameHeight - 300, 2, platform);
-        setHorizontalPlatform(1000, gameHeight - 400, 1, platform);
+        setHorizontalPlaformOnFloor(800, 3, platformleveltwo);
+        setHorizontalPlatform(900, gameHeight - 300, 2, platformleveltwo);
+        setHorizontalPlatform(1000, gameHeight - 400, 1, platformleveltwo);
 
-        setHorizontalPlatform(1500, gameHeight - 400, 4, platform);
+        setHorizontalPlatform(1500, gameHeight - 400, 4, platformleveltwo);
 
-        setHorizontalPlatform(1900, gameHeight - 600, 3, platform);
+        setHorizontalPlatform(1900, gameHeight - 600, 3, platformleveltwo);
 
-        setVerticalPlatformOnFloor(2000, 2, platform);
+        setVerticalPlatformOnFloor(2000, 2, platformleveltwo);
 
-        setVerticalPlatformOnFloor(2300, 2, platform);
-        setVerticalPlatformOnFloor(2400, 2, platform);
-        setVerticalPlatformOnFloor(2500, 2, platform);
-        setVerticalPlatformOnFloor(2600, 2, platform);
+        setVerticalPlatformOnFloor(2300, 2, platformleveltwo);
+        setVerticalPlatformOnFloor(2400, 2, platformleveltwo);
+        setVerticalPlatformOnFloor(2500, 2, platformleveltwo);
+        setVerticalPlatformOnFloor(2600, 2, platformleveltwo);
 
-        setHorizontalPlaformOnFloor(3000, 10, platform);
-        setHorizontalPlatform(3000, gameHeight - 300, 8, platform);
-        setHorizontalPlatform(3000, gameHeight - 400, 6, platform);
-        setHorizontalPlatform(3300, gameHeight - 500, 3, platform);
-        setHorizontalPlatform(3400, gameHeight - 600, 2, platform);
-        setHorizontalPlatform(3400, gameHeight - 700, 2, platform);
+        setHorizontalPlaformOnFloor(3000, 10, platformleveltwo);
+        setHorizontalPlatform(3000, gameHeight - 300, 8, platformleveltwo);
+        setHorizontalPlatform(3000, gameHeight - 400, 6, platformleveltwo);
+        setHorizontalPlatform(3300, gameHeight - 500, 3, platformleveltwo);
+        setHorizontalPlatform(3400, gameHeight - 600, 2, platformleveltwo);
+        setHorizontalPlatform(3400, gameHeight - 700, 2, platformleveltwo);
 
-        setVerticalPlatformOnFloor(4400, 1, platform);
-        setVerticalPlatformOnFloor(4600, 2, platform);
-        setVerticalPlatformOnFloor(4800, 3, platform);
-        setVerticalPlatformOnFloor(5000, 4, platform);
-        setVerticalPlatformOnFloor(5200, 5, platform);
-        setVerticalPlatformOnFloor(5400, 2, platform);
-
-
-        setHorizontalPlatform(5700, gameHeight - 500, 4, platform);
-        setVerticalPlatform(6000, gameHeight - 600, 2, platform);
-
-        setHorizontalPlatform(6400, gameHeight - 700, 2, platform);
-        setVerticalPlatformOnFloor(6700, 3, platform);
-        setHorizontalPlatform(6800, gameHeight - 700, 2, platform);
-
-        setHorizontalPlatform(7200, gameHeight - 700, 1, platform);
-        setHorizontalPlatform(7500, gameHeight - 700, 1, platform);
-
-        setVerticalPlatformOnFloor(7800, 3, platform);
-        setVerticalPlatform(7800, gameHeight - 600, 3, platform);
+        setVerticalPlatformOnFloor(4400, 1, platformleveltwo);
+        setVerticalPlatformOnFloor(4600, 2, platformleveltwo);
+        setVerticalPlatformOnFloor(4800, 3, platformleveltwo);
+        setVerticalPlatformOnFloor(5000, 4, platformleveltwo);
+        setVerticalPlatformOnFloor(5200, 5, platformleveltwo);
+        setVerticalPlatformOnFloor(5400, 2, platformleveltwo);
 
 
-        setVerticalPlatform(8100, gameHeight - 500, 1, platform);
-        setVerticalPlatform(8300, gameHeight - 500, 1, platform);
-        setVerticalPlatform(8500, gameHeight - 500, 1, platform);
-        setVerticalPlatform(8700, gameHeight - 500, 1, platform);
+        setHorizontalPlatform(5700, gameHeight - 500, 4, platformleveltwo);
+        setVerticalPlatform(6000, gameHeight - 600, 2, platformleveltwo);
 
-        setVerticalPlatformOnFloor(8800, 3, platform);
-        setVerticalPlatformOnFloor(8900, 5, platform);
-        setVerticalPlatformOnFloor(9100, 3, platform);
-        setVerticalPlatformOnFloor(9200, 2, platform);
-        setVerticalPlatformOnFloor(9300, 2, platform);
-        setVerticalPlatformOnFloor(9400, 1, platform);
-        setVerticalPlatformOnFloor(9500, 1, platform);
+        setHorizontalPlatform(6400, gameHeight - 700, 2, platformleveltwo);
+        setVerticalPlatformOnFloor(6700, 3, platformleveltwo);
+        setHorizontalPlatform(6800, gameHeight - 700, 2, platformleveltwo);
 
-        setVerticalPlatformOnFloor(10000, 10, platform);
-        setVerticalPlatformOnFloor(10100, 10, platform);
-        setVerticalPlatformOnFloor(10200, 10, platform);
-        setVerticalPlatformOnFloor(10300, 10, platform);
-        setVerticalPlatformOnFloor(10400, 10, platform);
+        setHorizontalPlatform(7200, gameHeight - 700, 1, platformleveltwo);
+        setHorizontalPlatform(7500, gameHeight - 700, 1, platformleveltwo);
+
+        setVerticalPlatformOnFloor(7800, 3, platformleveltwo);
+        setVerticalPlatform(7800, gameHeight - 600, 3, platformleveltwo);
+
+
+        setVerticalPlatform(8100, gameHeight - 500, 1, platformleveltwo);
+        setVerticalPlatform(8300, gameHeight - 500, 1, platformleveltwo);
+        setVerticalPlatform(8500, gameHeight - 500, 1, platformleveltwo);
+        setVerticalPlatform(8700, gameHeight - 500, 1, platformleveltwo);
+
+        setVerticalPlatformOnFloor(8800, 3, platformleveltwo);
+        setVerticalPlatformOnFloor(8900, 5, platformleveltwo);
+        setVerticalPlatformOnFloor(9100, 3, platformleveltwo);
+        setVerticalPlatformOnFloor(9200, 2, platformleveltwo);
+        setVerticalPlatformOnFloor(9300, 2, platformleveltwo);
+        setVerticalPlatformOnFloor(9400, 1, platformleveltwo);
+        setVerticalPlatformOnFloor(9500, 1, platformleveltwo);
+
+        setVerticalPlatformOnFloor(10000, 10, platformleveltwo);
+        setVerticalPlatformOnFloor(10100, 10, platformleveltwo);
+        setVerticalPlatformOnFloor(10200, 10, platformleveltwo);
+        setVerticalPlatformOnFloor(10300, 10, platformleveltwo);
+        setVerticalPlatformOnFloor(10400, 10, platformleveltwo);
 
 
     }
@@ -448,71 +522,71 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         objects.clear();
         moving.clear();
         moving2.clear();
-        setFloor(110, floor);
-        setBackground(20, background);
+        setFloor(110, floorlevelthree);
+        setBackground(20, backgroundlevelthree);
 
-        setHorizontalPlaformOnFloor(800, 3, platform);
-        setHorizontalPlatform(900, gameHeight - 300, 2, platform);
-        setHorizontalPlatform(1000, gameHeight - 400, 1, platform);
+        setHorizontalPlaformOnFloor(800, 3, platformlevelthree);
+        setHorizontalPlatform(900, gameHeight - 300, 2, platformlevelthree);
+        setHorizontalPlatform(1000, gameHeight - 400, 1, platformlevelthree);
 
-        setHorizontalPlatform(1500, gameHeight - 400, 4, platform);
+        setHorizontalPlatform(1500, gameHeight - 400, 4, platformlevelthree);
 
-        setHorizontalPlatform(1900, gameHeight - 600, 3, platform);
+        setHorizontalPlatform(1900, gameHeight - 600, 3, platformlevelthree);
 
-        setVerticalPlatformOnFloor(2000, 2, platform);
+        setVerticalPlatformOnFloor(2000, 2, platformlevelthree);
 
-        setVerticalPlatformOnFloor(2300, 2, platform);
-        setVerticalPlatformOnFloor(2400, 2, platform);
-        setVerticalPlatformOnFloor(2500, 2, platform);
-        setVerticalPlatformOnFloor(2600, 2, platform);
+        setVerticalPlatformOnFloor(2300, 2, platformlevelthree);
+        setVerticalPlatformOnFloor(2400, 2, platformlevelthree);
+        setVerticalPlatformOnFloor(2500, 2, platformlevelthree);
+        setVerticalPlatformOnFloor(2600, 2, platformlevelthree);
 
-        setHorizontalPlaformOnFloor(3000, 10, platform);
-        setHorizontalPlatform(3000, gameHeight - 300, 8, platform);
-        setHorizontalPlatform(3000, gameHeight - 400, 6, platform);
-        setHorizontalPlatform(3300, gameHeight - 500, 3, platform);
-        setHorizontalPlatform(3400, gameHeight - 600, 2, platform);
-        setHorizontalPlatform(3400, gameHeight - 700, 2, platform);
+        setHorizontalPlaformOnFloor(3000, 10, platformlevelthree);
+        setHorizontalPlatform(3000, gameHeight - 300, 8, platformlevelthree);
+        setHorizontalPlatform(3000, gameHeight - 400, 6, platformlevelthree);
+        setHorizontalPlatform(3300, gameHeight - 500, 3, platformlevelthree);
+        setHorizontalPlatform(3400, gameHeight - 600, 2, platformlevelthree);
+        setHorizontalPlatform(3400, gameHeight - 700, 2, platformlevelthree);
 
-        setVerticalPlatformOnFloor(4400, 1, platform);
-        setVerticalPlatformOnFloor(4600, 2, platform);
-        setVerticalPlatformOnFloor(4800, 3, platform);
-        setVerticalPlatformOnFloor(5000, 4, platform);
-        setVerticalPlatformOnFloor(5200, 5, platform);
-        setVerticalPlatformOnFloor(5400, 2, platform);
-
-
-        setHorizontalPlatform(5700, gameHeight - 500, 4, platform);
-        setVerticalPlatform(6000, gameHeight - 600, 2, platform);
-
-        setHorizontalPlatform(6400, gameHeight - 700, 2, platform);
-        setVerticalPlatformOnFloor(6700, 3, platform);
-        setHorizontalPlatform(6800, gameHeight - 700, 2, platform);
-
-        setHorizontalPlatform(7200, gameHeight - 700, 1, platform);
-        setHorizontalPlatform(7500, gameHeight - 700, 1, platform);
-
-        setVerticalPlatformOnFloor(7800, 3, platform);
-        setVerticalPlatform(7800, gameHeight - 600, 3, platform);
+        setVerticalPlatformOnFloor(4400, 1, platformlevelthree);
+        setVerticalPlatformOnFloor(4600, 2, platformlevelthree);
+        setVerticalPlatformOnFloor(4800, 3, platformlevelthree);
+        setVerticalPlatformOnFloor(5000, 4, platformlevelthree);
+        setVerticalPlatformOnFloor(5200, 5, platformlevelthree);
+        setVerticalPlatformOnFloor(5400, 2, platformlevelthree);
 
 
-        setVerticalPlatform(8100, gameHeight - 500, 1, platform);
-        setVerticalPlatform(8300, gameHeight - 500, 1, platform);
-        setVerticalPlatform(8500, gameHeight - 500, 1, platform);
-        setVerticalPlatform(8700, gameHeight - 500, 1, platform);
+        setHorizontalPlatform(5700, gameHeight - 500, 4, platformlevelthree);
+        setVerticalPlatform(6000, gameHeight - 600, 2, platformlevelthree);
 
-        setVerticalPlatformOnFloor(8800, 3, platform);
-        setVerticalPlatformOnFloor(8900, 5, platform);
-        setVerticalPlatformOnFloor(9100, 3, platform);
-        setVerticalPlatformOnFloor(9200, 2, platform);
-        setVerticalPlatformOnFloor(9300, 2, platform);
-        setVerticalPlatformOnFloor(9400, 1, platform);
-        setVerticalPlatformOnFloor(9500, 1, platform);
+        setHorizontalPlatform(6400, gameHeight - 700, 2, platformlevelthree);
+        setVerticalPlatformOnFloor(6700, 3, platformlevelthree);
+        setHorizontalPlatform(6800, gameHeight - 700, 2, platformlevelthree);
 
-        setVerticalPlatformOnFloor(10000, 10, platform);
-        setVerticalPlatformOnFloor(10100, 10, platform);
-        setVerticalPlatformOnFloor(10200, 10, platform);
-        setVerticalPlatformOnFloor(10300, 10, platform);
-        setVerticalPlatformOnFloor(10400, 10, platform);
+        setHorizontalPlatform(7200, gameHeight - 700, 1, platformlevelthree);
+        setHorizontalPlatform(7500, gameHeight - 700, 1, platformlevelthree);
+
+        setVerticalPlatformOnFloor(7800, 3, platformlevelthree);
+        setVerticalPlatform(7800, gameHeight - 600, 3, platformlevelthree);
+
+
+        setVerticalPlatform(8100, gameHeight - 500, 1, platformlevelthree);
+        setVerticalPlatform(8300, gameHeight - 500, 1, platformlevelthree);
+        setVerticalPlatform(8500, gameHeight - 500, 1, platformlevelthree);
+        setVerticalPlatform(8700, gameHeight - 500, 1, platformlevelthree);
+
+        setVerticalPlatformOnFloor(8800, 3, platformlevelthree);
+        setVerticalPlatformOnFloor(8900, 5, platformlevelthree);
+        setVerticalPlatformOnFloor(9100, 3, platformlevelthree);
+        setVerticalPlatformOnFloor(9200, 2, platformlevelthree);
+        setVerticalPlatformOnFloor(9300, 2, platformlevelthree);
+        setVerticalPlatformOnFloor(9400, 1, platformlevelthree);
+        setVerticalPlatformOnFloor(9500, 1, platformlevelthree);
+
+        setVerticalPlatformOnFloor(10000, 10, platformlevelthree);
+        setVerticalPlatformOnFloor(10100, 10, platformlevelthree);
+        setVerticalPlatformOnFloor(10200, 10, platformlevelthree);
+        setVerticalPlatformOnFloor(10300, 10, platformlevelthree);
+        setVerticalPlatformOnFloor(10400, 10, platformlevelthree);
 
 
     }
@@ -684,6 +758,132 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         }
     }
 
+    public void blinksecondsong(SecondSongMixer mixer, int songLength, Sprite temp, int index) {
+
+        if (index == 0) {
+            int globaltime = 0;
+            for (int a = 0; a < mixer.getTrumpet().getMelodyRhythmArray().length; a++) {
+                if (mixer.getTrumpet().getMelodyPitchArray()[a] > 0) {
+                    if (!mixer.getTrumpet().getMuteArray()[a]) {
+                        int start = globaltime;
+                        int finish = globaltime + (int) (0.5 * 1000 * (mixer.getTrumpet().getMelodyRhythmArray()[a] / 3));
+                        globaltime = globaltime + (int) (1000 * (mixer.getTrumpet().getMelodyRhythmArray()[a] / 3));
+                        timingMode(start, finish, songLength, temp, a);
+                    }
+                }
+            }
+        } else if (index == 1) {
+            int globaltime = 0;
+            for (int a = 0; a < mixer.getBass().getMelodyRhythmArray().length; a++) {
+                if (mixer.getBass().getMelodyRhythmArray()[a]> 0) {
+                    if (!mixer.getBass().getMuteArray()[a]) {
+                        int start = globaltime;
+                        int finish = globaltime + (int) (0.5 * 1000 * (mixer.getBass().getMelodyRhythmArray()[a] / 3));
+                        globaltime = globaltime + (int) (1000 * (mixer.getBass().getMelodyRhythmArray()[a] / 3));
+                        timingMode(start, finish, songLength, temp, a);
+                    }
+                }
+            }
+
+        } else if (index == 2) {
+            int globaltime = 0;
+            for (int a = 0; a < mixer.getWhistle().getMelodyRhythmArray().length; a++) {
+                if (mixer.getWhistle().getMelodyRhythmArray()[a] > 0) {
+                    if (!mixer.getWhistle().getMuteArray()[a]) {
+                        int start = globaltime;
+                        int finish = globaltime + (int) (0.5 * 1000 * (mixer.getWhistle().getMelodyRhythmArray()[a] / 3));
+                        globaltime = globaltime + (int) (1000 * (mixer.getWhistle().getMelodyRhythmArray()[a] / 3));
+                        timingMode(start, finish, songLength, temp, a);
+                    }
+                }
+            }
+
+        }
+        else if (index == 3){
+            int globaltime = 0;
+            for (int a = 0; a < mixer.getAcc().getMelodyRhythmArray().length; a++) {
+                if (mixer.getAcc().getMelodyRhythmArray()[a] > 0) {
+                    if (!mixer.getAcc().getMuteArray()[a]) {
+                        int start = globaltime;
+                        int finish = globaltime + (int) (0.5 * 1000 * (mixer.getAcc().getMelodyRhythmArray()[a] / 3));
+                        globaltime = globaltime + (int) (1000 * (mixer.getAcc().getMelodyRhythmArray()[a] / 3));
+                        timingMode(start, finish, songLength, temp, a);
+                    }
+                }
+            }
+
+        }
+        else {
+
+        }
+    }
+
+    public void blinkthirdsong(ThirdSongMixer mixer, int songLength, Sprite temp, int index) {
+
+        if (index == 0) {
+            int globaltime = 0;
+            for (int a = 0; a < mixer.getTrumpet().getMelodyRhythmArray().length; a++) {
+                if (mixer.getTrumpet().getMelodyPitchArray()[a] > 0) {
+                    if (!mixer.getTrumpet().getMuteArray()[a]) {
+                        int start = globaltime;
+                        int finish = globaltime + (int) (0.5 * 1000 * (mixer.getTrumpet().getMelodyRhythmArray()[a] / 3));
+                        timingMode(start, finish, songLength, temp, a);
+                    }
+                }
+                globaltime = globaltime + (int) (1000 * (mixer.getTrumpet().getMelodyRhythmArray()[a] / 3));
+            }
+
+
+        } else if (index == 1) {
+            int globaltime = 0;
+            for (int a = 0; a < mixer.getBass().getMelodyRhythmArray().length; a++) {
+                if (mixer.getBass().getMelodyRhythmArray()[a]> 0) {
+                    if (!mixer.getBass().getMuteArray()[a]) {
+                        int start = globaltime;
+                        int finish = globaltime + (int) (0.5 * 1000 * (mixer.getBass().getMelodyRhythmArray()[a] / 3));
+                        timingMode(start, finish, songLength, temp, a);
+                    }
+                }
+                globaltime = globaltime + (int) (1000 * (mixer.getBass().getMelodyRhythmArray()[a] / 3));
+
+            }
+
+
+        } else if (index == 2) {
+            int globaltime = 0;
+            for (int a = 0; a < mixer.getWhistle().getMelodyRhythmArray().length; a++) {
+                if (mixer.getWhistle().getMelodyRhythmArray()[a] > 0) {
+                    if (!mixer.getWhistle().getMuteArray()[a]) {
+                        int start = globaltime;
+                        int finish = globaltime + (int) (0.5 * 1000 * (mixer.getWhistle().getMelodyRhythmArray()[a] / 3));
+                        timingMode(start, finish, songLength, temp, a);
+                    }
+                }
+                globaltime = globaltime + (int) (1000 * (mixer.getWhistle().getMelodyRhythmArray()[a] / 3));
+
+            }
+
+
+        }
+        else if (index == 3){
+            int globaltime = 0;
+            for (int a = 0; a < mixer.getMelody().getMelodyRhythmArray().length; a++) {
+                if (mixer.getMelody().getMelodyRhythmArray()[a] > 0) {
+                    if (!mixer.getMelody().getMuteArray()[a]) {
+                        int start = globaltime;
+                        int finish = globaltime + (int) (0.5 * 1000 * (mixer.getMelody().getMelodyRhythmArray()[a] / 3));
+                        timingMode(start, finish, songLength, temp, a);
+                    }
+                }
+                globaltime = globaltime + (int) (1000 * (mixer.getMelody().getMelodyRhythmArray()[a] / 3));
+
+            }
+
+        }
+        else {
+
+        }
+    }
 
     public void blinkwithrest(double[] musicarray, int songLength, Sprite temp) {
         int globaltime = 0;
@@ -771,6 +971,21 @@ public class FortePrototype extends Game implements IEventListener, JMC {
 
             }
 
+
+            if (pad.isButtonPressed(GamePad.BUTTON_L3)) {
+                if (isStart && isEnd && isAtlevelOne) {
+                    player.dispatchEvent(songStartEvent);
+                } else if (isStart && isEnd && isAtlevelTwo) {
+                    levelonedoor.dispatchEvent(levelTwoEvent);
+                } else if (isStart && isEnd && isAtlevelThree) {
+                    leveltwodoor.dispatchEvent(levelThreeEvent);
+                } else if (isStart && isEnd && BossEncountered) {
+                    levelthreedoor.dispatchEvent(bevent);
+                }
+                else {
+
+                }
+            }
 
             if (pad.isButtonPressed(GamePad.BUTTON_CROSS)) {
                 if (!falling) {
@@ -926,8 +1141,9 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                             E.dispatchEvent(eevent);
 
                         } else if (e.getId() == "F") {
-                            //               F.dispatchEvent(fevent);
+                            F.dispatchEvent(fevent);
                         } else {
+
                             ;
                         }
                     }
@@ -961,7 +1177,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                 ExArray[a] = ExArray[a] - scrollingspeed;
             }
         }
-        if (isAtlevelTwo){
+        if (isAtlevelTwo) {
             for (int a = 0; a < CxArrayleveltwo.length; a++) {
                 CxArrayleveltwo[a] = CxArrayleveltwo[a] - scrollingspeed;
             }
@@ -971,8 +1187,11 @@ public class FortePrototype extends Game implements IEventListener, JMC {
             for (int a = 0; a < ExArrayleveltwo.length; a++) {
                 ExArrayleveltwo[a] = ExArrayleveltwo[a] - scrollingspeed;
             }
+            for (int a = 0; a < FxArrayleveltwo.length; a++) {
+                FxArrayleveltwo[a] = ExArrayleveltwo[a] - scrollingspeed;
+            }
         }
-        if (isAtlevelThree){
+        if (isAtlevelThree) {
             for (int a = 0; a < CxArraylevelthree.length; a++) {
                 CxArraylevelthree[a] = CxArraylevelthree[a] - scrollingspeed;
             }
@@ -981,6 +1200,9 @@ public class FortePrototype extends Game implements IEventListener, JMC {
             }
             for (int a = 0; a < ExArraylevelthree.length; a++) {
                 ExArraylevelthree[a] = ExArraylevelthree[a] - scrollingspeed;
+            }
+            for (int a = 0; a < FxArrayleveltwo.length; a++) {
+                FxArrayleveltwo[a] = ExArrayleveltwo[a] - scrollingspeed;
             }
         }
     }
@@ -1057,9 +1279,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
 
     @Override
     public void update(ArrayList<String> pressedKeys, ArrayList<GamePad> gamePads) {
-        //System.out.println(C.getPosX());
 
-        //   levelcheck();
         if (isStart) {
             if (!isEnd) {
                 if (!BossEncountered) {
@@ -1079,9 +1299,6 @@ public class FortePrototype extends Game implements IEventListener, JMC {
 
                     enemyCollision();
 
-                    blink(silenceTest, 5331, C, 0);
-                    blink(silenceTest, 5328, D, 1);
-                    blinkwithrest(whistleRhythmArray, 2662, E);
 
                     attack(objects);
                     scrolling();
@@ -1095,18 +1312,30 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                         if (player.collidesWith(levelonedoor, player.getVelX(), player.getVelY())) {
                             levelonedoor.dispatchEvent(levelTwoEvent);
                         }
+                        blink(silenceTest, 5331, C, 0);
+                        blink(silenceTest, 5328, D, 1);
+                        blinkwithrest(whistleRhythmArray, 2662, E);
+
                     }
                     if (isAtlevelTwo) {
                         if (player.collidesWith(leveltwodoor, player.getVelX(), player.getVelY())) {
                             leveltwodoor.dispatchEvent(levelThreeEvent);
                         }
+                        blinksecondsong(secondSongMixer,10656,C,0);
+                        blinksecondsong(secondSongMixer,10656,D,1);
+                        blinksecondsong(secondSongMixer,10656,E,2);
+                        blinksecondsong(secondSongMixer,10656,F,3);
+
 
                     }
-
                     if (isAtlevelThree) {
                         if (player.collidesWith(levelthreedoor, player.getVelX(), player.getVelY())) {
                             levelthreedoor.dispatchEvent(bevent);
                         }
+                        blinkthirdsong(thirdSongMixer,18330,C,0);
+                        blinkthirdsong(thirdSongMixer,18330,D,1);
+                        blinkthirdsong(thirdSongMixer,18330,E,2);
+                        blinkthirdsong(thirdSongMixer,18330,F,3);
 
                     }
                 } else {
@@ -1149,13 +1378,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
 
 
             } else {
-                for (GamePad pad : gamePads) {
-                    if (pad.isButtonPressed(GamePad.BUTTON_L3)) {
-                        exitGame();
-
-                    }
-
-                }
+                gamePadUpdate(gamePads);
             }
         } else {
             blink(silenceTest, 5331, startSreen, 2);
@@ -1288,6 +1511,9 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                     if (C != null) C.draw(g);
                     if (D != null) D.draw(g);
                     if (E != null) E.draw(g);
+                    if (isAtlevelTwo || isAtlevelThree) {
+                        if (F != null) F.draw(g);
+                    }
 
                 } else {
                     bossBackground.draw(g);
@@ -1337,15 +1563,24 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         DisplayObject source = (DisplayObject) event.getSource();
 
         if (source == levelthreedoor) {
+            if (silenceTest.isHasStarted()) {
+                silenceTest.stop();
+            }
+            if (secondSongMixer.isHasStarted()) {
+                secondSongMixer.stop();
+            }
+            if (thirdSongMixer.isHasStarted()) {
+                thirdSongMixer.stop();
+            }
             BossEncountered = true;
             player.setPosition(50, 50);
             boss.setPosition(500, 500);
             bossBackground.setPosition(0, 0);
             setBoosFloor(20, bossFloor);
-            silenceTest.stop();
             Score s = new Score("bossmusic.mid");
             Read.midi(s, "bossmusic.mid");
             Play.midi(s);
+            isEnd = false;
         }
 
         if (source == levelonedoor) {
@@ -1356,13 +1591,18 @@ public class FortePrototype extends Game implements IEventListener, JMC {
             leveltwosetup();
             silenceTest.clearallmuteArray();
 
-            if (silenceTest.isHasStarted()){
+            if (silenceTest.isHasStarted()) {
                 silenceTest.stop();
             }
-            silenceTest = new SilenceTest();
-
-            silenceTest.start();
-
+            if (secondSongMixer.isHasStarted()) {
+                secondSongMixer.stop();
+            }
+            if (thirdSongMixer.isHasStarted()) {
+                thirdSongMixer.stop();
+            }
+            secondSongMixer = new SecondSongMixer();
+            secondSongMixer.start();
+            isEnd = false;
         }
 
         if (source == leveltwodoor) {
@@ -1372,11 +1612,18 @@ public class FortePrototype extends Game implements IEventListener, JMC {
             isAtlevelThree = true;
             levelthreeup();
             silenceTest.clearallmuteArray();
-            if (silenceTest.isHasStarted()){
+            if (silenceTest.isHasStarted()) {
                 silenceTest.stop();
             }
-            silenceTest = new SilenceTest();
-            silenceTest.start();
+            if (secondSongMixer.isHasStarted()) {
+                secondSongMixer.stop();
+            }
+            if (thirdSongMixer.isHasStarted()) {
+                thirdSongMixer.stop();
+            }
+            thirdSongMixer = new ThirdSongMixer();
+            thirdSongMixer.start();
+            isEnd = false;
         }
 
         if (source == player) {
@@ -1386,11 +1633,20 @@ public class FortePrototype extends Game implements IEventListener, JMC {
             isAtlevelThree = false;
             levelonesetup();
             silenceTest.clearallmuteArray();
-            if (silenceTest.isHasStarted()){
+
+            if (silenceTest.isHasStarted()) {
                 silenceTest.stop();
+            }
+            if (secondSongMixer.isHasStarted()) {
+                secondSongMixer.stop();
+            }
+            if (thirdSongMixer.isHasStarted()) {
+                thirdSongMixer.stop();
             }
             silenceTest = new SilenceTest();
             silenceTest.start();
+            isEnd = false;
+            System.out.println("sss");
         }
 
         if (source == boss) {
@@ -1398,6 +1654,15 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                 isEnd = true;
                 isVictoryEnd = true;
                 Play.stopMidi();
+                if (silenceTest.isHasStarted()) {
+                    silenceTest.stop();
+                }
+                if (secondSongMixer.isHasStarted()) {
+                    secondSongMixer.stop();
+                }
+                if (thirdSongMixer.isHasStarted()) {
+                    thirdSongMixer.stop();
+                }
 
             }
 
@@ -1405,6 +1670,15 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                 isEnd = true;
                 isVictoryEnd = false;
                 Play.stopMidi();
+                if (silenceTest.isHasStarted()) {
+                    silenceTest.stop();
+                }
+                if (secondSongMixer.isHasStarted()) {
+                    secondSongMixer.stop();
+                }
+                if (thirdSongMixer.isHasStarted()) {
+                    thirdSongMixer.stop();
+                }
             }
 
             if (event.getEventType().equals(BossDamageEvent.BossDamageEvent)) {
@@ -1417,7 +1691,15 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         if (source == C) {
             if (C.isFlashing()) {
                 C.nextPosition();
-                silenceTest.getTrumpet().setMuteArray(C.getCurrentFlashingIndex(), true);
+                if (isAtlevelOne) {
+                    silenceTest.getTrumpet().setMuteArray(C.getCurrentFlashingIndex(), true);
+                }
+                if (isAtlevelTwo) {
+                    secondSongMixer.getTrumpet().setMuteArray(C.getCurrentFlashingIndex(),true);
+                }
+                if (isAtlevelThree) {
+                    thirdSongMixer.getTrumpet().setMuteArray(C.getCurrentFlashingIndex(),true);
+                }
             } else {
             }
         }
@@ -1426,8 +1708,18 @@ public class FortePrototype extends Game implements IEventListener, JMC {
 
             if (D.isFlashing()) {
                 D.nextPosition();
-                silenceTest.getBass().setMuteArray(D.getCurrentFlashingIndex(), true);
+                if (isAtlevelOne) {
+                    silenceTest.getBass().setMuteArray(D.getCurrentFlashingIndex(), true);
 
+                }
+                if (isAtlevelTwo) {
+                    secondSongMixer.getBass().setMuteArray(D.getCurrentFlashingIndex(),true);
+
+                }
+
+                if (isAtlevelThree) {
+thirdSongMixer.getBass().setMuteArray(D.getCurrentFlashingIndex(),true);
+                }
             } else {
 
             }
@@ -1437,8 +1729,35 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         if (source == E) {
             if (E.isFlashing()) {
                 E.nextPosition();
-                silenceTest.getWhistle().setMuteArray(E.getCurrentFlashingIndex(), true);
+                if (isAtlevelOne) {
+                    silenceTest.getWhistle().setMuteArray(E.getCurrentFlashingIndex(), true);
 
+                }
+                if (isAtlevelTwo) {
+                    secondSongMixer.getWhistle().setMuteArray(E.getCurrentFlashingIndex(),true);
+
+                }
+                if (isAtlevelThree) {
+                    thirdSongMixer.getWhistle().setMuteArray(E.getCurrentFlashingIndex(),true);
+
+                }
+            } else {
+
+            }
+
+        }
+
+        if (source == F) {
+            if (F.isFlashing()) {
+                F.nextPosition();
+
+                if (isAtlevelTwo) {
+                    secondSongMixer.getAcc().setMuteArray(F.getCurrentFlashingIndex(),true);
+
+                }
+                if (isAtlevelThree) {
+                    thirdSongMixer.getMelody().setMuteArray(F.getCurrentFlashingIndex(),true);
+                }
             } else {
 
             }
