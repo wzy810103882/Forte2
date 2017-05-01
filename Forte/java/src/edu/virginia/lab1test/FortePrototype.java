@@ -64,6 +64,9 @@ public class FortePrototype extends Game implements IEventListener, JMC {
     private boolean isEnd = false;
     private boolean BossEncountered = false;
     private boolean isVictoryEnd = false;
+    private boolean musicStarted = false;
+    private boolean musicLost = false;
+    private boolean musicWon = false;
     private SilenceTest silenceTest = new SilenceTest();
     private SecondSongMixer secondSongMixer = new SecondSongMixer();
     private ThirdSongMixer thirdSongMixer = new ThirdSongMixer();
@@ -956,7 +959,32 @@ public class FortePrototype extends Game implements IEventListener, JMC {
 
     }
 
+    public void timingModeStart(int start, int finish, int songLength, Sprite temp) {
 
+        //  BufferedImage image = new BufferedImage(2,2,1);
+        if (temp.isPrevChange()) {
+            temp.setPrev(temp.getDisplayImage());
+            temp.setPrevChange(false);
+        }
+        //  if (bol) {
+        //      image = temp.getDisplayImage();
+        //  }
+        if (mainClock.getElapsedTime() % songLength > start && (mainClock.getElapsedTime() % songLength) < start + 18) {
+            temp.setImage("flashbg.jpg");
+            temp.setFlashing(true);
+            temp.setStart(start);
+            temp.setFinish(finish);
+            // System.out.print(temp.getCurrentFlashingIndex());
+            //bol = false;
+        }
+
+        if (mainClock.getElapsedTime() % songLength > finish && (mainClock.getElapsedTime() % songLength) < finish + 18) {
+            temp.setImage(temp.getPrev());
+            temp.setFlashing(false);
+
+        }
+
+    }
     /**
      * update methods
      *
@@ -1393,7 +1421,16 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                 gamePadUpdate(gamePads);
             }
         } else {
-            blink(silenceTest, 5331, startSreen, 2);
+
+            if(!musicStarted) {
+                Score startMusic = new Score("start.mid");
+                Read.midi(startMusic, "start.mid");
+                Play.midi(startMusic);
+                musicStarted = true;
+            }
+                timingModeStart(0, 333, 666, startSreen);
+
+
             for (GamePad pad : gamePads) {
                 if (pad.isButtonPressed(GamePad.BUTTON_TRIANGLE)) {
                     this.start();
@@ -1552,9 +1589,40 @@ public class FortePrototype extends Game implements IEventListener, JMC {
             } else {
                 //g.setFont(new Font("PlayBill", Font.PLAIN, 100));
                 if (isVictoryEnd) {
+                    if(!musicLost) {
+
+                        if(silenceTest.isHasStarted()){
+                             silenceTest.stop();
+                        }
+                        if(secondSongMixer.isHasStarted()) {
+                            secondSongMixer.stop();
+                        }
+                        if(thirdSongMixer.isHasStarted()) {
+                            thirdSongMixer.stop();
+                        }
+                        Score winMusic = new Score("victory.mid");
+                        Read.midi(winMusic, "victory.mid");
+                        Play.midi(winMusic);
+                        musicLost = true;
+                    }
                     gameend.draw(g);
                     //g.drawString("Congratulations!", gameWidth / 2, gameHeight / 2);
                 } else {
+                    if(!musicWon) {
+                        if(silenceTest.isHasStarted()){
+                            silenceTest.stop();
+                        }
+                        if(secondSongMixer.isHasStarted()) {
+                            secondSongMixer.stop();
+                        }
+                        if(thirdSongMixer.isHasStarted()) {
+                            thirdSongMixer.stop();
+                        }
+                        Score loseMusic = new Score("gameover.mid");
+                        Read.midi(loseMusic, "gameover.mid");
+                        Play.midi(loseMusic);
+                        musicWon = true;
+                    }
                     //g.drawString("GAME OVER", (gameWidth / 2) - 200, (gameHeight / 2) -100);
                     //g.drawString("Press start to continue", (gameWidth / 2) - 250, (gameHeight / 2));
                     gameover.draw(g);
