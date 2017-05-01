@@ -218,12 +218,16 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         int ylowerbound = 200;
         int yupperbound = 700;
         s.setPosition(xlowerbound + (int) (Math.random() * ((xupperbound - xlowerbound) + 1)), ylowerbound + (int) (Math.random() * ((yupperbound - ylowerbound) + 1)));
+        boolean good = true;
         for (Sprite e : objects) {
             if (e.nearby(s)) {
                 if (e.collidesWith(s)) {
-                    s.setPosition(xlowerbound + (int) (Math.random() * ((xupperbound - xlowerbound) + 1)), ylowerbound + (int) (Math.random() * ((yupperbound - ylowerbound) + 1)));
+                    good = false;
                 }
             }
+        }
+        if (!good){
+            randomSpawn(s);
         }
     }
 
@@ -1151,7 +1155,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         }
     }
 
-    private int scrollingspeed = 5;
+    private int scrollingspeed = 3;
 
     public void scrolling() {
 
