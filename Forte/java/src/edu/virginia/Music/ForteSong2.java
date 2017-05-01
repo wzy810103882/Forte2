@@ -99,6 +99,20 @@ public class ForteSong2 extends RTLine implements JMC {
         return bassRhythmArray;
     }
 
+    public int[] getScore()
+    {
+        int count = 0;
+        for (int i = 0; i < muteArray.length; i++)
+        {
+            if(muteArray[i])
+            {
+                count++;
+            }
+        }
+        int[] ret = {count, muteArray.length};
+        return ret;
+    }
+
     public boolean[] getMuteArray()
     {
         return muteArray;

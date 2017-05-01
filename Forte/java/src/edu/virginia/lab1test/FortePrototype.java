@@ -65,7 +65,8 @@ public class FortePrototype extends Game implements IEventListener, JMC {
     private SilenceTest silenceTest = new SilenceTest();
     private SecondSongMixer secondSongMixer = new SecondSongMixer();
     private ThirdSongMixer thirdSongMixer = new ThirdSongMixer();
-    private int score = 0;
+    private double scorePct = 0;
+    private int[] gameScore = new int[] {0,0};
 
     private double[] trumpetRhythmArray = new double[]{DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE,
             QN, QN, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE,
@@ -1291,7 +1292,9 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                     platformCollision(objects);
 
                     enemyCollision();
-
+                    gameScore = silenceTest.getScore();
+                    scorePct = 100* (((double) gameScore[0]) / gameScore[1]);
+                    scorePct = Math.ceil(scorePct);
 
                     attack(objects);
                     scrolling();
@@ -1501,8 +1504,8 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                     if (isAtlevelThree) {
                         if (levelthreedoor != null) levelthreedoor.draw(g);
                     }
-
-                    g.drawString("Score: 0%", 360, 40);
+                    g.setFont(new Font("PlayBill", Font.PLAIN, 50));
+                    g.drawString((int)scorePct + "%", 860, 40);
                     if (C != null) C.draw(g);
                     if (D != null) D.draw(g);
                     if (E != null) E.draw(g);

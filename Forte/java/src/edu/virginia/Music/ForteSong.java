@@ -28,6 +28,20 @@ public class ForteSong extends RTLine implements JMC{
         return trumpetRhythmArray;
     }
 
+    public int[] getScore()
+    {
+        int count = 0;
+        for (int i = 0; i < muteArray.length; i++)
+        {
+            if(muteArray[i])
+            {
+                count++;
+            }
+        }
+        int[] ret = {count, muteArray.length};
+        return ret;
+    }
+
     private double[] trumpetRhythmArray = new double[] {DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE,
             QN, QN, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE,
             EN, EN, QN };

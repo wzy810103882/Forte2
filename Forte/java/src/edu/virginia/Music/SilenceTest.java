@@ -33,6 +33,23 @@ public class SilenceTest implements JMC, ChangeListener, ActionListener {
         return whistle;
     }
 
+    public int[] getScore()
+    {
+        int a[] = trumpet.getScore();
+        int b[] = bass.getScore();
+        int c[] = whistle.getScore();
+
+
+        int num = a[0] + b[0] + c[0];
+        int denom = a[1] + b[1] + c[1];
+        int ret[] = new int[] {num, denom};
+
+
+        //combine numerators, denominators
+        //return this percentage.
+        return ret;
+    }
+
     private ForteSong3 whistle;
 
 
