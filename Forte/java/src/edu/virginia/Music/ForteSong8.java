@@ -37,6 +37,20 @@ public class ForteSong8 extends RTLine implements JMC{
     public int[] getMelodyPitchArray() {
         return melodyPitchArray;
     }
+    public int[] getScore()
+    {
+        int count = 0;
+        for (int i = 0; i < muteArray.length; i++)
+        {
+            if(muteArray[i])
+            {
+                count++;
+            }
+        }
+        int[] ret = {count, muteArray.length};
+        return ret;
+    }
+
 
     public void setMelodyPitchArray(int[] melodyPitchArray) {
         this.melodyPitchArray = melodyPitchArray;

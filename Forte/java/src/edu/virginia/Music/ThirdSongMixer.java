@@ -31,6 +31,23 @@ public class ThirdSongMixer implements JMC, ChangeListener, ActionListener {
         return trumpet;
     }
 
+    public int[] getScore()
+    {
+        int a[] = trumpet.getScore();
+        int b[] = bass.getScore();
+        int c[] = whistle.getScore();
+
+
+        int num = a[0] + b[0] + c[0];
+        int denom = a[1] + b[1] + c[1];
+        int ret[] = new int[] {num, denom};
+
+
+        //combine numerators, denominators
+        //return this percentage.
+        return ret;
+    }
+
     public void setTrumpet(ForteSong7 trumpet) {
         this.trumpet = trumpet;
     }

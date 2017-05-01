@@ -1147,7 +1147,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         }
     }
 
-    private int scrollingspeed = 6;
+    private int scrollingspeed = 5;
 
     public void scrolling() {
 
@@ -1292,7 +1292,19 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                     platformCollision(objects);
 
                     enemyCollision();
-                    gameScore = silenceTest.getScore();
+                    if(isAtlevelOne)
+                    {
+                        gameScore = silenceTest.getScore();
+                    }
+                    else if(isAtlevelTwo)
+                    {
+                        gameScore = secondSongMixer.getScore();
+                    }
+                    else if(isAtlevelThree)
+                    {
+                        gameScore = thirdSongMixer.getScore();
+                    }
+
                     scorePct = 100* (((double) gameScore[0]) / gameScore[1]);
                     scorePct = Math.ceil(scorePct);
 
@@ -1535,18 +1547,19 @@ public class FortePrototype extends Game implements IEventListener, JMC {
 
                 }
             } else {
+                //g.setFont(new Font("PlayBill", Font.PLAIN, 100));
                 if (isVictoryEnd) {
-                    g.drawString("Congratulations!", gameWidth / 2, gameHeight / 2);
+                    //g.drawString("Congratulations!", gameWidth / 2, gameHeight / 2);
                 } else {
-                    g.drawString("GAME OVER", gameWidth / 2, gameHeight / 2);
+                    //g.drawString("GAME OVER", (gameWidth / 2) - 200, (gameHeight / 2) -100);
+                    //g.drawString("Press start to continue", (gameWidth / 2) - 250, (gameHeight / 2));
+
                 }
 
             }
         } else {
             startSreen.draw(g);
-            g.drawString("Forte", gameWidth / 2, gameHeight / 2);
-            g.drawString("press 'start' to start", gameWidth / 2, gameHeight / 2 + 50);
-        }
+            }
 
     }
 

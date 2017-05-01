@@ -34,6 +34,23 @@ public class SecondSongMixer implements JMC, ChangeListener, ActionListener {
         return bass;
     }
 
+    public int[] getScore()
+    {
+        int a[] = trumpet.getScore();
+        int b[] = bass.getScore();
+        int c[] = whistle.getScore();
+
+
+        int num = a[0] + b[0] + c[0];
+        int denom = a[1] + b[1] + c[1];
+        int ret[] = new int[] {num, denom};
+
+
+        //combine numerators, denominators
+        //return this percentage.
+        return ret;
+    }
+
     public void setBass(ForteSong5 bass) {
         this.bass = bass;
     }

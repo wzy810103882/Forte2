@@ -32,6 +32,7 @@ public class ForteSong6b extends RTLine implements JMC{
         return melodyRhythmArray;
     }
 
+
     public void setMelodyRhythmArray(double[] melodyRhythmArray) {
         this.melodyRhythmArray = melodyRhythmArray;
     }

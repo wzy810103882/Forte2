@@ -20,6 +20,7 @@ public class SilenceTest implements JMC, ChangeListener, ActionListener {
 
     private ForteSong trumpet;
     private ForteSong2 bass;
+    private ForteSong3 whistle;
 
     public ForteSong getTrumpet() {
         return trumpet;
@@ -50,7 +51,7 @@ public class SilenceTest implements JMC, ChangeListener, ActionListener {
         return ret;
     }
 
-    private ForteSong3 whistle;
+
 
 
     public boolean isHasStarted() {
