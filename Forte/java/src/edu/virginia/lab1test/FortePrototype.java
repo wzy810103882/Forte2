@@ -1710,7 +1710,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                 }
 
                 if (isAtlevelThree) {
-thirdSongMixer.getBass().setMuteArray(D.getCurrentFlashingIndex(),true);
+                thirdSongMixer.getBass().setMuteArray(D.getCurrentFlashingIndex(),true);
                 }
             } else {
 
