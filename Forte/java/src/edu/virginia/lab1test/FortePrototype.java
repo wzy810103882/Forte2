@@ -158,12 +158,12 @@ public class FortePrototype extends Game implements IEventListener, JMC {
     Sprite C = new Sprite("C", "C.png");
     Sprite D = new Sprite("D", "D.png");
     Sprite E = new Sprite("E", "E.png");
-    Sprite F = new Sprite("F", "F.png");
+    //Sprite F = new Sprite("F", "F.png");
 
     Cevent cevent = new Cevent(Cevent.Cevent, C);
     Devent devent = new Devent(Devent.Devent, D);
     Eevent eevent = new Eevent(Eevent.Eevent, E);
-    Fevent fevent = new Fevent(Fevent.Fevent, F);
+    //Fevent fevent = new Fevent(Fevent.Fevent, F);
 
     BossDamageEvent bossDamageEvent = new BossDamageEvent(BossDamageEvent.BossDamageEvent, boss);
     BossEvent bossCompleteEvent = new BossEvent(BossEvent.BossEvent, boss);
@@ -192,7 +192,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         C.addEventListener(this, Cevent.Cevent);
         D.addEventListener(this, Devent.Devent);
         E.addEventListener(this, Eevent.Eevent);
-        F.addEventListener(this, Fevent.Fevent);
+        //F.addEventListener(this, Fevent.Fevent);
         door.addEventListener(this, BossEvent.BossEvent);
         boss.addEventListener(this, BossEvent.BossEvent);
         boss.addEventListener(this, BossDamageEvent.BossDamageEvent);
@@ -204,7 +204,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         enemies.add(C);
         enemies.add(D);
         enemies.add(E);
-        enemies.add(F);
+        //enemies.add(F);
         bossObject.add(boss);
     }
 
@@ -226,17 +226,17 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         D.setyArray(DyArray);
         E.setxArray(ExArray);
         E.setyArray(EyArray);
-        F.setxArray(FxArray);
-        F.setyArray(FyArray);
+        //F.setxArray(FxArray);
+        //F.setyArray(FyArray);
         C.setCurrentIndex(0);
         D.setCurrentIndex(0);
         E.setCurrentIndex(0);
-        F.setCurrentIndex(0);
+        //F.setCurrentIndex(0);
 
         C.setCurrentFlashingIndex(0);
         D.setCurrentFlashingIndex(0);
         E.setCurrentFlashingIndex(0);
-        F.setCurrentFlashingIndex(0);
+        //F.setCurrentFlashingIndex(0);
 
         //  F.setxArray(FxArray);
         //  F.setyArray(FyArray);
@@ -244,7 +244,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         C.setPosition(260, gameHeight - floor.getUnscaledHeight() - C.getUnscaledHeight());
         D.setPosition(700, gameHeight - floor.getUnscaledHeight() - D.getUnscaledHeight());
         E.setPosition(780, gameHeight - floor.getUnscaledHeight() - E.getUnscaledHeight());
-        F.setPosition(900, gameHeight - floor.getUnscaledHeight() - E.getUnscaledHeight());
+        //F.setPosition(900, gameHeight - floor.getUnscaledHeight() - E.getUnscaledHeight());
 
         if (enemies.contains(F)) {
             enemies.remove(F);
@@ -275,29 +275,29 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         D.setyArray(DyArrayleveltwo);
         E.setxArray(ExArrayleveltwo);
         E.setyArray(EyArrayleveltwo);
-        F.setxArray(FxArrayleveltwo);
-        F.setyArray(FyArrayleveltwo);
+        //F.setxArray(FxArrayleveltwo);
+        //F.setyArray(FyArrayleveltwo);
 
         C.setCurrentIndex(0);
         D.setCurrentIndex(0);
         E.setCurrentIndex(0);
-        F.setCurrentIndex(0);
+        //F.setCurrentIndex(0);
         //  F.setxArray(FxArray);
         //  F.setyArray(FyArray);
 
         C.setCurrentFlashingIndex(0);
         D.setCurrentFlashingIndex(0);
         E.setCurrentFlashingIndex(0);
-        F.setCurrentFlashingIndex(0);
+        //F.setCurrentFlashingIndex(0);
 
         C.setPosition(260, gameHeight - floor.getUnscaledHeight() - C.getUnscaledHeight());
         D.setPosition(700, gameHeight - floor.getUnscaledHeight() - D.getUnscaledHeight());
         E.setPosition(780, gameHeight - floor.getUnscaledHeight() - E.getUnscaledHeight());
-        F.setPosition(900, gameHeight - floor.getUnscaledHeight() - E.getUnscaledHeight());
+        //F.setPosition(900, gameHeight - floor.getUnscaledHeight() - E.getUnscaledHeight());
         leveltwodoor.setPosition(9800, gameHeight - 300);
-        if (!enemies.contains(F)) {
-            enemies.add(F);
-        }
+        //if (!enemies.contains(F)) {
+          //  enemies.add(F);
+        //}
         platformSetupleveltwo();
         moving2.add(leveltwodoor);
         moving.add(player);
@@ -323,30 +323,30 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         D.setyArray(DyArraylevelthree);
         E.setxArray(ExArraylevelthree);
         E.setyArray(EyArraylevelthree);
-        F.setxArray(FxArraylevelthree);
-        F.setyArray(FyArraylevelthree);
+        //F.setxArray(FxArraylevelthree);
+        //F.setyArray(FyArraylevelthree);
 
         C.setCurrentIndex(0);
         D.setCurrentIndex(0);
         E.setCurrentIndex(0);
-        F.setCurrentIndex(0);
+        //F.setCurrentIndex(0);
         //  F.setxArray(FxArray);
         //  F.setyArray(FyArray);
 
         C.setCurrentFlashingIndex(0);
         D.setCurrentFlashingIndex(0);
         E.setCurrentFlashingIndex(0);
-        F.setCurrentFlashingIndex(0);
+        //F.setCurrentFlashingIndex(0);
 
         C.setPosition(260, gameHeight - floor.getUnscaledHeight() - C.getUnscaledHeight());
         D.setPosition(700, gameHeight - floor.getUnscaledHeight() - D.getUnscaledHeight());
         E.setPosition(780, gameHeight - floor.getUnscaledHeight() - E.getUnscaledHeight());
-        F.setPosition(900, gameHeight - floor.getUnscaledHeight() - E.getUnscaledHeight());
+        //F.setPosition(900, gameHeight - floor.getUnscaledHeight() - E.getUnscaledHeight());
         levelthreedoor.setPosition(9800, gameHeight - 300);
 
-        if (!enemies.contains(F)) {
-            enemies.add(F);
-        }
+        //if (!enemies.contains(F)) {
+        //    enemies.add(F);
+        //}
 
         platformSetuplevelthree();
         moving2.add(levelthreedoor);
@@ -865,21 +865,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
 
 
         }
-        else if (index == 3){
-            int globaltime = 0;
-            for (int a = 0; a < mixer.getMelody().getMelodyRhythmArray().length; a++) {
-                if (mixer.getMelody().getMelodyRhythmArray()[a] > 0) {
-                    if (!mixer.getMelody().getMuteArray()[a]) {
-                        int start = globaltime;
-                        int finish = globaltime + (int) (0.5 * 1000 * (mixer.getMelody().getMelodyRhythmArray()[a] / 3));
-                        timingMode(start, finish, songLength, temp, a);
-                    }
-                }
-                globaltime = globaltime + (int) (1000 * (mixer.getMelody().getMelodyRhythmArray()[a] / 3));
 
-            }
-
-        }
         else {
 
         }
@@ -972,7 +958,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
             }
 
 
-            if (pad.isButtonPressed(GamePad.BUTTON_L3)) {
+            if (pad.isButtonPressed(GamePad.BUTTON_TRIANGLE)) {
                 if (isStart && isEnd && isAtlevelOne) {
                     player.dispatchEvent(songStartEvent);
                 } else if (isStart && isEnd && isAtlevelTwo) {
@@ -1140,8 +1126,6 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                         } else if (e.getId() == "E") {
                             E.dispatchEvent(eevent);
 
-                        } else if (e.getId() == "F") {
-                            F.dispatchEvent(fevent);
                         } else {
 
                             ;
@@ -1324,7 +1308,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                         blinksecondsong(secondSongMixer,10656,C,0);
                         blinksecondsong(secondSongMixer,10656,D,1);
                         blinksecondsong(secondSongMixer,10656,E,2);
-                        blinksecondsong(secondSongMixer,10656,F,3);
+                        //blinksecondsong(secondSongMixer,10656,F,3);
 
 
                     }
@@ -1335,7 +1319,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                         blinkthirdsong(thirdSongMixer,18330,C,0);
                         blinkthirdsong(thirdSongMixer,18330,D,1);
                         blinkthirdsong(thirdSongMixer,18330,E,2);
-                        blinkthirdsong(thirdSongMixer,18330,F,3);
+                        //blinkthirdsong(thirdSongMixer,18330,F,3);
 
                     }
                 } else {
@@ -1383,7 +1367,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         } else {
             blink(silenceTest, 5331, startSreen, 2);
             for (GamePad pad : gamePads) {
-                if (pad.isButtonPressed(GamePad.BUTTON_L3)) {
+                if (pad.isButtonPressed(GamePad.BUTTON_TRIANGLE)) {
                     this.start();
                     mainClock.resetGameClock();
                     player.dispatchEvent(songStartEvent);
@@ -1511,9 +1495,9 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                     if (C != null) C.draw(g);
                     if (D != null) D.draw(g);
                     if (E != null) E.draw(g);
-                    if (isAtlevelTwo || isAtlevelThree) {
-                        if (F != null) F.draw(g);
-                    }
+                   // if (isAtlevelTwo || isAtlevelThree) {
+                   //     if (F != null) F.draw(g);
+                    //}
 
                 } else {
                     bossBackground.draw(g);
@@ -1747,22 +1731,7 @@ thirdSongMixer.getBass().setMuteArray(D.getCurrentFlashingIndex(),true);
 
         }
 
-        if (source == F) {
-            if (F.isFlashing()) {
-                F.nextPosition();
 
-                if (isAtlevelTwo) {
-                    secondSongMixer.getAcc().setMuteArray(F.getCurrentFlashingIndex(),true);
-
-                }
-                if (isAtlevelThree) {
-                    thirdSongMixer.getMelody().setMuteArray(F.getCurrentFlashingIndex(),true);
-                }
-            } else {
-
-            }
-
-        }
 
 
     }

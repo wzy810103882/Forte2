@@ -64,19 +64,13 @@ public class ForteSong10 extends RTLine implements JMC{
      * Generate the next note when requested.
      */
     public synchronized Note getNextNote() {
-        if(muteArray[arrayIndex])
-        {
+
             n.setPitch(melodyPitchArray[arrayIndex]);
             n.setRhythmValue(melodyRhythmArray[arrayIndex]);
             n.setDynamic(dynoPosition);
             n.setDuration(n.getRhythmValue());
 
-        }
-        else
-        {
-            n = new Note(REST, melodyRhythmArray[arrayIndex]);
 
-        }
 
 
         /*if(arrayIndex % 2 == 0)
