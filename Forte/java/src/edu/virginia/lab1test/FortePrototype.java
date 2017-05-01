@@ -42,6 +42,8 @@ public class FortePrototype extends Game implements IEventListener, JMC {
     private Sprite platform = new Sprite("Platform", "blue.png");
     private Sprite player = new Sprite("Player", "Protagonist.png");
 
+    private Sprite gameover = new Sprite("gameover", "flashingbggameover.jpg");
+    private Sprite gameend = new Sprite("gameend", "flashingbggameend.jpg");
     private Sprite platformleveltwo = new Sprite("Platform", "matt3.png");
     private Sprite floorleveltwo = new Sprite("Floor", "matt3.png");
     private Sprite backgroundleveltwo = new Sprite("background", "bg.png");
@@ -66,7 +68,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
     private SecondSongMixer secondSongMixer = new SecondSongMixer();
     private ThirdSongMixer thirdSongMixer = new ThirdSongMixer();
     private double scorePct = 0;
-    private int[] gameScore = new int[] {0,0};
+    private int[] gameScore = new int[]{0, 0};
 
     private double[] trumpetRhythmArray = new double[]{DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE,
             QN, QN, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE,
@@ -210,14 +212,21 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         bossObject.add(boss);
     }
 
-    public void randomSpawn(Sprite s){
+    public void randomSpawn(Sprite s) {
         int xlowerbound = player.getPosX();
-        int xupperbound = player.getPosX() + 1000;
-        int ylowerbound = 0;
+        int xupperbound = player.getPosX() + 500;
+        int ylowerbound = 200;
         int yupperbound = 700;
-        s.setPosition(xlowerbound + (int)(Math.random() * ((xupperbound - xlowerbound) + 1)),ylowerbound + (int)(Math.random() * ((yupperbound - ylowerbound) + 1)));
+        s.setPosition(xlowerbound + (int) (Math.random() * ((xupperbound - xlowerbound) + 1)), ylowerbound + (int) (Math.random() * ((yupperbound - ylowerbound) + 1)));
+        for (Sprite e : objects) {
+            if (e.nearby(s)) {
+                if (e.collidesWith(s)) {
+                    s.setPosition(xlowerbound + (int) (Math.random() * ((xupperbound - xlowerbound) + 1)), ylowerbound + (int) (Math.random() * ((yupperbound - ylowerbound) + 1)));
+                }
+            }
+        }
     }
-    
+
     public void levelonesetup() {
         player.setPosition(150, 50);
 
@@ -306,7 +315,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         //F.setPosition(900, gameHeight - floor.getUnscaledHeight() - E.getUnscaledHeight());
         leveltwodoor.setPosition(9800, gameHeight - 300);
         //if (!enemies.contains(F)) {
-          //  enemies.add(F);
+        //  enemies.add(F);
         //}
         platformSetupleveltwo();
         moving2.add(leveltwodoor);
@@ -785,7 +794,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         } else if (index == 1) {
             int globaltime = 0;
             for (int a = 0; a < mixer.getBass().getMelodyRhythmArray().length; a++) {
-                if (mixer.getBass().getMelodyRhythmArray()[a]> 0) {
+                if (mixer.getBass().getMelodyRhythmArray()[a] > 0) {
                     if (!mixer.getBass().getMuteArray()[a]) {
                         int start = globaltime;
                         int finish = globaltime + (int) (0.5 * 1000 * (mixer.getBass().getMelodyRhythmArray()[a] / 3));
@@ -808,8 +817,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                 }
             }
 
-        }
-        else if (index == 3){
+        } else if (index == 3) {
             int globaltime = 0;
             for (int a = 0; a < mixer.getAcc().getMelodyRhythmArray().length; a++) {
                 if (mixer.getAcc().getMelodyRhythmArray()[a] > 0) {
@@ -822,8 +830,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                 }
             }
 
-        }
-        else {
+        } else {
 
         }
     }
@@ -847,7 +854,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         } else if (index == 1) {
             int globaltime = 0;
             for (int a = 0; a < mixer.getBass().getMelodyRhythmArray().length; a++) {
-                if (mixer.getBass().getMelodyRhythmArray()[a]> 0) {
+                if (mixer.getBass().getMelodyRhythmArray()[a] > 0) {
                     if (!mixer.getBass().getMuteArray()[a]) {
                         int start = globaltime;
                         int finish = globaltime + (int) (0.5 * 1000 * (mixer.getBass().getMelodyRhythmArray()[a] / 3));
@@ -874,9 +881,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
             }
 
 
-        }
-
-        else {
+        } else {
 
         }
     }
@@ -977,8 +982,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                     leveltwodoor.dispatchEvent(levelThreeEvent);
                 } else if (isStart && isEnd && BossEncountered) {
                     levelthreedoor.dispatchEvent(bevent);
-                }
-                else {
+                } else {
 
                 }
             }
@@ -1292,20 +1296,15 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                     platformCollision(objects);
 
                     enemyCollision();
-                    if(isAtlevelOne)
-                    {
+                    if (isAtlevelOne) {
                         gameScore = silenceTest.getScore();
-                    }
-                    else if(isAtlevelTwo)
-                    {
+                    } else if (isAtlevelTwo) {
                         gameScore = secondSongMixer.getScore();
-                    }
-                    else if(isAtlevelThree)
-                    {
+                    } else if (isAtlevelThree) {
                         gameScore = thirdSongMixer.getScore();
                     }
 
-                    scorePct = 100* (((double) gameScore[0]) / gameScore[1]);
+                    scorePct = 100 * (((double) gameScore[0]) / gameScore[1]);
                     scorePct = Math.ceil(scorePct);
 
                     attack(objects);
@@ -1313,7 +1312,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
 
                     for (Sprite e : enemies) {
                         if (e.getPosX() < -e.getUnscaledWidth()) {
-                            e.nextPosition();
+                            randomSpawn(e);
                         }
                     }
                     if (isAtlevelOne) {
@@ -1329,9 +1328,9 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                         if (player.collidesWith(leveltwodoor, player.getVelX(), player.getVelY())) {
                             leveltwodoor.dispatchEvent(levelThreeEvent);
                         }
-                        blinksecondsong(secondSongMixer,10656,C,0);
-                        blinksecondsong(secondSongMixer,10656,D,1);
-                        blinksecondsong(secondSongMixer,10656,E,2);
+                        blinksecondsong(secondSongMixer, 10656, C, 0);
+                        blinksecondsong(secondSongMixer, 10656, D, 1);
+                        blinksecondsong(secondSongMixer, 10656, E, 2);
                         //blinksecondsong(secondSongMixer,10656,E,3);
                         //blinksecondsong(secondSongMixer,10656,F,3);
 
@@ -1341,9 +1340,9 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                         if (player.collidesWith(levelthreedoor, player.getVelX(), player.getVelY())) {
                             levelthreedoor.dispatchEvent(bevent);
                         }
-                        blinkthirdsong(thirdSongMixer,18330,C,0);
-                        blinkthirdsong(thirdSongMixer,18330,D,1);
-                        blinkthirdsong(thirdSongMixer,18330,E,2);
+                        blinkthirdsong(thirdSongMixer, 18330, C, 0);
+                        blinkthirdsong(thirdSongMixer, 18330, D, 1);
+                        blinkthirdsong(thirdSongMixer, 18330, E, 2);
                         //blinkthirdsong(thirdSongMixer,18330,F,3);
 
                     }
@@ -1517,12 +1516,12 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                         if (levelthreedoor != null) levelthreedoor.draw(g);
                     }
                     g.setFont(new Font("PlayBill", Font.PLAIN, 50));
-                    g.drawString((int)scorePct + "%", 860, 40);
+                    g.drawString((int) scorePct + "%", 860, 40);
                     if (C != null) C.draw(g);
                     if (D != null) D.draw(g);
                     if (E != null) E.draw(g);
-                   // if (isAtlevelTwo || isAtlevelThree) {
-                   //     if (F != null) F.draw(g);
+                    // if (isAtlevelTwo || isAtlevelThree) {
+                    //     if (F != null) F.draw(g);
                     //}
 
                 } else {
@@ -1549,17 +1548,18 @@ public class FortePrototype extends Game implements IEventListener, JMC {
             } else {
                 //g.setFont(new Font("PlayBill", Font.PLAIN, 100));
                 if (isVictoryEnd) {
+                    gameend.draw(g);
                     //g.drawString("Congratulations!", gameWidth / 2, gameHeight / 2);
                 } else {
                     //g.drawString("GAME OVER", (gameWidth / 2) - 200, (gameHeight / 2) -100);
                     //g.drawString("Press start to continue", (gameWidth / 2) - 250, (gameHeight / 2));
-
+                    gameover.draw(g);
                 }
 
             }
         } else {
             startSreen.draw(g);
-            }
+        }
 
     }
 
@@ -1586,6 +1586,8 @@ public class FortePrototype extends Game implements IEventListener, JMC {
             if (thirdSongMixer.isHasStarted()) {
                 thirdSongMixer.stop();
             }
+            health = 100;
+            healthbar.setPosition(0,0);
             BossEncountered = true;
             player.setPosition(50, 50);
             boss.setPosition(500, 500);
@@ -1704,15 +1706,15 @@ public class FortePrototype extends Game implements IEventListener, JMC {
 
         if (source == C) {
             if (C.isFlashing()) {
-                C.nextPosition();
+                randomSpawn(C);
                 if (isAtlevelOne) {
                     silenceTest.getTrumpet().setMuteArray(C.getCurrentFlashingIndex(), true);
                 }
                 if (isAtlevelTwo) {
-                    secondSongMixer.getTrumpet().setMuteArray(C.getCurrentFlashingIndex(),true);
+                    secondSongMixer.getTrumpet().setMuteArray(C.getCurrentFlashingIndex(), true);
                 }
                 if (isAtlevelThree) {
-                    thirdSongMixer.getTrumpet().setMuteArray(C.getCurrentFlashingIndex(),true);
+                    thirdSongMixer.getTrumpet().setMuteArray(C.getCurrentFlashingIndex(), true);
                 }
             } else {
             }
@@ -1721,18 +1723,18 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         if (source == D) {
 
             if (D.isFlashing()) {
-                D.nextPosition();
+                randomSpawn(D);
                 if (isAtlevelOne) {
                     silenceTest.getBass().setMuteArray(D.getCurrentFlashingIndex(), true);
 
                 }
                 if (isAtlevelTwo) {
-                    secondSongMixer.getBass().setMuteArray(D.getCurrentFlashingIndex(),true);
+                    secondSongMixer.getBass().setMuteArray(D.getCurrentFlashingIndex(), true);
 
                 }
 
                 if (isAtlevelThree) {
-                thirdSongMixer.getBass().setMuteArray(D.getCurrentFlashingIndex(),true);
+                    thirdSongMixer.getBass().setMuteArray(D.getCurrentFlashingIndex(), true);
                 }
             } else {
 
@@ -1742,18 +1744,18 @@ public class FortePrototype extends Game implements IEventListener, JMC {
 
         if (source == E) {
             if (E.isFlashing()) {
-                E.nextPosition();
+                randomSpawn(E);
                 if (isAtlevelOne) {
                     silenceTest.getWhistle().setMuteArray(E.getCurrentFlashingIndex(), true);
 
                 }
                 if (isAtlevelTwo) {
-                    secondSongMixer.getWhistle().setMuteArray(E.getCurrentFlashingIndex(),true);
-                    secondSongMixer.getAcc().setMuteArray(E.getCurrentFlashingIndex(),true);
+                    secondSongMixer.getWhistle().setMuteArray(E.getCurrentFlashingIndex(), true);
+                    secondSongMixer.getAcc().setMuteArray(E.getCurrentFlashingIndex(), true);
 
                 }
                 if (isAtlevelThree) {
-                    thirdSongMixer.getWhistle().setMuteArray(E.getCurrentFlashingIndex(),true);
+                    thirdSongMixer.getWhistle().setMuteArray(E.getCurrentFlashingIndex(), true);
 
 
                 }
@@ -1762,8 +1764,6 @@ public class FortePrototype extends Game implements IEventListener, JMC {
             }
 
         }
-
-
 
 
     }
