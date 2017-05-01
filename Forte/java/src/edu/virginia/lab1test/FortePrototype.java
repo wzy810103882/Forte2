@@ -65,6 +65,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
     private SilenceTest silenceTest = new SilenceTest();
     private SecondSongMixer secondSongMixer = new SecondSongMixer();
     private ThirdSongMixer thirdSongMixer = new ThirdSongMixer();
+    private int score = 0;
 
     private double[] trumpetRhythmArray = new double[]{DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE,
             QN, QN, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE, DOTTED_QUARTER_NOTE,
@@ -1145,7 +1146,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         }
     }
 
-    private int scrollingspeed = 5;
+    private int scrollingspeed = 6;
 
     public void scrolling() {
 
@@ -1316,6 +1317,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                         blinksecondsong(secondSongMixer,10656,C,0);
                         blinksecondsong(secondSongMixer,10656,D,1);
                         blinksecondsong(secondSongMixer,10656,E,2);
+                        //blinksecondsong(secondSongMixer,10656,E,3);
                         //blinksecondsong(secondSongMixer,10656,F,3);
 
 
@@ -1500,6 +1502,7 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                         if (levelthreedoor != null) levelthreedoor.draw(g);
                     }
 
+                    g.drawString("Score: 0%", 360, 40);
                     if (C != null) C.draw(g);
                     if (D != null) D.draw(g);
                     if (E != null) E.draw(g);
@@ -1727,10 +1730,12 @@ public class FortePrototype extends Game implements IEventListener, JMC {
                 }
                 if (isAtlevelTwo) {
                     secondSongMixer.getWhistle().setMuteArray(E.getCurrentFlashingIndex(),true);
+                    secondSongMixer.getAcc().setMuteArray(E.getCurrentFlashingIndex(),true);
 
                 }
                 if (isAtlevelThree) {
                     thirdSongMixer.getWhistle().setMuteArray(E.getCurrentFlashingIndex(),true);
+
 
                 }
             } else {

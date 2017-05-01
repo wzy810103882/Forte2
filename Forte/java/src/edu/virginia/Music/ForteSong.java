@@ -11,7 +11,7 @@ import javax.swing.*;
 
 public class ForteSong extends RTLine implements JMC{
     private Note n = new Note(36, 0.5);
-    private int dynoPosition = 120;
+    private int dynoPosition = 100;
 
     //i added these. currently not using.
     //private int[] pitchArray = new int[] {C4,C4,C4,D4,E4,E4,D4,E4,F4,G4,C5,C5,C5,G4,G4,G4,E4,E4,E4,C4,C4,C4,G4,F4,E4,D4,C4};
@@ -68,17 +68,21 @@ public class ForteSong extends RTLine implements JMC{
         n.setDuration(n.getRhythmValue() * 0.9);
         return n;*/
 
+        n.setPitch(trumpetPitchArray[arrayIndex]);
+        n.setRhythmValue(trumpetRhythmArray[arrayIndex]);
+        n.setDuration(n.getRhythmValue());
         if(muteArray[arrayIndex])
         {
-            n.setPitch(trumpetPitchArray[arrayIndex]);
-            n.setRhythmValue(trumpetRhythmArray[arrayIndex]);
-            n.setDynamic(dynoPosition);
-            n.setDuration(n.getRhythmValue());
+
+            //n.setDynamic(dynoPosition);
+            n.setDynamic(100);
+
 
         }
         else
         {
-            n = new Note(REST, trumpetRhythmArray[arrayIndex]);
+            n.setDynamic(0);
+            //n = new Note(REST, trumpetRhythmArray[arrayIndex]);
 
         }
 

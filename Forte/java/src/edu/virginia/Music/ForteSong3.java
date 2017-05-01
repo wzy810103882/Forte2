@@ -9,7 +9,7 @@ import javax.swing.*;
 
 public class ForteSong3 extends RTLine implements JMC {
     private Note n = new Note(36, 0.5);
-    private int dynoPosition = 120;
+    private int dynoPosition = 100;
 
     public int[] getWhistlePitchArray() {
         return whistlePitchArray;
@@ -64,17 +64,20 @@ public class ForteSong3 extends RTLine implements JMC {
         n.setDuration(n.getRhythmValue() * 0.9);
         return n;*/
 
+        n.setPitch(whistlePitchArray[arrayIndex]);
+        n.setRhythmValue(whistleRhythmArray[arrayIndex]);
+        n.setDuration(n.getRhythmValue());
         if(muteArray[arrayIndex])
         {
-            n.setPitch(whistlePitchArray[arrayIndex]);
-            n.setRhythmValue(whistleRhythmArray[arrayIndex]);
-            n.setDynamic(dynoPosition);
-            n.setDuration(n.getRhythmValue());
+
+            //n.setDynamic(dynoPosition);
+            n.setDynamic(100);
+
         }
         else
         {
-
-            n = new Note(REST, whistleRhythmArray[arrayIndex]);
+            n.setDynamic(0);
+            //n = new Note(REST, whistleRhythmArray[arrayIndex]);
 
         }
 

@@ -10,7 +10,7 @@ import jm.JMC;
 
 public class ForteSong4 extends RTLine implements JMC{
     private Note n = new Note(36, 0.5);
-    private int dynoPosition = 50;
+    private int dynoPosition = 100;
 
     private int[] melodyPitchArray = new int[] {REST, D4, BF3, G3, G3, FS3, REST, FS3, BF3, C4, C4, BF3, G3, BF3, REST,
             G3, G3, BF3, C4, REST, C4, G3, G3, G3, BF3, REST, C4, C4, G3, G3, REST};
@@ -65,17 +65,22 @@ public class ForteSong4 extends RTLine implements JMC{
      */
     public synchronized Note getNextNote() {
 
+        n.setPitch(melodyPitchArray[arrayIndex]);
+        n.setRhythmValue(melodyRhythmArray[arrayIndex]);
+        n.setDuration(n.getRhythmValue());
+
         if(muteArray[arrayIndex])
         {
-            n.setPitch(melodyPitchArray[arrayIndex]);
-            n.setRhythmValue(melodyRhythmArray[arrayIndex]);
-            n.setDynamic(dynoPosition);
-            n.setDuration(n.getRhythmValue());
+
+            //n.setDynamic(dynoPosition);
+            n.setDynamic(100);
+
 
         }
         else
         {
-            n = new Note(REST, melodyRhythmArray[arrayIndex]);
+            n.setDynamic(20);
+            //n = new Note(REST, melodyRhythmArray[arrayIndex]);
 
         }
 

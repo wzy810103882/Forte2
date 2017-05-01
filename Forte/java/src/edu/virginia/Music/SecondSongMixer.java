@@ -19,6 +19,8 @@ public class SecondSongMixer implements JMC, ChangeListener, ActionListener {
 
     private ForteSong4 trumpet;
     private ForteSong5 bass;
+    private ForteSong6 whistle;
+    private ForteSong6b acc;
 
     public ForteSong4 getTrumpet() {
         return trumpet;
@@ -60,8 +62,7 @@ public class SecondSongMixer implements JMC, ChangeListener, ActionListener {
         this.hasStarted = hasStarted;
     }
 
-    private ForteSong6 whistle;
-    private ForteSong6b acc;
+
     private boolean hasStarted = false;
 
 
