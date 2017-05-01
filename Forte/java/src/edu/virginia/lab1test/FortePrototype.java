@@ -1574,6 +1574,9 @@ public class FortePrototype extends Game implements IEventListener, JMC {
         DisplayObject source = (DisplayObject) event.getSource();
 
         if (source == levelthreedoor) {
+            isAtlevelTwo = false;
+            isAtlevelOne = false;
+            isAtlevelThree = false;
             if (silenceTest.isHasStarted()) {
                 silenceTest.stop();
             }
